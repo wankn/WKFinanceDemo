@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="63" id="KGk-i7-Jjw" customClass="WKHomeLargeTitleCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="62.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新手专享" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6N-Kw-42G">
+                        <rect key="frame" x="15" y="13" width="307" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Ysw-Hj-aBA"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="享受新手奖励利率" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ju-ax-bha">
+                        <rect key="frame" x="15" y="38" width="307" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="diS-mb-L8G"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="0ju-ax-bha" firstAttribute="leading" secondItem="b6N-Kw-42G" secondAttribute="leading" id="12Q-rQ-f6Q"/>
+                    <constraint firstItem="0ju-ax-bha" firstAttribute="trailing" secondItem="b6N-Kw-42G" secondAttribute="trailing" id="86z-fT-Voe"/>
+                    <constraint firstItem="b6N-Kw-42G" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="HVj-pb-fm8"/>
+                    <constraint firstAttribute="bottom" secondItem="0ju-ax-bha" secondAttribute="bottom" constant="5" id="bnt-dp-RnE"/>
+                    <constraint firstItem="b6N-Kw-42G" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="cVu-4e-wnJ"/>
+                    <constraint firstItem="b6N-Kw-42G" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="10" id="eKS-Ru-U7V"/>
+                    <constraint firstItem="0ju-ax-bha" firstAttribute="top" secondItem="b6N-Kw-42G" secondAttribute="bottom" constant="5" id="p9U-Hb-bI2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="subTitleLabel" destination="0ju-ax-bha" id="VKM-SA-ZCu"/>
+                <outlet property="titleLabel" destination="b6N-Kw-42G" id="1bv-Vk-jMX"/>
+            </connections>
+            <point key="canvasLocation" x="53" y="76.5"/>
+        </tableViewCell>
+    </objects>
+</document>

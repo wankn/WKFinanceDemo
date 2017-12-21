@@ -1,0 +1,51 @@
+{
+  "name": "SBLib",
+  "version": "0.8.4",
+  "summary": "A short description of SBLib.",
+  "description": "SBLib...",
+  "homepage": "https://github.com/doll313/SBLib",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "yuki.wang": "385734069@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/doll313/SBLib.git",
+    "tag": "0.8.4"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "source_files": "SBLib/Classes/**/*",
+  "prefix_header_file": "SBLib/Classes/SBLib-prefix.h",
+  "dependencies": {
+    "AFNetworking": [
+
+    ],
+    "FMDB": [
+
+    ],
+    "MBProgressHUD": [
+
+    ],
+    "MJRefresh": [
+
+    ]
+  },
+  "exclude_files": [
+    "SBLib/Classes/STKeyChain/STKeychain.*",
+    "SBLib/Classes/Util/SBDownloadFilter.*"
+  ],
+  "subspecs": [
+    {
+      "name": "no-arc",
+      "source_files": [
+        "SBLib/Classes/STKeyChain/STKeychain.*",
+        "SBLib/Classes/Util/SBDownloadFilter.*"
+      ],
+      "requires_arc": false
+    }
+  ]
+}
