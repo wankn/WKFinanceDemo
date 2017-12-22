@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="WKCarouselBannerCell">
+            <rect key="frame" x="0.0" y="0.0" width="246" height="70"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="246" height="70"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6i-Ca-bSB" customClass="SDCycleScrollView">
+                        <rect key="frame" x="0.0" y="0.0" width="246" height="70"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Q6i-Ca-bSB" secondAttribute="trailing" id="IJS-Wg-X3a"/>
+                <constraint firstItem="Q6i-Ca-bSB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Tfs-va-tHt"/>
+                <constraint firstAttribute="bottom" secondItem="Q6i-Ca-bSB" secondAttribute="bottom" id="eaa-Ey-lyu"/>
+                <constraint firstItem="Q6i-Ca-bSB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vqX-Kl-CsF"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <size key="customSize" width="246" height="70"/>
+            <connections>
+                <outlet property="cycleScrollView" destination="Q6i-Ca-bSB" id="zR1-4b-ORr"/>
+            </connections>
+            <point key="canvasLocation" x="-63" y="33"/>
+        </collectionViewCell>
+    </objects>
+</document>

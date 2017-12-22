@@ -16,7 +16,9 @@
 #define RGB(r, g, b) RGB_A(r, g, b, 1)
 #define RGB_HEX(__h__) RGB((__h__ >> 16) & 0xFF, (__h__ >> 8) & 0xFF, __h__ & 0xFF)
 
-
+#define APP_UI_SCREEN_SIZE     ([UIScreen mainScreen].bounds.size)          //屏幕大小
+#define APP_UI_SCREEN_FHEIGHT  ([UIScreen mainScreen].bounds.size.height)   //界面的高度
+#define APP_UI_SCREEN_FWIDTH   ([UIScreen mainScreen].bounds.size.width)    //界面的宽度
 
 
 #endif /* WKFinanceConstant_h */

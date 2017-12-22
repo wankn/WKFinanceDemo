@@ -7,6 +7,7 @@
 //
 
 #import "WKCarouselBannerCellHelper.h"
+#import "WKModuleBasicProtocol.h"
 
 @interface WKCarouselBannerCellHelper()
 @property (nonatomic, strong) DataItemResult *result;
@@ -15,15 +16,11 @@
 
 @implementation WKCarouselBannerCellHelper
 
-+ (WKCarouselBannerCellHelper *)helperWithDataItemResult:(DataItemResult *)result {
-    return [[self alloc] initWithDataItemResult:result];
-}
 
-- (instancetype)initWithDataItemResult:(DataItemResult *)result {
-    if (self = [super init]) {
-        self.result = result;
-    }
-    return self;
+#pragma mark - WKModuleCellHelperProtocol
+/** 绑定数据源 */
+- (void)configureWithDataItemResult:(DataItemResult *)result {
+    self.result = result;
 }
 
 #pragma mark - getters

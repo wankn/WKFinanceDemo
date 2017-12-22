@@ -1,28 +1,32 @@
 //
-//  WKVerticalCarouselCell.m
+//  WKModuleRollPlatformNoticeCell.m
 //  WKFinanceDemo
 //
-//  Created by 王昆 on 2017/11/17.
+//  Created by 王昆 on 2017/12/22.
 //  Copyright © 2017年 wangkun. All rights reserved.
 //
 
-#import "WKVerticalCarouselCell.h"
+#import "WKModuleRollPlatformNoticeCell.h"
 #import "SDCycleScrollView.h"
+#import "WKModuleBasicProtocol.h"
+#import "WKModuleRollPlatformNoticeCellHelper.h"
 
-@interface WKVerticalCarouselCell()
+@interface WKModuleRollPlatformNoticeCell()<WKModuleCellProtocol>
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *cycleScrollView;
-
 @end
 
-@implementation WKVerticalCarouselCell
+@implementation WKModuleRollPlatformNoticeCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    // Initialization code
 }
 
-#pragma mark -
-- (void)configureHelper:(WKVerticalCarouselCellHelper *)helper {
+#pragma mark - WKModuleCellProtocol
+/** 绑定cellHelper */
+- (void)configureCellHelper:(id)cellHelper {
     [self setupCycleScrollView];
+    WKModuleRollPlatformNoticeCellHelper *helper = cellHelper;
     self.cycleScrollView.titlesGroup = helper.titleList;
 }
 

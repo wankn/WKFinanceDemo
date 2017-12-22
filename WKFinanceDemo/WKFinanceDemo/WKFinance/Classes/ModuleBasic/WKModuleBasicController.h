@@ -8,11 +8,14 @@
 
 #import "WKBasicController.h"
 #import "WKModuleBasicControllerHelper.h"
+#import "UIScrollView+WKRefresh.h"
 
 @interface WKModuleBasicController : WKBasicController<UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,WKModuleControllerProtocol>
 
 @property (nonatomic, strong) UICollectionView *mainCollectionView;
 @property (nonatomic, strong) WKModuleBasicControllerHelper *helper;
 
+
+- (void)manualRefresh:(BOOL)manualRefresh;
 
 @end

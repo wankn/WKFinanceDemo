@@ -7,6 +7,7 @@
 //
 
 #import "WKHomeController.h"
+#import "WKHomeControllerHelper.h"
 
 @interface WKHomeController ()
 
@@ -18,7 +19,16 @@
     [super viewDidLoad];
 }
 
-#pragma mark - 
+#pragma mark - WKModuleControllerProtocol
+- (id)createControllerHelper {
+    WKHomeControllerHelper *helper = [[WKHomeControllerHelper alloc] init];
+    __weak typeof(self) weakSelf = self;
+    helper.requestFinishBlock = ^(BOOL hasError, NSString *message) {
+        [weakSelf.mainCollectionView wk_endRefresh];
+        [weakSelf.mainCollectionView reloadData];
+    };
+    return helper;
+}
 
 
 

@@ -10,13 +10,15 @@
 #import "WKModuleBasicProtocol.h"
 #import "WKFinanceConstant.h"
 
-@interface WKModuleBasicControllerHelper : NSObject<WKModuleControllerHelperProtocol>
+@interface WKModuleBasicControllerHelper : NSObject<WKModuleControllerHelperProtocol,SBHttpDataLoaderDelegate>
 
 @property (nonatomic, readonly) NSMutableArray<id<WKModuleSectionDataSourceProtocol>> *sectionDataSourceList;
 @property (nonatomic, readonly) NSSet *cellNameSet;  /**< cell类名 集合 注册用 */
 @property (nonatomic, readonly) NSSet *sectionHeaderNameSet; /**< sectionHeader类名集合 注册用 */
 @property (nonatomic, readonly) NSSet *sectionFooterNameSet; /**< sectionFooter类名集合 注册用 */
 
+@property (nonatomic, copy) void(^reloadMainViewBlock)(void); /**< 刷新主页block */
+@property (nonatomic, copy) void(^requestFinishBlock)(BOOL hasError,NSString *message);
 
 /** 刷新数据 */
 - (void)requestData;

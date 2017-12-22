@@ -2,14 +2,16 @@
 //  WKCarouselBannerCell.m
 //  WKFinanceDemo
 //
-//  Created by 王昆 on 2017/11/17.
+//  Created by 王昆 on 2017/12/22.
 //  Copyright © 2017年 wangkun. All rights reserved.
 //
 
 #import "WKCarouselBannerCell.h"
+#import "WKCarouselBannerCellHelper.h"
+#import "WKModuleBasicProtocol.h"
 #import "SDCycleScrollView.h"
 
-@interface WKCarouselBannerCell()<SDCycleScrollViewDelegate>
+@interface WKCarouselBannerCell()<SDCycleScrollViewDelegate,WKModuleCellProtocol>
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *cycleScrollView;
 @property (strong, nonatomic) WKCarouselBannerCellHelper *helper;
 @end
@@ -18,6 +20,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    // Initialization code
 }
 
 #pragma mark - SDCycleScrollViewDelegate
@@ -26,14 +29,15 @@
     
 }
 
-
-#pragma mark - public methods
-- (void)configureHelper:(WKCarouselBannerCellHelper *)helper {
+#pragma mark - WKModuleCellProtocol
+/** 绑定cellHelper */
+- (void)configureCellHelper:(id)cellHelper {
     [self setupCycleScrollView];
-    self.cycleScrollView.imageURLStringsGroup = helper.imagesUrlList;
+    self.helper = cellHelper;
+    self.cycleScrollView.imageURLStringsGroup = self.helper.imagesUrlList;
 }
 
-#pragma mark -
+#pragma mark - private methods
 - (void)setupCycleScrollView {
     self.cycleScrollView.delegate = self;
     self.cycleScrollView.backgroundColor = [UIColor clearColor];

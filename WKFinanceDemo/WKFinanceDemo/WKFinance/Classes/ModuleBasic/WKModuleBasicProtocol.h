@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 #import <SBLib/DataItemResult.h>
 #import <SBLib/SBHttpDataLoader.h>
+#import "WKModuleConstant.h"
 
 @class WKModuleControllerHelperProtocol;
 
@@ -18,7 +19,7 @@
 
 @optional
 /** 获取控制器Helper */
-- (WKModuleControllerHelperProtocol *)createControllerHelper;
+- (id)createControllerHelper;
 
 /** 事件响应 */
 - (void)switchToTargetControllerWithType:(NSInteger)type params:(NSDictionary *)params;

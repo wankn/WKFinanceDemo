@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="WKModuleRollPlatformNoticeCell">
+            <rect key="frame" x="0.0" y="0.0" width="287" height="81"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="287" height="81"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wk_ notice.png" highlightedImage="wk_ notice.png" translatesAutoresizingMaskIntoConstraints="NO" id="3cp-y3-rid">
+                        <rect key="frame" x="15" y="30" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="UgU-yG-8aQ"/>
+                            <constraint firstAttribute="height" constant="20" id="fNr-iD-LUC"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GgQ-ky-Rc1" customClass="SDCycleScrollView">
+                        <rect key="frame" x="50" y="25.5" width="222" height="30"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="kCJ-VW-ePb"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="3cp-y3-rid" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="83f-cT-Ll9"/>
+                <constraint firstItem="GgQ-ky-Rc1" firstAttribute="centerY" secondItem="3cp-y3-rid" secondAttribute="centerY" id="GpS-kV-12g"/>
+                <constraint firstItem="GgQ-ky-Rc1" firstAttribute="leading" secondItem="3cp-y3-rid" secondAttribute="trailing" constant="15" id="Y0E-hM-qye"/>
+                <constraint firstAttribute="trailing" secondItem="GgQ-ky-Rc1" secondAttribute="trailing" constant="15" id="cpf-77-8wX"/>
+                <constraint firstItem="3cp-y3-rid" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="mUa-Wn-Kbh"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <size key="customSize" width="287" height="81"/>
+            <connections>
+                <outlet property="cycleScrollView" destination="GgQ-ky-Rc1" id="HWy-mK-C97"/>
+            </connections>
+            <point key="canvasLocation" x="13.5" y="43.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="wk_ notice.png" width="40" height="40"/>
+    </resources>
+</document>

@@ -7,7 +7,6 @@
 //
 
 #import "WKModuleBasicController.h"
-#import "UIScrollView+WKRefresh.h"
 #import "Masonry.h"
 
 @interface WKModuleBasicController ()
@@ -22,6 +21,8 @@
     [self.mainCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    
+    [self manualRefresh:YES];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -215,15 +216,27 @@ didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
     }
 }
 
+#pragma mark - public methods
+- (void)manualRefresh:(BOOL)manualRefresh {
+    if (manualRefresh) {
+        [self.mainCollectionView wk_beginRefresh];
+    } else {
+        [self.helper requestData];
+    }
+}
+
 #pragma mark - private methods
 /** 注册cell */
 - (void)registerCells {
     
     //注册cell
     for (NSString *cellName in self.helper.cellNameSet) {
-        [self.mainCollectionView registerClass:NSClassFromString(cellName)
-                    forCellWithReuseIdentifier:cellName];
+//        [self.mainCollectionView registerClass:NSClassFromString(cellName)
+//                    forCellWithReuseIdentifier:cellName];
+        [self.mainCollectionView registerNib:[UINib nibWithNibName:cellName bundle:nil]
+                  forCellWithReuseIdentifier:cellName];
     }
+    
     //注册header
     for (NSString *reusableViewName in self.helper.sectionHeaderNameSet) {
         [self.mainCollectionView registerClass:NSClassFromString(reusableViewName)
@@ -245,6 +258,12 @@ didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
                        withReuseIdentifier:@"UICollectionReusableView"];
 }
 
+/** 刷新列表 */
+- (void)reloadCollectionView {
+    
+    [self.mainCollectionView reloadData];
+}
+
 #pragma mark - getters
 - (UICollectionView *)mainCollectionView {
     if (!_mainCollectionView) {
@@ -262,13 +281,8 @@ didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
         __weak typeof(self) weakSelf = self;
         _mainCollectionView.wk_beginRefreshCallBack = ^{
             __strong typeof(weakSelf) strongSelf = weakSelf;
-//            [strongSelf.helper requestData];
-//            [strongSelf.mainCollectionView endLoadMore];
-        };
-        _mainCollectionView.wk_beginLoadMoreCallBack = ^{
-            __strong typeof(weakSelf) strongSelf = weakSelf;
-//            [strongSelf.helper requestLoadMoreDataIsFirstPage:NO];
-//            [strongSelf.mainCollectionView endRefresh];
+            [strongSelf.helper requestData];
+            [strongSelf.mainCollectionView wk_endLoadMore];
         };
         [self registerCells];
     }
@@ -282,9 +296,9 @@ didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
     if ([self respondsToSelector:@selector(createControllerHelper)]) {
         _helper = [self createControllerHelper];
         __weak typeof(self) weakSelf = self;
-//        _helper.reloadMainViewBlock = ^{
-//            [weakSelf reloadCollectionView];
-//        };
+        _helper.reloadMainViewBlock = ^{
+            [weakSelf reloadCollectionView];
+        };
         return _helper;
     } else {
         return nil;

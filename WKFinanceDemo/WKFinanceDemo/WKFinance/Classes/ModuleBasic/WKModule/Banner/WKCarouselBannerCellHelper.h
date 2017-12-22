@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WKModuleBasicProtocol.h"
 #import <SBLib/SBLib.h>
 
-@interface WKCarouselBannerCellHelper : NSObject
+@interface WKCarouselBannerCellHelper : NSObject<WKModuleCellHelperProtocol>
 
 @property (nonatomic, readonly) NSArray *imagesUrlList;
 
-+ (WKCarouselBannerCellHelper *)helperWithDataItemResult:(DataItemResult *)result;
 
 @end
