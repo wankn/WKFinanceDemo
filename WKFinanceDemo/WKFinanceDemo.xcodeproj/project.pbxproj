@@ -50,24 +50,14 @@
 		EA2EA7811FECEADC00F80995 /* WKModuleNewUserProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA2EA77F1FECEADC00F80995 /* WKModuleNewUserProductCell.xib */; };
 		EA2EA7851FED054100F80995 /* wk_home_btnbg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA2EA7831FED054000F80995 /* wk_home_btnbg@2x.png */; };
 		EA2EA7861FED054100F80995 /* wk_home_btnbg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA2EA7841FED054000F80995 /* wk_home_btnbg@3x.png */; };
+		EA91BA391FF14C60002A210B /* WKProductPrograss.m in Sources */ = {isa = PBXBuildFile; fileRef = EA91BA381FF14C60002A210B /* WKProductPrograss.m */; };
 		EAF7EEF41FBE833500E087C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF7EEF31FBE833500E087C0 /* AppDelegate.m */; };
 		EAF7EEFA1FBE833500E087C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAF7EEF81FBE833500E087C0 /* Main.storyboard */; };
 		EAF7EEFC1FBE833500E087C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAF7EEFB1FBE833500E087C0 /* Assets.xcassets */; };
 		EAF7EEFF1FBE833500E087C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAF7EEFD1FBE833500E087C0 /* LaunchScreen.storyboard */; };
 		EAF7EF021FBE833500E087C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF7EF011FBE833500E087C0 /* main.m */; };
 		EAFA22011FC2E0720044D83D /* WKFinanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFA21AA1FC2E0720044D83D /* WKFinanceController.m */; };
-		EAFA22041FC2E0720044D83D /* WKGeneralProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFA21B11FC2E0720044D83D /* WKGeneralProductCell.m */; };
-		EAFA22051FC2E0720044D83D /* WKGeneralProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAFA21B21FC2E0720044D83D /* WKGeneralProductCell.xib */; };
-		EAFA22061FC2E0720044D83D /* WKHomeLargeTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFA21B41FC2E0720044D83D /* WKHomeLargeTitleCell.m */; };
-		EAFA22071FC2E0720044D83D /* WKHomeLargeTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAFA21B51FC2E0720044D83D /* WKHomeLargeTitleCell.xib */; };
-		EAFA22081FC2E0720044D83D /* WKHomeSafeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFA21B71FC2E0720044D83D /* WKHomeSafeCell.m */; };
-		EAFA22091FC2E0720044D83D /* WKHomeSafeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAFA21B81FC2E0720044D83D /* WKHomeSafeCell.xib */; };
-		EAFA220A1FC2E0720044D83D /* WKNewUserProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFA21BA1FC2E0720044D83D /* WKNewUserProductCell.m */; };
-		EAFA220B1FC2E0720044D83D /* WKNewUserProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAFA21BB1FC2E0720044D83D /* WKNewUserProductCell.xib */; };
 		EAFA220E1FC2E0720044D83D /* WKCarouselBannerCellHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFA21C11FC2E0720044D83D /* WKCarouselBannerCellHelper.m */; };
-		EAFA220F1FC2E0720044D83D /* WKGeneralProductCellHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFA21C31FC2E0720044D83D /* WKGeneralProductCellHelper.m */; };
-		EAFA22101FC2E0720044D83D /* WKHomeLargeTitleCellHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFA21C51FC2E0720044D83D /* WKHomeLargeTitleCellHelper.m */; };
-		EAFA22111FC2E0720044D83D /* WKHomeSafeCellHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFA21C71FC2E0720044D83D /* WKHomeSafeCellHelper.m */; };
 		EAFA22121FC2E0720044D83D /* WKNewUserProductCellHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFA21C91FC2E0720044D83D /* WKNewUserProductCellHelper.m */; };
 		EAFA22141FC2E0720044D83D /* WKHomeProductProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFA21CE1FC2E0720044D83D /* WKHomeProductProgress.m */; };
 		EAFA22151FC2E0720044D83D /* WKHomeTagsView.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFA21D01FC2E0720044D83D /* WKHomeTagsView.m */; };
@@ -171,6 +161,8 @@
 		EA2EA77F1FECEADC00F80995 /* WKModuleNewUserProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WKModuleNewUserProductCell.xib; sourceTree = "<group>"; };
 		EA2EA7831FED054000F80995 /* wk_home_btnbg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_home_btnbg@2x.png"; sourceTree = "<group>"; };
 		EA2EA7841FED054000F80995 /* wk_home_btnbg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_home_btnbg@3x.png"; sourceTree = "<group>"; };
+		EA91BA371FF14C60002A210B /* WKProductPrograss.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKProductPrograss.h; sourceTree = "<group>"; };
+		EA91BA381FF14C60002A210B /* WKProductPrograss.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKProductPrograss.m; sourceTree = "<group>"; };
 		EAF7EEEF1FBE833500E087C0 /* WKFinanceDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WKFinanceDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAF7EEF21FBE833500E087C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EAF7EEF31FBE833500E087C0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -181,26 +173,8 @@
 		EAF7EF011FBE833500E087C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EAFA21A91FC2E0720044D83D /* WKFinanceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKFinanceController.h; sourceTree = "<group>"; };
 		EAFA21AA1FC2E0720044D83D /* WKFinanceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKFinanceController.m; sourceTree = "<group>"; };
-		EAFA21B01FC2E0720044D83D /* WKGeneralProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKGeneralProductCell.h; sourceTree = "<group>"; };
-		EAFA21B11FC2E0720044D83D /* WKGeneralProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKGeneralProductCell.m; sourceTree = "<group>"; };
-		EAFA21B21FC2E0720044D83D /* WKGeneralProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WKGeneralProductCell.xib; sourceTree = "<group>"; };
-		EAFA21B31FC2E0720044D83D /* WKHomeLargeTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKHomeLargeTitleCell.h; sourceTree = "<group>"; };
-		EAFA21B41FC2E0720044D83D /* WKHomeLargeTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKHomeLargeTitleCell.m; sourceTree = "<group>"; };
-		EAFA21B51FC2E0720044D83D /* WKHomeLargeTitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WKHomeLargeTitleCell.xib; sourceTree = "<group>"; };
-		EAFA21B61FC2E0720044D83D /* WKHomeSafeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKHomeSafeCell.h; sourceTree = "<group>"; };
-		EAFA21B71FC2E0720044D83D /* WKHomeSafeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKHomeSafeCell.m; sourceTree = "<group>"; };
-		EAFA21B81FC2E0720044D83D /* WKHomeSafeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WKHomeSafeCell.xib; sourceTree = "<group>"; };
-		EAFA21B91FC2E0720044D83D /* WKNewUserProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKNewUserProductCell.h; sourceTree = "<group>"; };
-		EAFA21BA1FC2E0720044D83D /* WKNewUserProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKNewUserProductCell.m; sourceTree = "<group>"; };
-		EAFA21BB1FC2E0720044D83D /* WKNewUserProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WKNewUserProductCell.xib; sourceTree = "<group>"; };
 		EAFA21C01FC2E0720044D83D /* WKCarouselBannerCellHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKCarouselBannerCellHelper.h; sourceTree = "<group>"; };
 		EAFA21C11FC2E0720044D83D /* WKCarouselBannerCellHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKCarouselBannerCellHelper.m; sourceTree = "<group>"; };
-		EAFA21C21FC2E0720044D83D /* WKGeneralProductCellHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKGeneralProductCellHelper.h; sourceTree = "<group>"; };
-		EAFA21C31FC2E0720044D83D /* WKGeneralProductCellHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKGeneralProductCellHelper.m; sourceTree = "<group>"; };
-		EAFA21C41FC2E0720044D83D /* WKHomeLargeTitleCellHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKHomeLargeTitleCellHelper.h; sourceTree = "<group>"; };
-		EAFA21C51FC2E0720044D83D /* WKHomeLargeTitleCellHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKHomeLargeTitleCellHelper.m; sourceTree = "<group>"; };
-		EAFA21C61FC2E0720044D83D /* WKHomeSafeCellHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKHomeSafeCellHelper.h; sourceTree = "<group>"; };
-		EAFA21C71FC2E0720044D83D /* WKHomeSafeCellHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKHomeSafeCellHelper.m; sourceTree = "<group>"; };
 		EAFA21C81FC2E0720044D83D /* WKNewUserProductCellHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKNewUserProductCellHelper.h; sourceTree = "<group>"; };
 		EAFA21C91FC2E0720044D83D /* WKNewUserProductCellHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKNewUserProductCellHelper.m; sourceTree = "<group>"; };
 		EAFA21CD1FC2E0720044D83D /* WKHomeProductProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKHomeProductProgress.h; sourceTree = "<group>"; };
@@ -504,8 +478,6 @@
 		EAFA21AB1FC2E0720044D83D /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				EAFA21AC1FC2E0720044D83D /* Cells */,
-				EAFA21BF1FC2E0720044D83D /* Helpers */,
 				EAFA21CC1FC2E0720044D83D /* Views */,
 				EAFA21D11FC2E0720044D83D /* WKHomeController.h */,
 				EAFA21D21FC2E0720044D83D /* WKHomeController.m */,
@@ -515,38 +487,6 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		EAFA21AC1FC2E0720044D83D /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				EAFA21B01FC2E0720044D83D /* WKGeneralProductCell.h */,
-				EAFA21B11FC2E0720044D83D /* WKGeneralProductCell.m */,
-				EAFA21B21FC2E0720044D83D /* WKGeneralProductCell.xib */,
-				EAFA21B31FC2E0720044D83D /* WKHomeLargeTitleCell.h */,
-				EAFA21B41FC2E0720044D83D /* WKHomeLargeTitleCell.m */,
-				EAFA21B51FC2E0720044D83D /* WKHomeLargeTitleCell.xib */,
-				EAFA21B61FC2E0720044D83D /* WKHomeSafeCell.h */,
-				EAFA21B71FC2E0720044D83D /* WKHomeSafeCell.m */,
-				EAFA21B81FC2E0720044D83D /* WKHomeSafeCell.xib */,
-				EAFA21B91FC2E0720044D83D /* WKNewUserProductCell.h */,
-				EAFA21BA1FC2E0720044D83D /* WKNewUserProductCell.m */,
-				EAFA21BB1FC2E0720044D83D /* WKNewUserProductCell.xib */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		EAFA21BF1FC2E0720044D83D /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				EAFA21C21FC2E0720044D83D /* WKGeneralProductCellHelper.h */,
-				EAFA21C31FC2E0720044D83D /* WKGeneralProductCellHelper.m */,
-				EAFA21C41FC2E0720044D83D /* WKHomeLargeTitleCellHelper.h */,
-				EAFA21C51FC2E0720044D83D /* WKHomeLargeTitleCellHelper.m */,
-				EAFA21C61FC2E0720044D83D /* WKHomeSafeCellHelper.h */,
-				EAFA21C71FC2E0720044D83D /* WKHomeSafeCellHelper.m */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		EAFA21CC1FC2E0720044D83D /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -554,6 +494,8 @@
 				EAFA21CE1FC2E0720044D83D /* WKHomeProductProgress.m */,
 				EAFA21CF1FC2E0720044D83D /* WKHomeTagsView.h */,
 				EAFA21D01FC2E0720044D83D /* WKHomeTagsView.m */,
+				EA91BA371FF14C60002A210B /* WKProductPrograss.h */,
+				EA91BA381FF14C60002A210B /* WKProductPrograss.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -744,13 +686,10 @@
 				EA2BA0B61FF0DDE500768E2F /* wk_module_newad@2x.png in Resources */,
 				EA2BA0D01FF0F26900768E2F /* WKModuleBottomTipCell.xib in Resources */,
 				EAFA22291FC2E0720044D83D /* wk_ finance_highlight@2x.png in Resources */,
-				EAFA22091FC2E0720044D83D /* WKHomeSafeCell.xib in Resources */,
 				EAF7EEFC1FBE833500E087C0 /* Assets.xcassets in Resources */,
 				EAF7EEFA1FBE833500E087C0 /* Main.storyboard in Resources */,
 				EA2EA7741FECE5B100F80995 /* WKCarouselBannerCell.xib in Resources */,
 				EAFA22261FC2E0720044D83D /* wk_ finance.png in Resources */,
-				EAFA22071FC2E0720044D83D /* WKHomeLargeTitleCell.xib in Resources */,
-				EAFA220B1FC2E0720044D83D /* WKNewUserProductCell.xib in Resources */,
 				EAFA222E1FC2E0720044D83D /* wk_mine.png in Resources */,
 				EA2EA7811FECEADC00F80995 /* WKModuleNewUserProductCell.xib in Resources */,
 				EAFA22301FC2E0720044D83D /* wk_mine_highlight.png in Resources */,
@@ -764,7 +703,6 @@
 				EAFA222F1FC2E0720044D83D /* wk_mine@2x.png in Resources */,
 				EAFA22281FC2E0720044D83D /* wk_ finance_highlight.png in Resources */,
 				EA2EA7791FECE72100F80995 /* WKModuleRollPlatformNoticeCell.xib in Resources */,
-				EAFA22051FC2E0720044D83D /* WKGeneralProductCell.xib in Resources */,
 				EA2EA7851FED054100F80995 /* wk_home_btnbg@2x.png in Resources */,
 				EA2BA0AD1FF0D5C200768E2F /* wk_module_safelogo@2x.png in Resources */,
 			);
@@ -833,6 +771,7 @@
 			files = (
 				EA2EA77C1FECE8B300F80995 /* WKModuleRollPlatformNoticeCellHelper.m in Sources */,
 				EA2BA0CB1FF0F23B00768E2F /* WKModuleBottomTipDataSource.m in Sources */,
+				EA91BA391FF14C60002A210B /* WKProductPrograss.m in Sources */,
 				EAFA221D1FC2E0720044D83D /* UILabel+WK.m in Sources */,
 				EAFA22181FC2E0720044D83D /* WKMineController.m in Sources */,
 				EA2EA7641FECCE8700F80995 /* WKModuleProductDataSource.m in Sources */,
@@ -840,18 +779,14 @@
 				EA2EA7661FECCE8700F80995 /* WKModuleNewUserProductDataSource.m in Sources */,
 				EA2EA7651FECCE8700F80995 /* WKModulePlatformIntroDataSource.m in Sources */,
 				EA2EA7801FECEADC00F80995 /* WKModuleNewUserProductCell.m in Sources */,
-				EAFA22041FC2E0720044D83D /* WKGeneralProductCell.m in Sources */,
-				EAFA22081FC2E0720044D83D /* WKHomeSafeCell.m in Sources */,
 				EA2BA0BE1FF0DEF400768E2F /* WKModuleAdImageCell.m in Sources */,
 				EA2BA0CF1FF0F26900768E2F /* WKModuleBottomTipCell.m in Sources */,
-				EAFA220F1FC2E0720044D83D /* WKGeneralProductCellHelper.m in Sources */,
 				EAFA22141FC2E0720044D83D /* WKHomeProductProgress.m in Sources */,
 				EA2EA7381FEBAE8400F80995 /* WKModuleBasicControllerHelper.m in Sources */,
 				EAFA22121FC2E0720044D83D /* WKNewUserProductCellHelper.m in Sources */,
 				EA2EA72B1FEBABF200F80995 /* UIColor+WK.m in Sources */,
 				EAFA22201FC2E0720044D83D /* WKHomeHttpProcess.m in Sources */,
 				EA2EA7681FECCE8700F80995 /* WKModuleBannerDataSource.m in Sources */,
-				EAFA22061FC2E0720044D83D /* WKHomeLargeTitleCell.m in Sources */,
 				EA2BA0B21FF0DA4200768E2F /* WKUserInfoManager.m in Sources */,
 				EA2EA73E1FEBB5AD00F80995 /* UIScrollView+WKRefresh.m in Sources */,
 				EAF7EF021FBE833500E087C0 /* main.m in Sources */,
@@ -862,19 +797,16 @@
 				EAFA22011FC2E0720044D83D /* WKFinanceController.m in Sources */,
 				EA2BA0C21FF0DF7600768E2F /* WKModuleAdImageCellHelper.m in Sources */,
 				EAFA220E1FC2E0720044D83D /* WKCarouselBannerCellHelper.m in Sources */,
-				EAFA22101FC2E0720044D83D /* WKHomeLargeTitleCellHelper.m in Sources */,
 				EAFA22151FC2E0720044D83D /* WKHomeTagsView.m in Sources */,
 				EAFA221C1FC2E0720044D83D /* NSString+WK.m in Sources */,
 				EAFA221B1FC2E0720044D83D /* NSDictionary+WKRealValue.m in Sources */,
 				EA2BA0D61FF0FF4300768E2F /* WKModuleProductCellHelper.m in Sources */,
 				EA2EA7781FECE72100F80995 /* WKModuleRollPlatformNoticeCell.m in Sources */,
 				EA2BA0D31FF0F2AC00768E2F /* WKModuleBottomTipCellHelper.m in Sources */,
-				EAFA220A1FC2E0720044D83D /* WKNewUserProductCell.m in Sources */,
 				EA2BA0A51FF0C29F00768E2F /* WKModulePlatformIntroCell.m in Sources */,
 				EA2EA7411FECA9FC00F80995 /* WKModuleConstant.m in Sources */,
 				EAF7EEF41FBE833500E087C0 /* AppDelegate.m in Sources */,
 				EA2EA7731FECE5B100F80995 /* WKCarouselBannerCell.m in Sources */,
-				EAFA22111FC2E0720044D83D /* WKHomeSafeCellHelper.m in Sources */,
 				EAFA22161FC2E0720044D83D /* WKHomeController.m in Sources */,
 				EA2EA76E1FECDADC00F80995 /* WKModuleTitleReusableView.m in Sources */,
 				EA2EA7671FECCE8700F80995 /* WKModuleRollPlatformNoticeDataSource.m in Sources */,

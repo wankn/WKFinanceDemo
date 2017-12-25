@@ -9,6 +9,7 @@
 #import "WKModuleProductCell.h"
 #import "WKHomeTagsView.h"
 #import "WKModuleProductCellHelper.h"
+#import "WKProductPrograss.h"
 
 @interface WKModuleProductCell()
 @property (weak, nonatomic) IBOutlet UILabel *productNameLabel;
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *remainingInvestmentLabel;
 @property (weak, nonatomic) IBOutlet WKHomeTagsView *tagsView;
+@property (weak, nonatomic) IBOutlet WKProductPrograss *progress;
 
 @end
 
@@ -25,7 +27,10 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-     self.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = [UIColor whiteColor];
+    
+    [self.progress configureForeRadius:30 foreLineWidth:5 backRadius:30 backLineWidth:5];
+    self.progress.progressValue = 0.2;
 }
 
 #pragma mark - WKModuleCellProtocol

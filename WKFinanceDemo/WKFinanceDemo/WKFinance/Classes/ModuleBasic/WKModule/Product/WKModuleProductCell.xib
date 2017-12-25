@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -53,15 +53,14 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="16x-cA-cYv">
-                        <rect key="frame" x="264" y="24" width="52" height="51"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="1" green="0.48757133740000003" blue="0.41564380540000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MeQ-4Z-waT" customClass="WKHomeTagsView">
                         <rect key="frame" x="103" y="9" width="124" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="16x-cA-cYv" customClass="WKProductPrograss">
+                        <rect key="frame" x="258" y="22" width="52" height="51"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </view>
                 </subviews>
             </view>
@@ -69,6 +68,7 @@
             <size key="customSize" width="330" height="95"/>
             <connections>
                 <outlet property="productNameLabel" destination="xlw-Oz-dlI" id="x9L-X4-fWE"/>
+                <outlet property="progress" destination="16x-cA-cYv" id="d3i-6o-ym7"/>
                 <outlet property="remainingInvestmentLabel" destination="nTN-dB-3mP" id="2G4-hy-Mfd"/>
                 <outlet property="tagsView" destination="MeQ-4Z-waT" id="rRA-kC-OTn"/>
                 <outlet property="timeLabel" destination="klD-7X-opR" id="3PW-CM-n2s"/>
