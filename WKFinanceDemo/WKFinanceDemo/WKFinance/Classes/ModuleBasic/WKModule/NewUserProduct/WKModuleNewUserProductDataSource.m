@@ -21,7 +21,7 @@
 #pragma mark - WKModuleSectionDataSourceProtocol
 /** 需要注册的cell */
 - (NSArray *)fetchCellRegisterList {
-    return @[@"WKNewUserProductCell"];
+    return @[@"WKModuleNewUserProductCell"];
 }
 
 /** items个数 */
@@ -31,13 +31,19 @@
 
 /** cell的size */
 - (CGSize)sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(APP_UI_SCREEN_FWIDTH, 180);
+    return CGSizeMake(APP_UI_SCREEN_FWIDTH, 140);
+}
+
+/** 获取需要注册的 sectionHeader 的类名 */
+- (NSArray *)fetchSectionHeaderReusableViewClassNameList {
+    return @[@"WKModuleTitleReusableView"];
 }
 
 /** sectionHeader */
 - (UICollectionReusableView *)viewForSectionHeaderAtIndexPath:(NSIndexPath *)indexPath
                                                collectionView:(UICollectionView *)collectionView {
-    WKModuleTitleReusableView *reusableView = [[WKModuleTitleReusableView alloc] init];
+    WKModuleTitleReusableView *reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"WKModuleTitleReusableView" forIndexPath:indexPath];
+    reusableView.backgroundColor = [UIColor whiteColor];
     NSString *title = [self.result.resultInfo getString:@"newTitle"];
     [reusableView configureTitle:title];
     return reusableView;
@@ -50,12 +56,12 @@
 
 /** 获取section的inset */
 - (UIEdgeInsets)insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsZero;
+    return UIEdgeInsetsMake(0, 0, 10, 0);
 }
 
 /** 获取对应位置的cell类名 */
 - (NSString *)cellClassNameAtIndexPath:(NSIndexPath *)indexPath {
-    return @"WKNewUserProductCell";
+    return @"WKModuleNewUserProductCell";
 }
 
 /** 获取相应位置的cellHelper */
@@ -72,7 +78,12 @@
     [self.cellHelperList removeAllObjects];
     for (id obj in result.dataList) {
         if ([obj isKindOfClass:[DataItemDetail class]]) {
-            WKNewUserProductCellHelper *cellHelper = [WKNewUserProductCellHelper helperWithDataItemDetail:obj];
+            WKNewUserProductCellHelper *cellHelper = [[WKNewUserProductCellHelper alloc] init];
+            DataItemResult *tmpResult = [[DataItemResult alloc] init];
+            [tmpResult.resultInfo appendItems:obj];
+            if ([cellHelper respondsToSelector:@selector(configureWithDataItemResult:)]) {
+                [cellHelper configureWithDataItemResult:tmpResult];
+            }
             [self.cellHelperList addObject:cellHelper];
         }
     }

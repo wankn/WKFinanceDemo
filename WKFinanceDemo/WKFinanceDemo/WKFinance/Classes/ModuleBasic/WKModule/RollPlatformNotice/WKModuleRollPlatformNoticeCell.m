@@ -10,6 +10,7 @@
 #import "SDCycleScrollView.h"
 #import "WKModuleBasicProtocol.h"
 #import "WKModuleRollPlatformNoticeCellHelper.h"
+#import "UIView+WKLayout.h"
 
 @interface WKModuleRollPlatformNoticeCell()<WKModuleCellProtocol>
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *cycleScrollView;
@@ -20,6 +21,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+     self.backgroundColor = [UIColor whiteColor];
+    [self wk_addBottomSeparator];
 }
 
 #pragma mark - WKModuleCellProtocol

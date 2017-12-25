@@ -21,17 +21,14 @@
 @end
 
 @implementation WKNewUserProductCellHelper
-+ (WKNewUserProductCellHelper *)helperWithDataItemDetail:(DataItemDetail *)detail {
-    return [[self alloc] initWithDataItemDetail:detail];
+
+#pragma mark - WKModuleCellHelperProtocol
+/** 绑定数据源 */
+- (void)configureWithDataItemResult:(DataItemResult *)result {
+    self.detail = result.resultInfo;
 }
 
-- (instancetype)initWithDataItemDetail:(DataItemDetail *)detail {
-    if (self = [super init]) {
-        self.detail = detail;
-    }
-    return self;
-}
-
+#pragma mark - getters
 - (NSString *)profit {
     double tmp = [self.detail getString:@"profit"].doubleValue;
     return [NSString stringWithFormat:@"%.2f%%",tmp*100.0];
@@ -39,7 +36,7 @@
 
 - (NSString *)investBegin {
     NSString *tmp = [[self.detail getString:@"investBegin"] wk_rejectLastZero];
-    return [NSString stringWithFormat:@"%@元起投",tmp];
+    return [NSString stringWithFormat:@"起投金额  %@元",tmp];
 }
 
 - (NSString *)descriptionText {
@@ -48,7 +45,7 @@
 
 - (NSString *)timeLimitValue {
     NSString *plstimeLimitValue =  [self.detail getString:@"plstimeLimitValue"];
-    return [NSString stringWithFormat:@"%@天期限",plstimeLimitValue];
+    return [NSString stringWithFormat:@"投资期限  %@天",plstimeLimitValue];
 }
 
 @end

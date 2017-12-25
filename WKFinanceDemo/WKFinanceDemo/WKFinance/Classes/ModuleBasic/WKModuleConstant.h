@@ -17,6 +17,8 @@ typedef NS_ENUM(NSInteger, WKModuleType) {
     WKModuleTypePlatformIntro = 3,       //平台简介
     WKModuleTypeNewUserProduct = 4,      //新手
     WKModuleTypeProduct = 5,             //标的
+    WKModuleTypeNewAd = 6,               //广告图
+    WKModuleTypeBottomTip = 7            //底部提示
 };
 
 

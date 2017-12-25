@@ -8,6 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		3D8D3BEBA07BFEE361AB7D77 /* libPods-WKFinanceDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA92B46A21547A198677FA8D /* libPods-WKFinanceDemo.a */; };
+		EA2BA0A51FF0C29F00768E2F /* WKModulePlatformIntroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2BA0A31FF0C29F00768E2F /* WKModulePlatformIntroCell.m */; };
+		EA2BA0A61FF0C29F00768E2F /* WKModulePlatformIntroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA2BA0A41FF0C29F00768E2F /* WKModulePlatformIntroCell.xib */; };
+		EA2BA0AB1FF0D5C200768E2F /* wk_module_platform@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA2BA0A71FF0D5C100768E2F /* wk_module_platform@2x.png */; };
+		EA2BA0AC1FF0D5C200768E2F /* wk_module_platform@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA2BA0A81FF0D5C100768E2F /* wk_module_platform@3x.png */; };
+		EA2BA0AD1FF0D5C200768E2F /* wk_module_safelogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA2BA0A91FF0D5C100768E2F /* wk_module_safelogo@2x.png */; };
+		EA2BA0AE1FF0D5C200768E2F /* wk_module_safelogo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA2BA0AA1FF0D5C100768E2F /* wk_module_safelogo@3x.png */; };
+		EA2BA0B21FF0DA4200768E2F /* WKUserInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2BA0B11FF0DA4200768E2F /* WKUserInfoManager.m */; };
+		EA2BA0B51FF0DDE500768E2F /* wk_module_newad@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA2BA0B31FF0DDE300768E2F /* wk_module_newad@3x.png */; };
+		EA2BA0B61FF0DDE500768E2F /* wk_module_newad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA2BA0B41FF0DDE400768E2F /* wk_module_newad@2x.png */; };
+		EA2BA0BA1FF0DE7A00768E2F /* WKModuleAdImageDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2BA0B91FF0DE7A00768E2F /* WKModuleAdImageDataSource.m */; };
+		EA2BA0BE1FF0DEF400768E2F /* WKModuleAdImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2BA0BC1FF0DEF400768E2F /* WKModuleAdImageCell.m */; };
+		EA2BA0BF1FF0DEF400768E2F /* WKModuleAdImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA2BA0BD1FF0DEF400768E2F /* WKModuleAdImageCell.xib */; };
+		EA2BA0C21FF0DF7600768E2F /* WKModuleAdImageCellHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2BA0C11FF0DF7600768E2F /* WKModuleAdImageCellHelper.m */; };
+		EA2BA0C61FF0ED1F00768E2F /* WKModuleProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2BA0C41FF0ED1F00768E2F /* WKModuleProductCell.m */; };
+		EA2BA0C71FF0ED1F00768E2F /* WKModuleProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA2BA0C51FF0ED1F00768E2F /* WKModuleProductCell.xib */; };
+		EA2BA0CB1FF0F23B00768E2F /* WKModuleBottomTipDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2BA0CA1FF0F23B00768E2F /* WKModuleBottomTipDataSource.m */; };
+		EA2BA0CF1FF0F26900768E2F /* WKModuleBottomTipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2BA0CD1FF0F26900768E2F /* WKModuleBottomTipCell.m */; };
+		EA2BA0D01FF0F26900768E2F /* WKModuleBottomTipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA2BA0CE1FF0F26900768E2F /* WKModuleBottomTipCell.xib */; };
+		EA2BA0D31FF0F2AC00768E2F /* WKModuleBottomTipCellHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2BA0D21FF0F2AC00768E2F /* WKModuleBottomTipCellHelper.m */; };
+		EA2BA0D61FF0FF4300768E2F /* WKModuleProductCellHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2BA0D51FF0FF4300768E2F /* WKModuleProductCellHelper.m */; };
 		EA2EA72B1FEBABF200F80995 /* UIColor+WK.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2EA72A1FEBABF200F80995 /* UIColor+WK.m */; };
 		EA2EA7351FEBAE4700F80995 /* WKModuleBasicController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2EA7341FEBAE4700F80995 /* WKModuleBasicController.m */; };
 		EA2EA7381FEBAE8400F80995 /* WKModuleBasicControllerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2EA7371FEBAE8400F80995 /* WKModuleBasicControllerHelper.m */; };
@@ -63,10 +83,6 @@
 		EAFA221F1FC2E0720044D83D /* WKHomeHttpLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFA21EA1FC2E0720044D83D /* WKHomeHttpLoader.m */; };
 		EAFA22201FC2E0720044D83D /* WKHomeHttpProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFA21EC1FC2E0720044D83D /* WKHomeHttpProcess.m */; };
 		EAFA22211FC2E0720044D83D /* wk_ notice.png in Resources */ = {isa = PBXBuildFile; fileRef = EAFA21EF1FC2E0720044D83D /* wk_ notice.png */; };
-		EAFA22221FC2E0720044D83D /* wk_companies_star.png in Resources */ = {isa = PBXBuildFile; fileRef = EAFA21F01FC2E0720044D83D /* wk_companies_star.png */; };
-		EAFA22231FC2E0720044D83D /* wk_companies_star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAFA21F11FC2E0720044D83D /* wk_companies_star@2x.png */; };
-		EAFA22241FC2E0720044D83D /* wk_shield.png in Resources */ = {isa = PBXBuildFile; fileRef = EAFA21F21FC2E0720044D83D /* wk_shield.png */; };
-		EAFA22251FC2E0720044D83D /* wk_shield@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAFA21F31FC2E0720044D83D /* wk_shield@2x.png */; };
 		EAFA22261FC2E0720044D83D /* wk_ finance.png in Resources */ = {isa = PBXBuildFile; fileRef = EAFA21F51FC2E0720044D83D /* wk_ finance.png */; };
 		EAFA22271FC2E0720044D83D /* wk_ finance@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAFA21F61FC2E0720044D83D /* wk_ finance@2x.png */; };
 		EAFA22281FC2E0720044D83D /* wk_ finance_highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = EAFA21F71FC2E0720044D83D /* wk_ finance_highlight.png */; };
@@ -85,6 +101,36 @@
 		54951E8E841E483BDBBE74A7 /* Pods-WKFinanceDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WKFinanceDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WKFinanceDemo/Pods-WKFinanceDemo.release.xcconfig"; sourceTree = "<group>"; };
 		AA92B46A21547A198677FA8D /* libPods-WKFinanceDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WKFinanceDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2E04539465584E901D0C18C /* Pods-WKFinanceDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WKFinanceDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WKFinanceDemo/Pods-WKFinanceDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		EA2BA0A21FF0C29F00768E2F /* WKModulePlatformIntroCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKModulePlatformIntroCell.h; sourceTree = "<group>"; };
+		EA2BA0A31FF0C29F00768E2F /* WKModulePlatformIntroCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKModulePlatformIntroCell.m; sourceTree = "<group>"; };
+		EA2BA0A41FF0C29F00768E2F /* WKModulePlatformIntroCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WKModulePlatformIntroCell.xib; sourceTree = "<group>"; };
+		EA2BA0A71FF0D5C100768E2F /* wk_module_platform@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_module_platform@2x.png"; sourceTree = "<group>"; };
+		EA2BA0A81FF0D5C100768E2F /* wk_module_platform@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_module_platform@3x.png"; sourceTree = "<group>"; };
+		EA2BA0A91FF0D5C100768E2F /* wk_module_safelogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_module_safelogo@2x.png"; sourceTree = "<group>"; };
+		EA2BA0AA1FF0D5C100768E2F /* wk_module_safelogo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_module_safelogo@3x.png"; sourceTree = "<group>"; };
+		EA2BA0B01FF0DA4200768E2F /* WKUserInfoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKUserInfoManager.h; sourceTree = "<group>"; };
+		EA2BA0B11FF0DA4200768E2F /* WKUserInfoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKUserInfoManager.m; sourceTree = "<group>"; };
+		EA2BA0B31FF0DDE300768E2F /* wk_module_newad@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_module_newad@3x.png"; sourceTree = "<group>"; };
+		EA2BA0B41FF0DDE400768E2F /* wk_module_newad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_module_newad@2x.png"; sourceTree = "<group>"; };
+		EA2BA0B81FF0DE7A00768E2F /* WKModuleAdImageDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKModuleAdImageDataSource.h; sourceTree = "<group>"; };
+		EA2BA0B91FF0DE7A00768E2F /* WKModuleAdImageDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKModuleAdImageDataSource.m; sourceTree = "<group>"; };
+		EA2BA0BB1FF0DEF400768E2F /* WKModuleAdImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKModuleAdImageCell.h; sourceTree = "<group>"; };
+		EA2BA0BC1FF0DEF400768E2F /* WKModuleAdImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKModuleAdImageCell.m; sourceTree = "<group>"; };
+		EA2BA0BD1FF0DEF400768E2F /* WKModuleAdImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WKModuleAdImageCell.xib; sourceTree = "<group>"; };
+		EA2BA0C01FF0DF7600768E2F /* WKModuleAdImageCellHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKModuleAdImageCellHelper.h; sourceTree = "<group>"; };
+		EA2BA0C11FF0DF7600768E2F /* WKModuleAdImageCellHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKModuleAdImageCellHelper.m; sourceTree = "<group>"; };
+		EA2BA0C31FF0ED1F00768E2F /* WKModuleProductCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKModuleProductCell.h; sourceTree = "<group>"; };
+		EA2BA0C41FF0ED1F00768E2F /* WKModuleProductCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKModuleProductCell.m; sourceTree = "<group>"; };
+		EA2BA0C51FF0ED1F00768E2F /* WKModuleProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WKModuleProductCell.xib; sourceTree = "<group>"; };
+		EA2BA0C91FF0F23B00768E2F /* WKModuleBottomTipDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKModuleBottomTipDataSource.h; sourceTree = "<group>"; };
+		EA2BA0CA1FF0F23B00768E2F /* WKModuleBottomTipDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKModuleBottomTipDataSource.m; sourceTree = "<group>"; };
+		EA2BA0CC1FF0F26900768E2F /* WKModuleBottomTipCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKModuleBottomTipCell.h; sourceTree = "<group>"; };
+		EA2BA0CD1FF0F26900768E2F /* WKModuleBottomTipCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKModuleBottomTipCell.m; sourceTree = "<group>"; };
+		EA2BA0CE1FF0F26900768E2F /* WKModuleBottomTipCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WKModuleBottomTipCell.xib; sourceTree = "<group>"; };
+		EA2BA0D11FF0F2AC00768E2F /* WKModuleBottomTipCellHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKModuleBottomTipCellHelper.h; sourceTree = "<group>"; };
+		EA2BA0D21FF0F2AC00768E2F /* WKModuleBottomTipCellHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKModuleBottomTipCellHelper.m; sourceTree = "<group>"; };
+		EA2BA0D41FF0FF4300768E2F /* WKModuleProductCellHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKModuleProductCellHelper.h; sourceTree = "<group>"; };
+		EA2BA0D51FF0FF4300768E2F /* WKModuleProductCellHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKModuleProductCellHelper.m; sourceTree = "<group>"; };
 		EA2EA7291FEBABF200F80995 /* UIColor+WK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+WK.h"; sourceTree = "<group>"; };
 		EA2EA72A1FEBABF200F80995 /* UIColor+WK.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+WK.m"; sourceTree = "<group>"; };
 		EA2EA7311FEBADC200F80995 /* WKFinanceConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKFinanceConstant.h; sourceTree = "<group>"; };
@@ -184,10 +230,6 @@
 		EAFA21EB1FC2E0720044D83D /* WKHomeHttpProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKHomeHttpProcess.h; sourceTree = "<group>"; };
 		EAFA21EC1FC2E0720044D83D /* WKHomeHttpProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKHomeHttpProcess.m; sourceTree = "<group>"; };
 		EAFA21EF1FC2E0720044D83D /* wk_ notice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_ notice.png"; sourceTree = "<group>"; };
-		EAFA21F01FC2E0720044D83D /* wk_companies_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wk_companies_star.png; sourceTree = "<group>"; };
-		EAFA21F11FC2E0720044D83D /* wk_companies_star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_companies_star@2x.png"; sourceTree = "<group>"; };
-		EAFA21F21FC2E0720044D83D /* wk_shield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wk_shield.png; sourceTree = "<group>"; };
-		EAFA21F31FC2E0720044D83D /* wk_shield@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_shield@2x.png"; sourceTree = "<group>"; };
 		EAFA21F51FC2E0720044D83D /* wk_ finance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_ finance.png"; sourceTree = "<group>"; };
 		EAFA21F61FC2E0720044D83D /* wk_ finance@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_ finance@2x.png"; sourceTree = "<group>"; };
 		EAFA21F71FC2E0720044D83D /* wk_ finance_highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_ finance_highlight.png"; sourceTree = "<group>"; };
@@ -231,6 +273,43 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		EA2BA0AF1FF0DA2600768E2F /* Unit */ = {
+			isa = PBXGroup;
+			children = (
+				EA2BA0B01FF0DA4200768E2F /* WKUserInfoManager.h */,
+				EA2BA0B11FF0DA4200768E2F /* WKUserInfoManager.m */,
+			);
+			path = Unit;
+			sourceTree = "<group>";
+		};
+		EA2BA0B71FF0DE6000768E2F /* AdImage */ = {
+			isa = PBXGroup;
+			children = (
+				EA2BA0B81FF0DE7A00768E2F /* WKModuleAdImageDataSource.h */,
+				EA2BA0B91FF0DE7A00768E2F /* WKModuleAdImageDataSource.m */,
+				EA2BA0BB1FF0DEF400768E2F /* WKModuleAdImageCell.h */,
+				EA2BA0BC1FF0DEF400768E2F /* WKModuleAdImageCell.m */,
+				EA2BA0BD1FF0DEF400768E2F /* WKModuleAdImageCell.xib */,
+				EA2BA0C01FF0DF7600768E2F /* WKModuleAdImageCellHelper.h */,
+				EA2BA0C11FF0DF7600768E2F /* WKModuleAdImageCellHelper.m */,
+			);
+			path = AdImage;
+			sourceTree = "<group>";
+		};
+		EA2BA0C81FF0F21A00768E2F /* BottomTip */ = {
+			isa = PBXGroup;
+			children = (
+				EA2BA0C91FF0F23B00768E2F /* WKModuleBottomTipDataSource.h */,
+				EA2BA0CA1FF0F23B00768E2F /* WKModuleBottomTipDataSource.m */,
+				EA2BA0CC1FF0F26900768E2F /* WKModuleBottomTipCell.h */,
+				EA2BA0CD1FF0F26900768E2F /* WKModuleBottomTipCell.m */,
+				EA2BA0CE1FF0F26900768E2F /* WKModuleBottomTipCell.xib */,
+				EA2BA0D11FF0F2AC00768E2F /* WKModuleBottomTipCellHelper.h */,
+				EA2BA0D21FF0F2AC00768E2F /* WKModuleBottomTipCellHelper.m */,
+			);
+			path = BottomTip;
+			sourceTree = "<group>";
+		};
 		EA2EA7321FEBAE2E00F80995 /* ModuleBasic */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +331,8 @@
 		EA2EA7451FECB3EF00F80995 /* WKModule */ = {
 			isa = PBXGroup;
 			children = (
+				EA2BA0C81FF0F21A00768E2F /* BottomTip */,
+				EA2BA0B71FF0DE6000768E2F /* AdImage */,
 				EA2EA7691FECDAB000F80995 /* Units */,
 				EA2EA7611FECCE8700F80995 /* Banner */,
 				EA2EA75B1FECCE8700F80995 /* NewUserProduct */,
@@ -267,6 +348,11 @@
 			children = (
 				EA2EA7561FECCE8700F80995 /* WKModuleProductDataSource.m */,
 				EA2EA7571FECCE8700F80995 /* WKModuleProductDataSource.h */,
+				EA2BA0C31FF0ED1F00768E2F /* WKModuleProductCell.h */,
+				EA2BA0C41FF0ED1F00768E2F /* WKModuleProductCell.m */,
+				EA2BA0C51FF0ED1F00768E2F /* WKModuleProductCell.xib */,
+				EA2BA0D41FF0FF4300768E2F /* WKModuleProductCellHelper.h */,
+				EA2BA0D51FF0FF4300768E2F /* WKModuleProductCellHelper.m */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -276,6 +362,9 @@
 			children = (
 				EA2EA7591FECCE8700F80995 /* WKModulePlatformIntroDataSource.h */,
 				EA2EA75A1FECCE8700F80995 /* WKModulePlatformIntroDataSource.m */,
+				EA2BA0A21FF0C29F00768E2F /* WKModulePlatformIntroCell.h */,
+				EA2BA0A31FF0C29F00768E2F /* WKModulePlatformIntroCell.m */,
+				EA2BA0A41FF0C29F00768E2F /* WKModulePlatformIntroCell.xib */,
 			);
 			path = PlatformIntro;
 			sourceTree = "<group>";
@@ -283,6 +372,8 @@
 		EA2EA75B1FECCE8700F80995 /* NewUserProduct */ = {
 			isa = PBXGroup;
 			children = (
+				EAFA21C81FC2E0720044D83D /* WKNewUserProductCellHelper.h */,
+				EAFA21C91FC2E0720044D83D /* WKNewUserProductCellHelper.m */,
 				EA2EA75C1FECCE8700F80995 /* WKModuleNewUserProductDataSource.h */,
 				EA2EA75D1FECCE8700F80995 /* WKModuleNewUserProductDataSource.m */,
 				EA2EA77D1FECEADC00F80995 /* WKModuleNewUserProductCell.h */,
@@ -452,8 +543,6 @@
 				EAFA21C51FC2E0720044D83D /* WKHomeLargeTitleCellHelper.m */,
 				EAFA21C61FC2E0720044D83D /* WKHomeSafeCellHelper.h */,
 				EAFA21C71FC2E0720044D83D /* WKHomeSafeCellHelper.m */,
-				EAFA21C81FC2E0720044D83D /* WKNewUserProductCellHelper.h */,
-				EAFA21C91FC2E0720044D83D /* WKNewUserProductCellHelper.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -481,6 +570,7 @@
 		EAFA21D81FC2E0720044D83D /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				EA2BA0AF1FF0DA2600768E2F /* Unit */,
 				EAFA21D91FC2E0720044D83D /* Basic */,
 			);
 			path = Others;
@@ -549,12 +639,14 @@
 		EAFA21EE1FC2E0720044D83D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				EA2BA0B41FF0DDE400768E2F /* wk_module_newad@2x.png */,
+				EA2BA0B31FF0DDE300768E2F /* wk_module_newad@3x.png */,
+				EA2BA0A71FF0D5C100768E2F /* wk_module_platform@2x.png */,
+				EA2BA0A81FF0D5C100768E2F /* wk_module_platform@3x.png */,
+				EA2BA0A91FF0D5C100768E2F /* wk_module_safelogo@2x.png */,
+				EA2BA0AA1FF0D5C100768E2F /* wk_module_safelogo@3x.png */,
 				EA2EA7821FED054000F80995 /* module */,
 				EAFA21EF1FC2E0720044D83D /* wk_ notice.png */,
-				EAFA21F01FC2E0720044D83D /* wk_companies_star.png */,
-				EAFA21F11FC2E0720044D83D /* wk_companies_star@2x.png */,
-				EAFA21F21FC2E0720044D83D /* wk_shield.png */,
-				EAFA21F31FC2E0720044D83D /* wk_shield@2x.png */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -640,35 +732,41 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA2BA0AB1FF0D5C200768E2F /* wk_module_platform@2x.png in Resources */,
 				EA2EA7861FED054100F80995 /* wk_home_btnbg@3x.png in Resources */,
+				EA2BA0A61FF0C29F00768E2F /* WKModulePlatformIntroCell.xib in Resources */,
+				EA2BA0C71FF0ED1F00768E2F /* WKModuleProductCell.xib in Resources */,
 				EAF7EEFF1FBE833500E087C0 /* LaunchScreen.storyboard in Resources */,
-				EAFA22221FC2E0720044D83D /* wk_companies_star.png in Resources */,
-				EAFA22251FC2E0720044D83D /* wk_shield@2x.png in Resources */,
 				EAFA222D1FC2E0720044D83D /* wk_home_highlight@2x.png in Resources */,
 				EAFA22271FC2E0720044D83D /* wk_ finance@2x.png in Resources */,
 				EAFA222B1FC2E0720044D83D /* wk_home@2x.png in Resources */,
+				EA2BA0B51FF0DDE500768E2F /* wk_module_newad@3x.png in Resources */,
+				EA2BA0B61FF0DDE500768E2F /* wk_module_newad@2x.png in Resources */,
+				EA2BA0D01FF0F26900768E2F /* WKModuleBottomTipCell.xib in Resources */,
 				EAFA22291FC2E0720044D83D /* wk_ finance_highlight@2x.png in Resources */,
 				EAFA22091FC2E0720044D83D /* WKHomeSafeCell.xib in Resources */,
 				EAF7EEFC1FBE833500E087C0 /* Assets.xcassets in Resources */,
 				EAF7EEFA1FBE833500E087C0 /* Main.storyboard in Resources */,
-				EAFA22231FC2E0720044D83D /* wk_companies_star@2x.png in Resources */,
 				EA2EA7741FECE5B100F80995 /* WKCarouselBannerCell.xib in Resources */,
-				EAFA22241FC2E0720044D83D /* wk_shield.png in Resources */,
 				EAFA22261FC2E0720044D83D /* wk_ finance.png in Resources */,
 				EAFA22071FC2E0720044D83D /* WKHomeLargeTitleCell.xib in Resources */,
 				EAFA220B1FC2E0720044D83D /* WKNewUserProductCell.xib in Resources */,
 				EAFA222E1FC2E0720044D83D /* wk_mine.png in Resources */,
 				EA2EA7811FECEADC00F80995 /* WKModuleNewUserProductCell.xib in Resources */,
 				EAFA22301FC2E0720044D83D /* wk_mine_highlight.png in Resources */,
+				EA2BA0AC1FF0D5C200768E2F /* wk_module_platform@3x.png in Resources */,
 				EAFA22211FC2E0720044D83D /* wk_ notice.png in Resources */,
+				EA2BA0BF1FF0DEF400768E2F /* WKModuleAdImageCell.xib in Resources */,
 				EAFA22311FC2E0720044D83D /* wk_mine_highlight@2x.png in Resources */,
 				EAFA222A1FC2E0720044D83D /* wk_home.png in Resources */,
 				EAFA222C1FC2E0720044D83D /* wk_home_highlight.png in Resources */,
+				EA2BA0AE1FF0D5C200768E2F /* wk_module_safelogo@3x.png in Resources */,
 				EAFA222F1FC2E0720044D83D /* wk_mine@2x.png in Resources */,
 				EAFA22281FC2E0720044D83D /* wk_ finance_highlight.png in Resources */,
 				EA2EA7791FECE72100F80995 /* WKModuleRollPlatformNoticeCell.xib in Resources */,
 				EAFA22051FC2E0720044D83D /* WKGeneralProductCell.xib in Resources */,
 				EA2EA7851FED054100F80995 /* wk_home_btnbg@2x.png in Resources */,
+				EA2BA0AD1FF0D5C200768E2F /* wk_module_safelogo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,6 +832,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA2EA77C1FECE8B300F80995 /* WKModuleRollPlatformNoticeCellHelper.m in Sources */,
+				EA2BA0CB1FF0F23B00768E2F /* WKModuleBottomTipDataSource.m in Sources */,
 				EAFA221D1FC2E0720044D83D /* UILabel+WK.m in Sources */,
 				EAFA22181FC2E0720044D83D /* WKMineController.m in Sources */,
 				EA2EA7641FECCE8700F80995 /* WKModuleProductDataSource.m in Sources */,
@@ -743,6 +842,8 @@
 				EA2EA7801FECEADC00F80995 /* WKModuleNewUserProductCell.m in Sources */,
 				EAFA22041FC2E0720044D83D /* WKGeneralProductCell.m in Sources */,
 				EAFA22081FC2E0720044D83D /* WKHomeSafeCell.m in Sources */,
+				EA2BA0BE1FF0DEF400768E2F /* WKModuleAdImageCell.m in Sources */,
+				EA2BA0CF1FF0F26900768E2F /* WKModuleBottomTipCell.m in Sources */,
 				EAFA220F1FC2E0720044D83D /* WKGeneralProductCellHelper.m in Sources */,
 				EAFA22141FC2E0720044D83D /* WKHomeProductProgress.m in Sources */,
 				EA2EA7381FEBAE8400F80995 /* WKModuleBasicControllerHelper.m in Sources */,
@@ -751,18 +852,25 @@
 				EAFA22201FC2E0720044D83D /* WKHomeHttpProcess.m in Sources */,
 				EA2EA7681FECCE8700F80995 /* WKModuleBannerDataSource.m in Sources */,
 				EAFA22061FC2E0720044D83D /* WKHomeLargeTitleCell.m in Sources */,
+				EA2BA0B21FF0DA4200768E2F /* WKUserInfoManager.m in Sources */,
 				EA2EA73E1FEBB5AD00F80995 /* UIScrollView+WKRefresh.m in Sources */,
 				EAF7EF021FBE833500E087C0 /* main.m in Sources */,
 				EA2EA73B1FEBB00B00F80995 /* WKModuleBasicProtocol.m in Sources */,
+				EA2BA0BA1FF0DE7A00768E2F /* WKModuleAdImageDataSource.m in Sources */,
 				EAFA22171FC2E0720044D83D /* WKHomeControllerHelper.m in Sources */,
+				EA2BA0C61FF0ED1F00768E2F /* WKModuleProductCell.m in Sources */,
 				EAFA22011FC2E0720044D83D /* WKFinanceController.m in Sources */,
+				EA2BA0C21FF0DF7600768E2F /* WKModuleAdImageCellHelper.m in Sources */,
 				EAFA220E1FC2E0720044D83D /* WKCarouselBannerCellHelper.m in Sources */,
 				EAFA22101FC2E0720044D83D /* WKHomeLargeTitleCellHelper.m in Sources */,
 				EAFA22151FC2E0720044D83D /* WKHomeTagsView.m in Sources */,
 				EAFA221C1FC2E0720044D83D /* NSString+WK.m in Sources */,
 				EAFA221B1FC2E0720044D83D /* NSDictionary+WKRealValue.m in Sources */,
+				EA2BA0D61FF0FF4300768E2F /* WKModuleProductCellHelper.m in Sources */,
 				EA2EA7781FECE72100F80995 /* WKModuleRollPlatformNoticeCell.m in Sources */,
+				EA2BA0D31FF0F2AC00768E2F /* WKModuleBottomTipCellHelper.m in Sources */,
 				EAFA220A1FC2E0720044D83D /* WKNewUserProductCell.m in Sources */,
+				EA2BA0A51FF0C29F00768E2F /* WKModulePlatformIntroCell.m in Sources */,
 				EA2EA7411FECA9FC00F80995 /* WKModuleConstant.m in Sources */,
 				EAF7EEF41FBE833500E087C0 /* AppDelegate.m in Sources */,
 				EA2EA7731FECE5B100F80995 /* WKCarouselBannerCell.m in Sources */,

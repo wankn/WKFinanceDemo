@@ -9,6 +9,7 @@
 #import "WKHomeControllerHelper.h"
 #import "WKHomeHttpProcess.h"
 #import "DataItemResult+WK.h"
+#import "WKUserInfoManager.h"
 
 @interface WKHomeControllerHelper()
 
@@ -54,6 +55,16 @@
     [platResult.resultInfo setObject:@(WKModuleTypePlatformIntro) forKey:@"ModuleType"];
     [mutableArr addObject:platResult];
     
+    //新手广告图
+    if (![WKUserInfoManager hasLogin]) {
+        DataItemResult *tmpResult = [[DataItemResult alloc] init];
+        NSDictionary *dic = @{@"NativeImageName":@"wk_module_newad"};
+        DataItemDetail *tmpDetail = [DataItemDetail detailFromDictionary:dic];
+        [tmpResult.resultInfo appendItems:tmpDetail];
+        [tmpResult.resultInfo setObject:@(WKModuleTypeNewAd) forKey:@"ModuleType"];
+        [mutableArr addObject:tmpResult];
+    }
+    
     //新手标
     NSArray *newProductList = [detail getArray:@"newProductList"];
     if (newProductList.count > 0) {
@@ -62,23 +73,35 @@
         NSString *title = [detail getString:@"newTitle"];
         NSString *subTitle = [detail getString:@"newDescribe"];
         NSDictionary *dic = @{@"newTitle":title,@"newDescribe":subTitle};
-        DataItemDetail *detail = [DataItemDetail detailFromDictionary:dic];
-        [tmpResult.resultInfo appendItems:detail];
+        DataItemDetail *tmpDetail = [DataItemDetail detailFromDictionary:dic];
+        [tmpResult.resultInfo appendItems:tmpDetail];
         [tmpResult wk_bulidResultWithArray:newProductList];
         [tmpResult.resultInfo setObject:@(WKModuleTypeNewUserProduct) forKey:@"ModuleType"];
         [mutableArr addObject:tmpResult];
     }
 
-    //普通标
-    NSArray *productList = [detail getArray:@"productList"];
-    if (productList.count > 0) {
-        
-        DataItemResult *tmpResult = [[DataItemResult alloc] init];
-        [tmpResult wk_bulidResultWithArray:productList];
-        [tmpResult.resultInfo setObject:@(WKModuleTypeProduct) forKey:@"ModuleType"];
-        
-        [mutableArr addObject:tmpResult];
+    if ([WKUserInfoManager hasLogin]) {
+        //普通标
+        NSArray *productList = [detail getArray:@"productList"];
+        if (productList.count > 0) {
+            DataItemResult *tmpResult = [[DataItemResult alloc] init];
+            NSString *title = [detail getString:@"productTitle"];
+            NSString *subTitle = [detail getString:@"productDescribe"];
+            NSDictionary *dic = @{@"newTitle":title,@"newDescribe":subTitle};
+            DataItemDetail *tmpDetail = [DataItemDetail detailFromDictionary:dic];
+            [tmpResult.resultInfo appendItems:tmpDetail];
+            [tmpResult wk_bulidResultWithArray:productList];
+            [tmpResult.resultInfo setObject:@(WKModuleTypeProduct) forKey:@"ModuleType"];
+            
+            [mutableArr addObject:tmpResult];
+        }
     }
+    
+    //底部提示
+    DataItemResult *bottomResult = [[DataItemResult alloc] init];
+    [bottomResult.resultInfo setObject:@(WKModuleTypeBottomTip) forKey:@"ModuleType"];
+    [mutableArr addObject:bottomResult];
+    
     return mutableArr;
 }
 

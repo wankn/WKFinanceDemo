@@ -27,6 +27,12 @@
         case WKModuleTypeProduct:
             return @"WKModuleProductDataSource";
             break;
+        case WKModuleTypeNewAd:
+            return @"WKModuleAdImageDataSource";
+            break;
+        case WKModuleTypeBottomTip:
+            return @"WKModuleBottomTipDataSource";
+            break;
         default:
             break;
     }
@@ -39,7 +45,9 @@
              @"WKModuleRollPlatformNoticeDataSource",
              @"WKModulePlatformIntroDataSource",
              @"WKModuleNewUserProductDataSource",
-             @"WKModuleProductDataSource"];
+             @"WKModuleProductDataSource",
+             @"WKModuleAdImageDataSource",
+             @"WKModuleBottomTipDataSource"];
 }
 
 

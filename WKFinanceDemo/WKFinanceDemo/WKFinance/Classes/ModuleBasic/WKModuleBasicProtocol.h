@@ -71,6 +71,10 @@
 /** 获取section的inset */
 - (UIEdgeInsets)insetForSectionAtIndex:(NSInteger)section;
 
+/** cell间隙 */
+- (CGFloat)minimumLineSpacingForSectionAtIndex:(NSInteger)section;
+- (CGFloat)minimumInteritemSpacingForSectionAtIndex:(NSInteger)section;
+
 /** 获取需要注册的 sectionHeader 的类名 */
 - (NSArray *)fetchSectionHeaderReusableViewClassNameList;
 /** 获取需要注册的 sectionFooter 的类名 */

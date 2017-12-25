@@ -51,9 +51,6 @@
             NSString *cellName = [sectionDataSource cellClassNameAtIndexPath:indexPath];
             UICollectionViewCell<WKModuleCellProtocol> *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellName forIndexPath:indexPath];
             
-            //设置(Nomal)正常状态下的颜色
-            [cell setBackgroundColor:[UIColor whiteColor]];
-            
             //绑定代理
             if ([cell respondsToSelector:@selector(setDelegate:)]) {
                 [cell setDelegate:self];
@@ -208,6 +205,26 @@ didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
     return CGSizeZero;
 }
 
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    if (self.helper.sectionDataSourceList.count > section) {
+        id<WKModuleSectionDataSourceProtocol> sectionDataSource = self.helper.sectionDataSourceList[section];
+        if ([sectionDataSource respondsToSelector:@selector(minimumLineSpacingForSectionAtIndex:)]) {
+            return [sectionDataSource minimumLineSpacingForSectionAtIndex:section];
+        }
+    }
+    return 0;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    if (self.helper.sectionDataSourceList.count > section) {
+        id<WKModuleSectionDataSourceProtocol> sectionDataSource = self.helper.sectionDataSourceList[section];
+        if ([sectionDataSource respondsToSelector:@selector(minimumInteritemSpacingForSectionAtIndex:)]) {
+            return [sectionDataSource minimumInteritemSpacingForSectionAtIndex:section];
+        }
+    }
+    return 0;
+}
+
 - (void)collectionView:(UICollectionView *)collectionView willDisplaySupplementaryView:(UICollectionReusableView *)view forElementKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath {
     if (@available(iOS 11.0, *)) {
         if ([elementKind isEqualToString:UICollectionElementKindSectionHeader]) {
@@ -268,8 +285,6 @@ didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
 - (UICollectionView *)mainCollectionView {
     if (!_mainCollectionView) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
-        layout.minimumLineSpacing = 0;
-        layout.minimumInteritemSpacing = 0;
         _mainCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero
                                                  collectionViewLayout:layout];
         _mainCollectionView.dataSource = self;

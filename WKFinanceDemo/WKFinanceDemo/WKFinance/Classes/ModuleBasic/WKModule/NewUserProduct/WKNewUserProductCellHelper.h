@@ -8,15 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <SBLib/SBLib.h>
+#import "WKModuleBasicProtocol.h"
 
 
-@interface WKNewUserProductCellHelper : NSObject
+@interface WKNewUserProductCellHelper : NSObject<WKModuleCellHelperProtocol>
 
 @property (nonatomic, readonly) NSString *profit; /**< <#note#> */
 @property (nonatomic, readonly) NSString *investBegin;  /**< <#note#> */
 @property (nonatomic, readonly) NSString *descriptionText;  /**< <#note#> */
 @property (nonatomic, readonly) NSString *timeLimitValue;  /**< <#note#> */
-
-+ (WKNewUserProductCellHelper *)helperWithDataItemDetail:(DataItemDetail *)detail;
 
 @end

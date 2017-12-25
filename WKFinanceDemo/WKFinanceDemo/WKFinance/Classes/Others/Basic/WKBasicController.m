@@ -7,6 +7,7 @@
 //
 
 #import "WKBasicController.h"
+#import "WKFinanceConstant.h"
 
 @interface WKBasicController ()
 
@@ -16,8 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
+    self.view.backgroundColor = RGB_HEX(0xF5F5F5);
 }
 
 @end

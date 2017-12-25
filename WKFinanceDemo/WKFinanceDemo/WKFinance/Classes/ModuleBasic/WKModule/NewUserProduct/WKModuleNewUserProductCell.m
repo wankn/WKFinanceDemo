@@ -7,12 +7,33 @@
 //
 
 #import "WKModuleNewUserProductCell.h"
+#import "WKModuleBasicProtocol.h"
+#import "WKNewUserProductCellHelper.h"
+
+@interface WKModuleNewUserProductCell()<WKModuleCellProtocol>
+@property (weak, nonatomic) IBOutlet UILabel *indexLabel;
+@property (weak, nonatomic) IBOutlet UILabel *indexDesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *minBuyAmoutLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UIButton *buyButton;
+
+@end
 
 @implementation WKModuleNewUserProductCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    self.backgroundColor = [UIColor whiteColor];
+}
+
+#pragma mark - WKModuleCellProtocol
+/** 绑定cellHelper */
+- (void)configureCellHelper:(id)cellHelper {
+    WKNewUserProductCellHelper *helper = cellHelper;
+    self.indexLabel.text = helper.profit;
+    self.minBuyAmoutLabel.text = helper.investBegin;
+    self.timeLabel.text = helper.timeLimitValue;
 }
 
 @end

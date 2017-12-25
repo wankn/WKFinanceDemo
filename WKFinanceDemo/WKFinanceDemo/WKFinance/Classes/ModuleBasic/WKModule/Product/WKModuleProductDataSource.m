@@ -9,7 +9,7 @@
 #import "WKModuleProductDataSource.h"
 #import "WKFinanceConstant.h"
 #import "WKModuleTitleReusableView.h"
-#import "WKGeneralProductCellHelper.h"
+#import "WKModuleProductCellHelper.h"
 
 @interface WKModuleProductDataSource()
 @property (nonatomic, strong) NSMutableArray *cellHelperList;
@@ -20,7 +20,7 @@
 
 /** 需要注册的cell */
 - (NSArray *)fetchCellRegisterList {
-    return @[@"WKGeneralProductCell"];
+    return @[@"WKModuleProductCell"];
 }
 
 /** items个数 */
@@ -30,13 +30,14 @@
 
 /** cell的size */
 - (CGSize)sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(APP_UI_SCREEN_FWIDTH, 200);
+    return CGSizeMake(APP_UI_SCREEN_FWIDTH, 90.0);
 }
 
 /** sectionHeader */
 - (UICollectionReusableView *)viewForSectionHeaderAtIndexPath:(NSIndexPath *)indexPath
                                                collectionView:(UICollectionView *)collectionView {
-    WKModuleTitleReusableView *reusableView = [[WKModuleTitleReusableView alloc] init];
+    WKModuleTitleReusableView *reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"WKModuleTitleReusableView" forIndexPath:indexPath];
+    reusableView.backgroundColor = [UIColor whiteColor];
     NSString *title = [self.result.resultInfo getString:@"newTitle"];
     [reusableView configureTitle:title];
     return reusableView;
@@ -49,7 +50,11 @@
 
 /** 获取section的inset */
 - (UIEdgeInsets)insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsZero;
+    return UIEdgeInsetsMake(0, 0, 10, 0);
+}
+
+- (CGFloat)minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return 10;
 }
 
 /** 获取需要注册的 sectionHeader 的类名 */
@@ -59,7 +64,7 @@
 
 /** 获取对应位置的cell类名 */
 - (NSString *)cellClassNameAtIndexPath:(NSIndexPath *)indexPath {
-    return @"WKGeneralProductCell";
+    return @"WKModuleProductCell";
 }
 
 /** 获取相应位置的cellHelper */
@@ -76,7 +81,12 @@
     [self.cellHelperList removeAllObjects];
     for (id obj in result.dataList) {
         if ([obj isKindOfClass:[DataItemDetail class]]) {
-            WKGeneralProductCellHelper *helper = [WKGeneralProductCellHelper helperWithDataItemDetail:obj];
+            WKModuleProductCellHelper *helper = [[WKModuleProductCellHelper alloc] init];
+            DataItemResult *tmpResult = [[DataItemResult alloc] init];
+            [tmpResult.resultInfo appendItems:obj];
+            if ([helper respondsToSelector:@selector(configureWithDataItemResult:)]) {
+                [helper configureWithDataItemResult:tmpResult];
+            }
             [self.cellHelperList addObject:helper];
         }
     }

@@ -1,23 +1,24 @@
 //
-//  WKModulePlatformIntroDataSource.m
+//  WKModuleAdImageDataSource.m
 //  WKFinanceDemo
 //
-//  Created by 王昆 on 2017/12/22.
+//  Created by 王昆 on 2017/12/25.
 //  Copyright © 2017年 wangkun. All rights reserved.
 //
 
-#import "WKModulePlatformIntroDataSource.h"
+#import "WKModuleAdImageDataSource.h"
 #import "WKFinanceConstant.h"
+#import "WKModuleAdImageCellHelper.h"
 
-@interface WKModulePlatformIntroDataSource()
+@interface WKModuleAdImageDataSource()
+@property (nonatomic, strong) WKModuleAdImageCellHelper *cellHelper;
 @end
 
-@implementation WKModulePlatformIntroDataSource
-
+@implementation WKModuleAdImageDataSource
 #pragma mark - WKModuleSectionDataSourceProtocol
 /** 需要注册的cell */
 - (NSArray *)fetchCellRegisterList {
-    return @[@"WKModulePlatformIntroCell"];
+    return @[@"WKModuleAdImageCell"];
 }
 
 /** items个数 */
@@ -27,7 +28,9 @@
 
 /** cell的size */
 - (CGSize)sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(APP_UI_SCREEN_FWIDTH, 70);
+    CGFloat scale = 750/170.0;
+    CGFloat height = APP_UI_SCREEN_FWIDTH/scale;
+    return CGSizeMake(APP_UI_SCREEN_FWIDTH, height);
 }
 
 /** 获取section的inset */
@@ -37,16 +40,21 @@
 
 /** 获取对应位置的cell类名 */
 - (NSString *)cellClassNameAtIndexPath:(NSIndexPath *)indexPath {
-    return @"WKModulePlatformIntroCell";
+    return @"WKModuleAdImageCell";
 }
 
 /** 获取相应位置的cellHelper */
 - (id)cellHelperAtIndexPath:(NSIndexPath *)indexPath {
-    return nil;
+    return self.cellHelper;
 }
 
 /** 绑定数据源 */
 - (void)configureDataItemResult:(DataItemResult *)result {
     
+    self.cellHelper = [[WKModuleAdImageCellHelper alloc] init];
+    if ([self.cellHelper respondsToSelector:@selector(configureWithDataItemResult:)]) {
+        [self.cellHelper configureWithDataItemResult:result];
+    }
 }
+
 @end
