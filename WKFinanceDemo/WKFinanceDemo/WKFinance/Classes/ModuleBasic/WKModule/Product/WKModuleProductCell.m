@@ -28,9 +28,8 @@
     [super awakeFromNib];
     // Initialization code
     self.backgroundColor = [UIColor whiteColor];
-    
-    [self.progress configureForeRadius:30 foreLineWidth:5 backRadius:30 backLineWidth:5];
-    self.progress.progressValue = 0.2;
+    [self.progress configureForeRadius:25 foreLineWidth:5];
+    self.progress.foreProgressColor = [UIColor redColor];
 }
 
 #pragma mark - WKModuleCellProtocol
@@ -41,6 +40,7 @@
     self.yieldLabel.attributedText = helper.profitAttributedString;
     self.timeLabel.attributedText = helper.timeLimitValue;
     self.remainingInvestmentLabel.attributedText = helper.surplusAmount;
+    [self.progress updateProgressValue:helper.investPercent.floatValue animate:YES];
 }
 
 @end

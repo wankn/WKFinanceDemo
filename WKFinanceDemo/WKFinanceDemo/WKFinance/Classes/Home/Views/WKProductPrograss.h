@@ -10,19 +10,17 @@
 
 @interface WKProductPrograss : UIView
 
-@property (nonatomic, strong) CAShapeLayer *foregroundCircleLayer;
-@property (nonatomic, strong) CAShapeLayer *backgroundCircleLayer;
-@property (nonatomic, assign) CGFloat progressValue;
+@property (nonatomic, readonly) CAShapeLayer *foregroundCircleLayer;
+@property (nonatomic, readonly) CAShapeLayer *backgroundCircleLayer;
+@property (nonatomic, readonly) CGFloat progressValue;
 
-- (instancetype)initWithFrame:(CGRect)frame
-                   foreRadius:(CGFloat)foreRadius
-                foreLineWidth:(CGFloat)foreLineWidth
-                   backRadius:(CGFloat)backRadius
-                backLineWidth:(CGFloat)backLineWidth;
+@property (nonatomic, strong) UIColor *backProgressColor; /**< 底部进度条颜色 */
+@property (nonatomic, strong) UIColor *foreProgressColor; /**< 顶部进度条颜色 */
 
 - (void)configureForeRadius:(CGFloat)foreRadius
-              foreLineWidth:(CGFloat)foreLineWidth
-                 backRadius:(CGFloat)backRadius
-              backLineWidth:(CGFloat)backLineWidth;
+              foreLineWidth:(CGFloat)foreLineWidth;
+
+- (void)updateProgressValue:(CGFloat)progress
+                    animate:(BOOL)animate;
 
 @end
