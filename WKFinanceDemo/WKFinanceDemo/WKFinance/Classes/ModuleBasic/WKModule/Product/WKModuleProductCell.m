@@ -12,10 +12,12 @@
 #import "WKProductPrograss.h"
 
 @interface WKModuleProductCell()
-@property (weak, nonatomic) IBOutlet UILabel *productNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *yieldLabel;
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *remainingInvestmentLabel;
+@property (weak, nonatomic) IBOutlet UILabel *productNameLabel;//标的名
+@property (weak, nonatomic) IBOutlet UILabel *yieldLabel;//收益率
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;//投资期限
+@property (weak, nonatomic) IBOutlet UILabel *remainingInvestmentLabel;//剩余投资
+@property (weak, nonatomic) IBOutlet UILabel *yieldDesLabel;//收益率描述
+
 @property (weak, nonatomic) IBOutlet WKHomeTagsView *tagsView;
 @property (weak, nonatomic) IBOutlet WKProductPrograss *progress;
 
@@ -27,6 +29,11 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    self.yieldLabel.adjustsFontSizeToFitWidth = YES;
+    self.timeLabel.adjustsFontSizeToFitWidth = YES;
+    self.remainingInvestmentLabel.adjustsFontSizeToFitWidth = YES;
+    self.yieldDesLabel.adjustsFontSizeToFitWidth = YES;
+    
     self.backgroundColor = [UIColor whiteColor];
     [self.progress configureForeRadius:25 foreLineWidth:5];
     self.progress.foreProgressColor = [UIColor redColor];

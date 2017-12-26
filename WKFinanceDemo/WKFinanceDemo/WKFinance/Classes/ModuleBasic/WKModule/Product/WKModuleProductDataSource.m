@@ -25,12 +25,12 @@
 
 /** items个数 */
 - (CGFloat)numberOfItems {
-    return self.cellHelperList.count;
+    return MIN(self.cellHelperList.count, 3);
 }
 
 /** cell的size */
 - (CGSize)sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(APP_UI_SCREEN_FWIDTH, 90.0);
+    return CGSizeMake(APP_UI_SCREEN_FWIDTH, 110.0);
 }
 
 /** sectionHeader */

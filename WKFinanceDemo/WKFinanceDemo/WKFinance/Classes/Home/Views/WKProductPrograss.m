@@ -65,7 +65,7 @@
     self.progressValue = progress;
     [self.foregroundCircleLayer removeAllAnimations];
     if (animate) {
-        CABasicAnimation *animation= [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
         animation.fromValue = @(0.0);
         animation.toValue = @(self.progressValue);
         animation.duration = self.animationDuration * self.progressValue;

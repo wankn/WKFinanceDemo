@@ -28,9 +28,12 @@
 
 - (NSAttributedString *)profitAttributedString {
     double profit = [[self.detail getString:@"profit"] doubleValue];
-    NSString *profitStr = [NSString stringWithFormat:@"%.2f",profit];
+    NSString *profitStr = [NSString stringWithFormat:@"%.2f",profit*100];
     double profitFloat = [[self.detail getString:@"profitFloat"] doubleValue];
-    NSString *profitText = [NSString stringWithFormat:@"%@%%+%.2f%%",profitStr,profitFloat];
+    NSString *profitText = profitStr;
+    if (profitFloat > 0) {
+        profitText = [NSString stringWithFormat:@"%@%%+%.2f%%",profitStr,profitFloat*100];
+    }
     NSMutableAttributedString *att = [[NSMutableAttributedString alloc] initWithString:profitText];
     [att addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:25.0f]} range:NSMakeRange(0, profitStr.length)];
     return att;
