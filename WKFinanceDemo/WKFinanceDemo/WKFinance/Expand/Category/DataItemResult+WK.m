@@ -9,6 +9,7 @@
 #import "DataItemResult+WK.h"
 
 @implementation DataItemResult (WK)
+
 - (void)wk_bulidResultWithArray:(NSArray *)array {
     for (id value in array) {
         if ([value isKindOfClass:[NSDictionary class]]) {
@@ -17,4 +18,16 @@
         }
     }
 }
+
+- (void)wk_bulidResultWithArray:(NSArray *)array maxCount:(NSInteger)maxCount {
+    
+    for (int i = 0; i < MIN(array.count, maxCount); i ++) {
+        id obj = array[i];
+        if ([obj isKindOfClass:[NSDictionary class]]) {
+            DataItemDetail *detail = [DataItemDetail detailFromDictionary:obj];
+            [self addItem:detail];
+        }
+    }
+}
+
 @end

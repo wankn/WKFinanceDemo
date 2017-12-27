@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -26,7 +26,7 @@
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GgQ-ky-Rc1" customClass="SDCycleScrollView">
-                        <rect key="frame" x="50" y="25.5" width="222" height="30"/>
+                        <rect key="frame" x="30" y="25.5" width="242" height="30"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="kCJ-VW-ePb"/>
@@ -37,11 +37,10 @@
             <constraints>
                 <constraint firstItem="3cp-y3-rid" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="83f-cT-Ll9"/>
                 <constraint firstItem="GgQ-ky-Rc1" firstAttribute="centerY" secondItem="3cp-y3-rid" secondAttribute="centerY" id="GpS-kV-12g"/>
-                <constraint firstItem="GgQ-ky-Rc1" firstAttribute="leading" secondItem="3cp-y3-rid" secondAttribute="trailing" constant="15" id="Y0E-hM-qye"/>
+                <constraint firstItem="GgQ-ky-Rc1" firstAttribute="leading" secondItem="3cp-y3-rid" secondAttribute="trailing" constant="-5" id="Y0E-hM-qye"/>
                 <constraint firstAttribute="trailing" secondItem="GgQ-ky-Rc1" secondAttribute="trailing" constant="15" id="cpf-77-8wX"/>
                 <constraint firstItem="3cp-y3-rid" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="mUa-Wn-Kbh"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="287" height="81"/>
             <connections>
                 <outlet property="cycleScrollView" destination="GgQ-ky-Rc1" id="HWy-mK-C97"/>

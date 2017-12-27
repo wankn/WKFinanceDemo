@@ -34,8 +34,14 @@
 /** 返回请求配置的loader */
 - (SBHttpDataLoader *)fetchConfigLoader;
 
+/** 加载更多接口 */
+- (SBHttpDataLoader *)fetchLoadMoreConfigLoaderWithPageIndex:(NSInteger)index;
+
 /** 获取子类需要定制的 */
-- (NSArray *)fetchDataSourceListWithDataItemResult:(DataItemResult *)result;
+- (NSArray<DataItemResult*> *)fetchDataSourceListWithDataItemResult:(DataItemResult *)result;
+
+/** 装载加载更多数据 */
+- (void)loadingLoadMoreResult:(DataItemResult *)result;
 
 @end
 

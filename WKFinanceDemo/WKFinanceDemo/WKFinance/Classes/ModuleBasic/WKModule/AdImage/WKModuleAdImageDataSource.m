@@ -9,9 +9,11 @@
 #import "WKModuleAdImageDataSource.h"
 #import "WKFinanceConstant.h"
 #import "WKModuleAdImageCellHelper.h"
+#import "NSObject+WKModuleHome.h"
 
 @interface WKModuleAdImageDataSource()
 @property (nonatomic, strong) WKModuleAdImageCellHelper *cellHelper;
+@property (nonatomic, assign) WKModuleSeparatorType separatorType;
 @end
 
 @implementation WKModuleAdImageDataSource
@@ -35,7 +37,7 @@
 
 /** 获取section的inset */
 - (UIEdgeInsets)insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(0, 0, 10, 0);
+    return [self wk_sectionInsetsWithModuleSeparatorType:self.separatorType];
 }
 
 /** 获取对应位置的cell类名 */
@@ -50,7 +52,7 @@
 
 /** 绑定数据源 */
 - (void)configureDataItemResult:(DataItemResult *)result {
-    
+    self.separatorType = [result.resultInfo getInt:WKModuleSeparatorTypeKey];
     self.cellHelper = [[WKModuleAdImageCellHelper alloc] init];
     if ([self.cellHelper respondsToSelector:@selector(configureWithDataItemResult:)]) {
         [self.cellHelper configureWithDataItemResult:result];

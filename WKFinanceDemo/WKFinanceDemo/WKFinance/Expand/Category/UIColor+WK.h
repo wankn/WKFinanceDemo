@@ -13,4 +13,7 @@
 /** 墙壁色 */
 + (UIColor *)wk_bgColor;
 
++ (UIColor *)wk_defaultRedColor;
+
+
 @end

@@ -17,7 +17,6 @@
 
 @implementation WKHomeControllerHelper
 
-
 #pragma mark - WKModuleControllerHelperProtocol
 - (SBHttpDataLoader *)fetchConfigLoader {
     SBHttpDataLoader *loader = [WKHomeHttpProcess requestHomeDataWithDelegate:self];
@@ -28,6 +27,7 @@
     return [self configureData:result];
 }
 
+#pragma mark - private methods
 - (NSArray *)configureData:(DataItemResult *)result {
 
     NSMutableArray *mutableArr = [NSMutableArray array];
@@ -37,7 +37,8 @@
     if (bannerArr.count > 0) {
         DataItemResult *tmpResult = [[DataItemResult alloc] init];
         [tmpResult wk_bulidResultWithArray:bannerArr];
-        [tmpResult.resultInfo setObject:@(WKModuleTypeBanner) forKey:@"ModuleType"];
+        [tmpResult.resultInfo setObject:@(WKModuleTypeBanner) forKey:WKModuleTypeKey];
+        [tmpResult.resultInfo setObject:@(WKModuleSeparatorTypeNone) forKey:WKModuleSeparatorTypeKey];
         [mutableArr addObject:tmpResult];
     }
 
@@ -46,13 +47,15 @@
     if (articleArr.count > 0) {
         DataItemResult *tmpResult = [[DataItemResult alloc] init];
         [tmpResult wk_bulidResultWithArray:articleArr];
-        [tmpResult.resultInfo setObject:@(WKModuleTypeRollPlatformNotice) forKey:@"ModuleType"];
+        [tmpResult.resultInfo setObject:@(WKModuleTypeRollPlatformNotice) forKey:WKModuleTypeKey];
+        [tmpResult.resultInfo setObject:@(WKModuleSeparatorTypeNone) forKey:WKModuleSeparatorTypeKey];
         [mutableArr addObject:tmpResult];
     }
 
     //平台简介 + 安全保障
     DataItemResult *platResult = [[DataItemResult alloc] init];
-    [platResult.resultInfo setObject:@(WKModuleTypePlatformIntro) forKey:@"ModuleType"];
+    [platResult.resultInfo setObject:@(WKModuleTypePlatformIntro) forKey:WKModuleTypeKey];
+    [platResult.resultInfo setObject:@(WKModuleSeparatorTypeBottom) forKey:WKModuleSeparatorTypeKey];
     [mutableArr addObject:platResult];
     
     //新手广告图
@@ -61,7 +64,8 @@
         NSDictionary *dic = @{@"NativeImageName":@"wk_module_newad"};
         DataItemDetail *tmpDetail = [DataItemDetail detailFromDictionary:dic];
         [tmpResult.resultInfo appendItems:tmpDetail];
-        [tmpResult.resultInfo setObject:@(WKModuleTypeNewAd) forKey:@"ModuleType"];
+        [tmpResult.resultInfo setObject:@(WKModuleTypeNewAd) forKey:WKModuleTypeKey];
+        [tmpResult.resultInfo setObject:@(WKModuleSeparatorTypeBottom) forKey:WKModuleSeparatorTypeKey];
         [mutableArr addObject:tmpResult];
     }
     
@@ -76,7 +80,8 @@
         DataItemDetail *tmpDetail = [DataItemDetail detailFromDictionary:dic];
         [tmpResult.resultInfo appendItems:tmpDetail];
         [tmpResult wk_bulidResultWithArray:newProductList];
-        [tmpResult.resultInfo setObject:@(WKModuleTypeNewUserProduct) forKey:@"ModuleType"];
+        [tmpResult.resultInfo setObject:@(WKModuleTypeNewUserProduct) forKey:WKModuleTypeKey];
+        [tmpResult.resultInfo setObject:@(WKModuleSeparatorTypeBottom) forKey:WKModuleSeparatorTypeKey];
         [mutableArr addObject:tmpResult];
     }
 
@@ -90,16 +95,17 @@
             NSDictionary *dic = @{@"newTitle":title,@"newDescribe":subTitle};
             DataItemDetail *tmpDetail = [DataItemDetail detailFromDictionary:dic];
             [tmpResult.resultInfo appendItems:tmpDetail];
-            [tmpResult wk_bulidResultWithArray:productList];
-            [tmpResult.resultInfo setObject:@(WKModuleTypeProduct) forKey:@"ModuleType"];
-            
+            [tmpResult wk_bulidResultWithArray:productList maxCount:3];
+            [tmpResult.resultInfo setObject:@(WKModuleTypeProduct) forKey:WKModuleTypeKey];
+            [tmpResult.resultInfo setObject:@(WKModuleSeparatorTypeBottom) forKey:WKModuleSeparatorTypeKey];
             [mutableArr addObject:tmpResult];
         }
     }
     
     //底部提示
     DataItemResult *bottomResult = [[DataItemResult alloc] init];
-    [bottomResult.resultInfo setObject:@(WKModuleTypeBottomTip) forKey:@"ModuleType"];
+    [bottomResult.resultInfo setObject:@(WKModuleTypeBottomTip) forKey:WKModuleTypeKey];
+    [bottomResult.resultInfo setObject:@(WKModuleSeparatorTypeBottom) forKey:WKModuleSeparatorTypeKey];
     [mutableArr addObject:bottomResult];
     
     return mutableArr;

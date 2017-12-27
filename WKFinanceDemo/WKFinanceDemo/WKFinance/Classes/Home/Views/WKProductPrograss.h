@@ -17,6 +17,10 @@
 @property (nonatomic, strong) UIColor *backProgressColor; /**< 底部进度条颜色 */
 @property (nonatomic, strong) UIColor *foreProgressColor; /**< 顶部进度条颜色 */
 
+//@property (nonatomic, strong) UIColor *foreGradientBeginColor;  /**< 渐变开始色 */
+//@property (nonatomic, strong) UIColor *foreGradientMiddleColor; /**< 渐变中间色 */
+//@property (nonatomic, strong) UIColor *foreGradientEndColor;    /**< 渐变结束色 */
+
 - (void)configureForeRadius:(CGFloat)foreRadius
               foreLineWidth:(CGFloat)foreLineWidth;
 

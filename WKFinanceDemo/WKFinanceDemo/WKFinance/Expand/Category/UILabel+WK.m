@@ -7,6 +7,7 @@
 //
 
 #import "UILabel+WK.h"
+#import "WKFinanceConstant.h"
 
 @implementation UILabel (WK)
 

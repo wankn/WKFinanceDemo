@@ -8,6 +8,9 @@
 
 #import "WKModuleConstant.h"
 
+NSString * const WKModuleTypeKey          = @"ModuleType";
+NSString * const WKModuleSeparatorTypeKey = @"ModuleSeparatorType";
+
 @implementation WKModuleConstant
 
 @end

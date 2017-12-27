@@ -10,6 +10,7 @@
 #import "WKFinanceConstant.h"
 #import "WKModuleTitleReusableView.h"
 #import "WKModuleProductCellHelper.h"
+#import "NSObject+WKModuleHome.h"
 
 @interface WKModuleProductDataSource()
 @property (nonatomic, strong) NSMutableArray *cellHelperList;
@@ -25,7 +26,7 @@
 
 /** items个数 */
 - (CGFloat)numberOfItems {
-    return MIN(self.cellHelperList.count, 3);
+    return self.cellHelperList.count;
 }
 
 /** cell的size */
@@ -45,12 +46,16 @@
 
 /** sectionHeader 的高度 */
 - (CGSize)referenceSizeForHeaderInSection:(NSInteger)section {
-    return CGSizeMake(APP_UI_SCREEN_FWIDTH, 50.0f);
+    if ([self hasSectionHeader]) {
+        return CGSizeMake(APP_UI_SCREEN_FWIDTH, 50.0f);
+    }
+    return CGSizeZero;
 }
 
 /** 获取section的inset */
 - (UIEdgeInsets)insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(0, 0, 10, 0);
+    WKModuleSeparatorType type = [self.result.resultInfo getInt:WKModuleSeparatorTypeKey];
+    return [self wk_sectionInsetsWithModuleSeparatorType:type];
 }
 
 - (CGFloat)minimumLineSpacingForSectionAtIndex:(NSInteger)section {
@@ -90,6 +95,12 @@
             [self.cellHelperList addObject:helper];
         }
     }
+}
+
+#pragma mark - private methods
+- (BOOL)hasSectionHeader {
+    NSString *title = [self.result.resultInfo getString:@"newTitle"];
+    return title.length != 0;
 }
 
 #pragma mark - getters

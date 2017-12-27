@@ -9,9 +9,11 @@
 #import "WKModuleBannerDataSource.h"
 #import "WKFinanceConstant.h"
 #import "WKCarouselBannerCellHelper.h"
+#import "NSObject+WKModuleHome.h"
 
 @interface WKModuleBannerDataSource()
 @property (nonatomic, strong) WKCarouselBannerCellHelper *cellHelper;
+@property (nonatomic, assign) WKModuleSeparatorType separatorType;
 @end
 
 @implementation WKModuleBannerDataSource
@@ -34,7 +36,7 @@
 
 /** 获取section的inset */
 - (UIEdgeInsets)insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsZero;
+    return [self wk_sectionInsetsWithModuleSeparatorType:self.separatorType];
 }
 
 /** 获取对应位置的cell类名 */
@@ -49,7 +51,7 @@
 
 /** 绑定数据源 */
 - (void)configureDataItemResult:(DataItemResult *)result {
-    
+    self.separatorType = [result.resultInfo getInt:WKModuleSeparatorTypeKey];
     self.cellHelper = [[WKCarouselBannerCellHelper alloc] init];
     if ([self.cellHelper respondsToSelector:@selector(configureWithDataItemResult:)]) {
         [self.cellHelper configureWithDataItemResult:result];

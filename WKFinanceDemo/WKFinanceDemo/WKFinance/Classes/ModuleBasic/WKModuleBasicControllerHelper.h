@@ -16,13 +16,16 @@
 @property (nonatomic, readonly) NSSet *cellNameSet;  /**< cell类名 集合 注册用 */
 @property (nonatomic, readonly) NSSet *sectionHeaderNameSet; /**< sectionHeader类名集合 注册用 */
 @property (nonatomic, readonly) NSSet *sectionFooterNameSet; /**< sectionFooter类名集合 注册用 */
+@property (nonatomic, readonly) DataItemResult *loadMoreResult; /**< 加载更多接口返回的数据 */
 
-@property (nonatomic, copy) void(^reloadMainViewBlock)(void); /**< 刷新主页block */
-@property (nonatomic, copy) void(^requestFinishBlock)(BOOL hasError,NSString *message);
+@property (nonatomic, copy) void(^reloadMainViewBlock)(void); /**< 刷新主页block 非请求类调用 */
+@property (nonatomic, copy) void(^requestFinishBlock)(BOOL hasError,NSString *message); /**< 刷新结束 */
+@property (nonatomic, copy) void(^requestMoreFinishBlock)(BOOL hasError,NSString *message,BOOL hasMore); /**< 加载更多结束 */
 
 /** 刷新数据 */
 - (void)requestData;
 
-
+/** 加载更多 */
+- (void)requestMoreData:(BOOL)isFirstPage;
 
 @end

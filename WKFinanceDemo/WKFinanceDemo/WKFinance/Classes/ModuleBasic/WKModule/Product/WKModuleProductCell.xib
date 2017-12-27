@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -53,7 +53,6 @@
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MeQ-4Z-waT" customClass="WKHomeTagsView">
                         <rect key="frame" x="94.5" y="15" width="215.5" height="20"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="16x-cA-cYv" customClass="WKProductPrograss">
                         <rect key="frame" x="265" y="47" width="50" height="50"/>
@@ -96,7 +95,6 @@
                 <constraint firstItem="nTN-dB-3mP" firstAttribute="top" secondItem="ziK-rg-YhO" secondAttribute="top" id="ww5-fB-5wn"/>
                 <constraint firstItem="nTN-dB-3mP" firstAttribute="trailing" secondItem="klD-7X-opR" secondAttribute="trailing" id="zFw-lz-1tq"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="330" height="112"/>
             <connections>
                 <outlet property="productNameLabel" destination="xlw-Oz-dlI" id="x9L-X4-fWE"/>

@@ -6,8 +6,8 @@
 //  Copyright © 2017年 wangkun. All rights reserved.
 //
 
-#import "WKBasicController.h"
+#import "WKModuleBasicController.h"
 
-@interface WKFinanceController : WKBasicController
+@interface WKFinanceController : WKModuleBasicController
 
 @end

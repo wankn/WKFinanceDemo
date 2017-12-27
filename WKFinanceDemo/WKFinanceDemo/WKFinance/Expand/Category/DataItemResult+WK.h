@@ -10,4 +10,5 @@
 
 @interface DataItemResult (WK)
 - (void)wk_bulidResultWithArray:(NSArray *)array;
+- (void)wk_bulidResultWithArray:(NSArray *)array maxCount:(NSInteger)maxCount;
 @end

@@ -8,6 +8,8 @@
 
 #import "WKBasicController.h"
 #import "WKFinanceConstant.h"
+#import "UIViewController+WKHideNavigationBar.h"
+#import "UIColor+WK.h"
 
 @interface WKBasicController ()
 
@@ -17,7 +19,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = RGB_HEX(0xF5F5F5);
+    self.view.backgroundColor = [UIColor wk_bgColor];
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if ([self respondsToSelector:@selector(hideNavigationBar)]) {
+        [self wkhide_viewWillAppear:animated];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self wkhide_viewWillDisappear:animated];
+}
+
 
 @end

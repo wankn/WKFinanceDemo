@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "WKModuleConstant.h"
 
-@interface WKModuleHandler : NSObject
+#import <UIKit/UIKit.h>
 
+@interface WKModuleHandler : NSObject
 
 + (NSString *)dataSourceClassNameWithModuleType:(WKModuleType)moduleType;
 
 + (NSArray *)supportableDataSourceList;
-
 
 @end

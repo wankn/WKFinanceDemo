@@ -17,6 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self adjustInset];
+    
     [self.view addSubview:self.mainCollectionView];
     [self.mainCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
@@ -279,6 +282,29 @@ didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
 - (void)reloadCollectionView {
     
     [self.mainCollectionView reloadData];
+}
+
+- (void)adjustInset {
+    if (@available(iOS 11.0, *)) {
+        self.mainCollectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+    CGFloat top = WKNavigationBarFullHeight;
+    CGFloat bottom = 0;
+    if (self.navigationController.viewControllers.count == 1) {
+        bottom = WKTabbarFullHeight;
+    } else {
+        bottom = WKTabbarBottomSpace;
+    }
+    if ([self respondsToSelector:@selector(hideNavigationBar)]) {
+        if ([self hideNavigationBar]) {
+            //顶部导航栏隐藏了，就是0
+            top = 0;
+        }
+    }
+    self.mainCollectionView.contentInset = UIEdgeInsetsMake(top, 0, bottom, 0);
+    self.mainCollectionView.scrollIndicatorInsets = self.mainCollectionView.contentInset;
 }
 
 #pragma mark - getters

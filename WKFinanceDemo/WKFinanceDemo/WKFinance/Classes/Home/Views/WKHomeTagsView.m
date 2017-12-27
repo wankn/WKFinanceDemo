@@ -24,16 +24,29 @@
     }
     CGFloat originX = 0;
     for (NSString *tag in tags) {
-        UILabel *label = [UILabel wk_tagLabelWithText:tag];
-        CGSize size = [tag wk_sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:CGSizeMake(MAXFLOAT, 15)];
+        if (tag.length == 0) continue;
+        UILabel *label = [self createTagLabel];
+        label.text = tag;
+        CGSize size = [tag wk_sizeWithFont:[UIFont systemFontOfSize:10.0f] constrainedToSize:CGSizeMake(MAXFLOAT, 15)];
         [self addSubview:label];
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(self);
             make.left.equalTo(self).offset(originX);
-            make.size.mas_equalTo(CGSizeMake(size.width + 5, size.height + 2));
+            make.size.mas_equalTo(CGSizeMake(size.width + 12, 15));
         }];
-        originX += (size.width+10);
+        originX += (size.width+12+5);
     }
+}
+
+- (UILabel *)createTagLabel {
+    UILabel *label = [[UILabel alloc] init];
+    label.textColor = [UIColor whiteColor];
+    label.font = [UIFont systemFontOfSize:10.0f];
+    label.backgroundColor = [UIColor redColor];
+    label.layer.cornerRadius = 7.5f;
+    label.layer.masksToBounds = YES;
+    label.textAlignment = NSTextAlignmentCenter;
+    return label;
 }
 
 @end

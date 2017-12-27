@@ -7,17 +7,18 @@
 //
 
 #import "WKProductPrograss.h"
+#import "WKFinanceConstant.h"
 
 @interface WKProductPrograss()<CAAnimationDelegate>
-@property (nonatomic, strong) CAShapeLayer *foregroundCircleLayer;
-@property (nonatomic, strong) CAShapeLayer *backgroundCircleLayer;
-@property (nonatomic, assign) CGFloat progressValue;
-
+@property (nonatomic, strong) CAShapeLayer *foregroundCircleLayer; /**< 顶部圆弧 */
+@property (nonatomic, strong) CAShapeLayer *backgroundCircleLayer; /**< 底部圆弧 */
+@property (nonatomic, assign) CGFloat progressValue; /**< 百分比 [0,1] */
 @property (nonatomic, assign) CGFloat animationDuration; /**< 动画持续时长 */
-@property (nonatomic, strong) NSTimer *timer;
-@property (nonatomic, strong) UILabel *percentLabel;
-@property (nonatomic, assign) CGFloat foreRadius;
-@property (nonatomic, assign) CGFloat foreLineWidth;
+@property (nonatomic, strong) NSTimer *timer; /**< 定时器 */
+@property (nonatomic, strong) UILabel *percentLabel;  /**< 显示百分比标签 */
+@property (nonatomic, assign) CGFloat foreRadius; /**< 半径 */
+@property (nonatomic, assign) CGFloat foreLineWidth; /**< 线宽 */
+@property (nonatomic, strong) CALayer *gradientLayer; /**< 渐变色 */
 @end
 
 @implementation WKProductPrograss
@@ -45,7 +46,7 @@
 
 - (void)defaultSetup {
     self.foreRadius = 25;
-    self.foreLineWidth = 5;
+    self.foreLineWidth = 4;
     self.animationDuration = 3;
     self.foreProgressColor = [UIColor redColor];
     self.backProgressColor = [UIColor lightGrayColor];
@@ -134,7 +135,9 @@
     self.foregroundCircleLayer.strokeStart = 0;
     self.foregroundCircleLayer.strokeEnd = 0.8;
     self.foregroundCircleLayer.strokeColor = self.foreProgressColor.CGColor;
-    [self.layer addSublayer:self.foregroundCircleLayer];
+//    [self.layer addSublayer:self.foregroundCircleLayer];
+    [self.gradientLayer setMask:self.foregroundCircleLayer];
+    [self.layer addSublayer:self.gradientLayer];
 }
 
 //创建圆环
@@ -190,6 +193,27 @@
         _percentLabel.textAlignment = NSTextAlignmentCenter;
     }
     return _percentLabel;
+}
+
+- (CALayer *)gradientLayer {
+    if (!_gradientLayer) {
+        _gradientLayer = [CALayer layer];
+        CGFloat offset = 5;
+        //左侧渐变色
+        CAGradientLayer *leftLayer = [CAGradientLayer layer];
+        leftLayer.frame = CGRectMake(0, 0, self.bounds.size.width/2 - offset, self.bounds.size.height);
+        leftLayer.locations = @[@0.0, @1];
+        leftLayer.colors = @[(id)RGB_HEX(0xFF0E00).CGColor, (id)RGB_HEX(0xFF4000).CGColor];
+        [_gradientLayer addSublayer:leftLayer];
+        
+        //右侧渐变色
+        CAGradientLayer *rightLayer = [CAGradientLayer layer];
+        rightLayer.frame = CGRectMake(self.bounds.size.width/2 - offset, 0, self.bounds.size.width/2 + offset, self.bounds.size.height);
+        rightLayer.locations = @[@0.0, @1];
+        rightLayer.colors = @[(id)RGB_HEX(0xFF7200).CGColor, (id)RGB_HEX(0xFF4000).CGColor];
+        [_gradientLayer addSublayer:rightLayer];
+    }
+    return _gradientLayer;
 }
 
 @end

@@ -10,7 +10,12 @@
 #import "WKHomeHttpLoader.h"
 
 @interface WKHomeHttpProcess : NSObject
-
+/** 首页 */
 + (WKHomeHttpLoader *)requestHomeDataWithDelegate:(id<SBHttpDataLoaderDelegate>)delegate;
+
+/** 理财 */
++ (WKHomeHttpLoader *)requestFinanceDataWithPageNo:(NSInteger)pageIndex
+                                          pageSize:(NSInteger)pageSize
+                                          delegate:(id<SBHttpDataLoaderDelegate>)delegate;
 
 @end

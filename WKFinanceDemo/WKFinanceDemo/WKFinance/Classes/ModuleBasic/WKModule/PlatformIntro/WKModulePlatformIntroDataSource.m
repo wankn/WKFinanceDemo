@@ -8,8 +8,10 @@
 
 #import "WKModulePlatformIntroDataSource.h"
 #import "WKFinanceConstant.h"
+#import "NSObject+WKModuleHome.h"
 
 @interface WKModulePlatformIntroDataSource()
+@property (nonatomic, assign) WKModuleSeparatorType separatorType;
 @end
 
 @implementation WKModulePlatformIntroDataSource
@@ -32,7 +34,7 @@
 
 /** 获取section的inset */
 - (UIEdgeInsets)insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(0, 0, 10, 0);
+    return [self wk_sectionInsetsWithModuleSeparatorType:self.separatorType];
 }
 
 /** 获取对应位置的cell类名 */
@@ -47,6 +49,6 @@
 
 /** 绑定数据源 */
 - (void)configureDataItemResult:(DataItemResult *)result {
-    
+    self.separatorType = [result.resultInfo getInt:WKModuleSeparatorTypeKey];
 }
 @end

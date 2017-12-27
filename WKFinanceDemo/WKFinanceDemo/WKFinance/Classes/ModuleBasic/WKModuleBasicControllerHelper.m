@@ -12,7 +12,9 @@
 
 @interface WKModuleBasicControllerHelper()<SBHttpDataLoaderDelegate>
 @property (nonatomic, strong) SBHttpDataLoader *configLoader;
+@property (nonatomic, strong) SBHttpDataLoader *loadMoreLoader;
 @property (nonatomic, strong) NSMutableArray<id<WKModuleSectionDataSourceProtocol>> *sectionDataSourceList;
+@property (nonatomic, strong) DataItemResult *loadMoreResult; /**< 加载更多接口返回的数据 */
 @end
 
 @implementation WKModuleBasicControllerHelper
@@ -20,18 +22,30 @@
 #pragma mark - public methods
 /** 刷新数据 */
 - (void)requestData {
-    
-    [self.configLoader stopLoading];
     if ([self respondsToSelector:@selector(fetchConfigLoader)]) {
+        [self.configLoader stopLoading];
         self.configLoader = [self fetchConfigLoader];
     }
 }
 
+/** 加载更多数据 */
+- (void)requestMoreData:(BOOL)isFirstPage {
+    NSInteger pageIndex = 1;
+    if (!isFirstPage) {
+        NSInteger currentPageIndex = [self.loadMoreResult.resultInfo getInt:@"pageNo"];
+        pageIndex = ceil(currentPageIndex) + 1;
+    }
+    if ([self respondsToSelector:@selector(fetchLoadMoreConfigLoaderWithPageIndex:)]) {
+        [self.loadMoreLoader stopLoading];
+        self.loadMoreLoader = [self fetchLoadMoreConfigLoaderWithPageIndex:pageIndex];
+    }
+}
+
 #pragma mark - private methods
-- (void)loadDataSourceList:(NSArray *)resultList {
+- (void)loadDataSourceList:(NSArray<DataItemResult *> *)resultList {
     [self.sectionDataSourceList removeAllObjects];
     for (DataItemResult *result in resultList) {
-        NSInteger moduleType = [result.resultInfo getInt:@"ModuleType"];
+        NSInteger moduleType = [result.resultInfo getInt:WKModuleTypeKey];
         NSString *clsName = [WKModuleHandler dataSourceClassNameWithModuleType:moduleType];
         if (clsName) {
             Class class = NSClassFromString(clsName);
@@ -55,6 +69,13 @@
         }
         if (self.requestFinishBlock) {
             self.requestFinishBlock(result.hasError, result.message);
+        }
+    } else if (dataLoader == self.loadMoreLoader) {
+        if (!result.hasError) {
+            self.loadMoreResult = result;
+            if ([self respondsToSelector:@selector(loadingLoadMoreResult:)]) {
+                
+            }
         }
     }
 }

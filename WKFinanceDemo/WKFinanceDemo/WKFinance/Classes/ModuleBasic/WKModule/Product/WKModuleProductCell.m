@@ -17,12 +17,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;//投资期限
 @property (weak, nonatomic) IBOutlet UILabel *remainingInvestmentLabel;//剩余投资
 @property (weak, nonatomic) IBOutlet UILabel *yieldDesLabel;//收益率描述
-
 @property (weak, nonatomic) IBOutlet WKHomeTagsView *tagsView;
 @property (weak, nonatomic) IBOutlet WKProductPrograss *progress;
-
 @end
-
 
 @implementation WKModuleProductCell
 
@@ -33,10 +30,8 @@
     self.timeLabel.adjustsFontSizeToFitWidth = YES;
     self.remainingInvestmentLabel.adjustsFontSizeToFitWidth = YES;
     self.yieldDesLabel.adjustsFontSizeToFitWidth = YES;
-    
     self.backgroundColor = [UIColor whiteColor];
-    [self.progress configureForeRadius:25 foreLineWidth:5];
-    self.progress.foreProgressColor = [UIColor redColor];
+    [self.progress configureForeRadius:25 foreLineWidth:4];
 }
 
 #pragma mark - WKModuleCellProtocol
@@ -48,6 +43,7 @@
     self.timeLabel.attributedText = helper.timeLimitValue;
     self.remainingInvestmentLabel.attributedText = helper.surplusAmount;
     [self.progress updateProgressValue:helper.investPercent.floatValue animate:YES];
+    [self.tagsView configureTags:helper.tags];
 }
 
 @end

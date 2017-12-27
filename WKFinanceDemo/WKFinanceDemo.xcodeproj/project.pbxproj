@@ -8,6 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		3D8D3BEBA07BFEE361AB7D77 /* libPods-WKFinanceDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA92B46A21547A198677FA8D /* libPods-WKFinanceDemo.a */; };
+		EA18FBD01FF368A30014EE89 /* UIViewController+WKHideNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EA18FBCF1FF368A30014EE89 /* UIViewController+WKHideNavigationBar.m */; };
+		EA18FBD31FF3847D0014EE89 /* WKFinanceControllerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EA18FBD21FF3847D0014EE89 /* WKFinanceControllerHelper.m */; };
+		EA18FBE71FF393280014EE89 /* wk_tab_home_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA18FBD71FF393250014EE89 /* wk_tab_home_selected@2x.png */; };
+		EA18FBE81FF393280014EE89 /* wk_tab_more@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA18FBD81FF393250014EE89 /* wk_tab_more@3x.png */; };
+		EA18FBE91FF393280014EE89 /* wk_tab_more_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA18FBD91FF393250014EE89 /* wk_tab_more_selected@2x.png */; };
+		EA18FBEA1FF393280014EE89 /* wk_tab_finance_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA18FBDA1FF393250014EE89 /* wk_tab_finance_selected@3x.png */; };
+		EA18FBEB1FF393280014EE89 /* wk_tab_more_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA18FBDB1FF393250014EE89 /* wk_tab_more_selected@3x.png */; };
+		EA18FBEC1FF393280014EE89 /* wk_tab_home@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA18FBDC1FF393250014EE89 /* wk_tab_home@3x.png */; };
+		EA18FBED1FF393280014EE89 /* wk_tab_finance@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA18FBDD1FF393260014EE89 /* wk_tab_finance@3x.png */; };
+		EA18FBEE1FF393280014EE89 /* wk_tab_more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA18FBDE1FF393260014EE89 /* wk_tab_more@2x.png */; };
+		EA18FBEF1FF393280014EE89 /* wk_tab_mine_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA18FBDF1FF393260014EE89 /* wk_tab_mine_selected@3x.png */; };
+		EA18FBF01FF393280014EE89 /* wk_tab_mine@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA18FBE01FF393270014EE89 /* wk_tab_mine@3x.png */; };
+		EA18FBF11FF393280014EE89 /* wk_tab_home_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA18FBE11FF393270014EE89 /* wk_tab_home_selected@3x.png */; };
+		EA18FBF21FF393280014EE89 /* wk_tab_finance_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA18FBE21FF393270014EE89 /* wk_tab_finance_selected@2x.png */; };
+		EA18FBF31FF393280014EE89 /* wk_tab_mine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA18FBE31FF393270014EE89 /* wk_tab_mine@2x.png */; };
+		EA18FBF41FF393280014EE89 /* wk_tab_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA18FBE41FF393270014EE89 /* wk_tab_home@2x.png */; };
+		EA18FBF51FF393280014EE89 /* wk_tab_mine_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA18FBE51FF393270014EE89 /* wk_tab_mine_selected@2x.png */; };
+		EA18FBF61FF393280014EE89 /* wk_tab_finance@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA18FBE61FF393280014EE89 /* wk_tab_finance@2x.png */; };
+		EA18FBF81FF393750014EE89 /* WKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA18FBF71FF393750014EE89 /* WKTabBarController.m */; };
+		EA18FBFF1FF3949B0014EE89 /* WKMoreHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA18FBFE1FF3949B0014EE89 /* WKMoreHomeViewController.m */; };
+		EA18FC051FF39E230014EE89 /* NSObject+WKModuleHome.m in Sources */ = {isa = PBXBuildFile; fileRef = EA18FC041FF39E230014EE89 /* NSObject+WKModuleHome.m */; };
 		EA2BA0A51FF0C29F00768E2F /* WKModulePlatformIntroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2BA0A31FF0C29F00768E2F /* WKModulePlatformIntroCell.m */; };
 		EA2BA0A61FF0C29F00768E2F /* WKModulePlatformIntroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA2BA0A41FF0C29F00768E2F /* WKModulePlatformIntroCell.xib */; };
 		EA2BA0AB1FF0D5C200768E2F /* wk_module_platform@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA2BA0A71FF0D5C100768E2F /* wk_module_platform@2x.png */; };
@@ -59,7 +80,6 @@
 		EAFA22011FC2E0720044D83D /* WKFinanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFA21AA1FC2E0720044D83D /* WKFinanceController.m */; };
 		EAFA220E1FC2E0720044D83D /* WKCarouselBannerCellHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFA21C11FC2E0720044D83D /* WKCarouselBannerCellHelper.m */; };
 		EAFA22121FC2E0720044D83D /* WKNewUserProductCellHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFA21C91FC2E0720044D83D /* WKNewUserProductCellHelper.m */; };
-		EAFA22141FC2E0720044D83D /* WKHomeProductProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFA21CE1FC2E0720044D83D /* WKHomeProductProgress.m */; };
 		EAFA22151FC2E0720044D83D /* WKHomeTagsView.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFA21D01FC2E0720044D83D /* WKHomeTagsView.m */; };
 		EAFA22161FC2E0720044D83D /* WKHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFA21D21FC2E0720044D83D /* WKHomeController.m */; };
 		EAFA22171FC2E0720044D83D /* WKHomeControllerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFA21D41FC2E0720044D83D /* WKHomeControllerHelper.m */; };
@@ -73,24 +93,38 @@
 		EAFA221F1FC2E0720044D83D /* WKHomeHttpLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFA21EA1FC2E0720044D83D /* WKHomeHttpLoader.m */; };
 		EAFA22201FC2E0720044D83D /* WKHomeHttpProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFA21EC1FC2E0720044D83D /* WKHomeHttpProcess.m */; };
 		EAFA22211FC2E0720044D83D /* wk_ notice.png in Resources */ = {isa = PBXBuildFile; fileRef = EAFA21EF1FC2E0720044D83D /* wk_ notice.png */; };
-		EAFA22261FC2E0720044D83D /* wk_ finance.png in Resources */ = {isa = PBXBuildFile; fileRef = EAFA21F51FC2E0720044D83D /* wk_ finance.png */; };
-		EAFA22271FC2E0720044D83D /* wk_ finance@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAFA21F61FC2E0720044D83D /* wk_ finance@2x.png */; };
-		EAFA22281FC2E0720044D83D /* wk_ finance_highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = EAFA21F71FC2E0720044D83D /* wk_ finance_highlight.png */; };
-		EAFA22291FC2E0720044D83D /* wk_ finance_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAFA21F81FC2E0720044D83D /* wk_ finance_highlight@2x.png */; };
-		EAFA222A1FC2E0720044D83D /* wk_home.png in Resources */ = {isa = PBXBuildFile; fileRef = EAFA21F91FC2E0720044D83D /* wk_home.png */; };
-		EAFA222B1FC2E0720044D83D /* wk_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAFA21FA1FC2E0720044D83D /* wk_home@2x.png */; };
-		EAFA222C1FC2E0720044D83D /* wk_home_highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = EAFA21FB1FC2E0720044D83D /* wk_home_highlight.png */; };
-		EAFA222D1FC2E0720044D83D /* wk_home_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAFA21FC1FC2E0720044D83D /* wk_home_highlight@2x.png */; };
-		EAFA222E1FC2E0720044D83D /* wk_mine.png in Resources */ = {isa = PBXBuildFile; fileRef = EAFA21FD1FC2E0720044D83D /* wk_mine.png */; };
-		EAFA222F1FC2E0720044D83D /* wk_mine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAFA21FE1FC2E0720044D83D /* wk_mine@2x.png */; };
-		EAFA22301FC2E0720044D83D /* wk_mine_highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = EAFA21FF1FC2E0720044D83D /* wk_mine_highlight.png */; };
-		EAFA22311FC2E0720044D83D /* wk_mine_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAFA22001FC2E0720044D83D /* wk_mine_highlight@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		54951E8E841E483BDBBE74A7 /* Pods-WKFinanceDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WKFinanceDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WKFinanceDemo/Pods-WKFinanceDemo.release.xcconfig"; sourceTree = "<group>"; };
 		AA92B46A21547A198677FA8D /* libPods-WKFinanceDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WKFinanceDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2E04539465584E901D0C18C /* Pods-WKFinanceDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WKFinanceDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WKFinanceDemo/Pods-WKFinanceDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		EA18FBCE1FF368A30014EE89 /* UIViewController+WKHideNavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+WKHideNavigationBar.h"; sourceTree = "<group>"; };
+		EA18FBCF1FF368A30014EE89 /* UIViewController+WKHideNavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+WKHideNavigationBar.m"; sourceTree = "<group>"; };
+		EA18FBD11FF3847D0014EE89 /* WKFinanceControllerHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKFinanceControllerHelper.h; sourceTree = "<group>"; };
+		EA18FBD21FF3847D0014EE89 /* WKFinanceControllerHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKFinanceControllerHelper.m; sourceTree = "<group>"; };
+		EA18FBD41FF390C70014EE89 /* WKTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKTabBarController.h; sourceTree = "<group>"; };
+		EA18FBD71FF393250014EE89 /* wk_tab_home_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_tab_home_selected@2x.png"; sourceTree = "<group>"; };
+		EA18FBD81FF393250014EE89 /* wk_tab_more@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_tab_more@3x.png"; sourceTree = "<group>"; };
+		EA18FBD91FF393250014EE89 /* wk_tab_more_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_tab_more_selected@2x.png"; sourceTree = "<group>"; };
+		EA18FBDA1FF393250014EE89 /* wk_tab_finance_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_tab_finance_selected@3x.png"; sourceTree = "<group>"; };
+		EA18FBDB1FF393250014EE89 /* wk_tab_more_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_tab_more_selected@3x.png"; sourceTree = "<group>"; };
+		EA18FBDC1FF393250014EE89 /* wk_tab_home@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_tab_home@3x.png"; sourceTree = "<group>"; };
+		EA18FBDD1FF393260014EE89 /* wk_tab_finance@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_tab_finance@3x.png"; sourceTree = "<group>"; };
+		EA18FBDE1FF393260014EE89 /* wk_tab_more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_tab_more@2x.png"; sourceTree = "<group>"; };
+		EA18FBDF1FF393260014EE89 /* wk_tab_mine_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_tab_mine_selected@3x.png"; sourceTree = "<group>"; };
+		EA18FBE01FF393270014EE89 /* wk_tab_mine@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_tab_mine@3x.png"; sourceTree = "<group>"; };
+		EA18FBE11FF393270014EE89 /* wk_tab_home_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_tab_home_selected@3x.png"; sourceTree = "<group>"; };
+		EA18FBE21FF393270014EE89 /* wk_tab_finance_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_tab_finance_selected@2x.png"; sourceTree = "<group>"; };
+		EA18FBE31FF393270014EE89 /* wk_tab_mine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_tab_mine@2x.png"; sourceTree = "<group>"; };
+		EA18FBE41FF393270014EE89 /* wk_tab_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_tab_home@2x.png"; sourceTree = "<group>"; };
+		EA18FBE51FF393270014EE89 /* wk_tab_mine_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_tab_mine_selected@2x.png"; sourceTree = "<group>"; };
+		EA18FBE61FF393280014EE89 /* wk_tab_finance@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_tab_finance@2x.png"; sourceTree = "<group>"; };
+		EA18FBF71FF393750014EE89 /* WKTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKTabBarController.m; sourceTree = "<group>"; };
+		EA18FBFD1FF3949B0014EE89 /* WKMoreHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKMoreHomeViewController.h; sourceTree = "<group>"; };
+		EA18FBFE1FF3949B0014EE89 /* WKMoreHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKMoreHomeViewController.m; sourceTree = "<group>"; };
+		EA18FC031FF39E230014EE89 /* NSObject+WKModuleHome.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+WKModuleHome.h"; sourceTree = "<group>"; };
+		EA18FC041FF39E230014EE89 /* NSObject+WKModuleHome.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WKModuleHome.m"; sourceTree = "<group>"; };
 		EA2BA0A21FF0C29F00768E2F /* WKModulePlatformIntroCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKModulePlatformIntroCell.h; sourceTree = "<group>"; };
 		EA2BA0A31FF0C29F00768E2F /* WKModulePlatformIntroCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKModulePlatformIntroCell.m; sourceTree = "<group>"; };
 		EA2BA0A41FF0C29F00768E2F /* WKModulePlatformIntroCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WKModulePlatformIntroCell.xib; sourceTree = "<group>"; };
@@ -177,8 +211,6 @@
 		EAFA21C11FC2E0720044D83D /* WKCarouselBannerCellHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKCarouselBannerCellHelper.m; sourceTree = "<group>"; };
 		EAFA21C81FC2E0720044D83D /* WKNewUserProductCellHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKNewUserProductCellHelper.h; sourceTree = "<group>"; };
 		EAFA21C91FC2E0720044D83D /* WKNewUserProductCellHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKNewUserProductCellHelper.m; sourceTree = "<group>"; };
-		EAFA21CD1FC2E0720044D83D /* WKHomeProductProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKHomeProductProgress.h; sourceTree = "<group>"; };
-		EAFA21CE1FC2E0720044D83D /* WKHomeProductProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKHomeProductProgress.m; sourceTree = "<group>"; };
 		EAFA21CF1FC2E0720044D83D /* WKHomeTagsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKHomeTagsView.h; sourceTree = "<group>"; };
 		EAFA21D01FC2E0720044D83D /* WKHomeTagsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKHomeTagsView.m; sourceTree = "<group>"; };
 		EAFA21D11FC2E0720044D83D /* WKHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKHomeController.h; sourceTree = "<group>"; };
@@ -204,18 +236,6 @@
 		EAFA21EB1FC2E0720044D83D /* WKHomeHttpProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKHomeHttpProcess.h; sourceTree = "<group>"; };
 		EAFA21EC1FC2E0720044D83D /* WKHomeHttpProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKHomeHttpProcess.m; sourceTree = "<group>"; };
 		EAFA21EF1FC2E0720044D83D /* wk_ notice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_ notice.png"; sourceTree = "<group>"; };
-		EAFA21F51FC2E0720044D83D /* wk_ finance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_ finance.png"; sourceTree = "<group>"; };
-		EAFA21F61FC2E0720044D83D /* wk_ finance@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_ finance@2x.png"; sourceTree = "<group>"; };
-		EAFA21F71FC2E0720044D83D /* wk_ finance_highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_ finance_highlight.png"; sourceTree = "<group>"; };
-		EAFA21F81FC2E0720044D83D /* wk_ finance_highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_ finance_highlight@2x.png"; sourceTree = "<group>"; };
-		EAFA21F91FC2E0720044D83D /* wk_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wk_home.png; sourceTree = "<group>"; };
-		EAFA21FA1FC2E0720044D83D /* wk_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_home@2x.png"; sourceTree = "<group>"; };
-		EAFA21FB1FC2E0720044D83D /* wk_home_highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wk_home_highlight.png; sourceTree = "<group>"; };
-		EAFA21FC1FC2E0720044D83D /* wk_home_highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_home_highlight@2x.png"; sourceTree = "<group>"; };
-		EAFA21FD1FC2E0720044D83D /* wk_mine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wk_mine.png; sourceTree = "<group>"; };
-		EAFA21FE1FC2E0720044D83D /* wk_mine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_mine@2x.png"; sourceTree = "<group>"; };
-		EAFA21FF1FC2E0720044D83D /* wk_mine_highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wk_mine_highlight.png; sourceTree = "<group>"; };
-		EAFA22001FC2E0720044D83D /* wk_mine_highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_mine_highlight@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +265,15 @@
 				54951E8E841E483BDBBE74A7 /* Pods-WKFinanceDemo.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		EA18FBF91FF394770014EE89 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				EA18FBFD1FF3949B0014EE89 /* WKMoreHomeViewController.h */,
+				EA18FBFE1FF3949B0014EE89 /* WKMoreHomeViewController.m */,
+			);
+			path = More;
 			sourceTree = "<group>";
 		};
 		EA2BA0AF1FF0DA2600768E2F /* Unit */ = {
@@ -298,6 +327,8 @@
 				EA2EA7401FECA9FC00F80995 /* WKModuleConstant.m */,
 				EA2EA7421FECAD5A00F80995 /* WKModuleHandler.h */,
 				EA2EA7431FECAD5A00F80995 /* WKModuleHandler.m */,
+				EA18FC031FF39E230014EE89 /* NSObject+WKModuleHome.h */,
+				EA18FC041FF39E230014EE89 /* NSObject+WKModuleHome.m */,
 			);
 			path = ModuleBasic;
 			sourceTree = "<group>";
@@ -457,6 +488,7 @@
 		EAFA21A71FC2E0720044D83D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EA18FBF91FF394770014EE89 /* More */,
 				EA2EA7321FEBAE2E00F80995 /* ModuleBasic */,
 				EAFA21A81FC2E0720044D83D /* Finance */,
 				EAFA21AB1FC2E0720044D83D /* Home */,
@@ -471,6 +503,8 @@
 			children = (
 				EAFA21A91FC2E0720044D83D /* WKFinanceController.h */,
 				EAFA21AA1FC2E0720044D83D /* WKFinanceController.m */,
+				EA18FBD11FF3847D0014EE89 /* WKFinanceControllerHelper.h */,
+				EA18FBD21FF3847D0014EE89 /* WKFinanceControllerHelper.m */,
 			);
 			path = Finance;
 			sourceTree = "<group>";
@@ -490,8 +524,6 @@
 		EAFA21CC1FC2E0720044D83D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EAFA21CD1FC2E0720044D83D /* WKHomeProductProgress.h */,
-				EAFA21CE1FC2E0720044D83D /* WKHomeProductProgress.m */,
 				EAFA21CF1FC2E0720044D83D /* WKHomeTagsView.h */,
 				EAFA21D01FC2E0720044D83D /* WKHomeTagsView.m */,
 				EA91BA371FF14C60002A210B /* WKProductPrograss.h */,
@@ -523,6 +555,10 @@
 			children = (
 				EAFA21DA1FC2E0720044D83D /* WKBasicController.h */,
 				EAFA21DB1FC2E0720044D83D /* WKBasicController.m */,
+				EA18FBCE1FF368A30014EE89 /* UIViewController+WKHideNavigationBar.h */,
+				EA18FBCF1FF368A30014EE89 /* UIViewController+WKHideNavigationBar.m */,
+				EA18FBD41FF390C70014EE89 /* WKTabBarController.h */,
+				EA18FBF71FF393750014EE89 /* WKTabBarController.m */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
@@ -596,18 +632,22 @@
 		EAFA21F41FC2E0720044D83D /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
-				EAFA21F51FC2E0720044D83D /* wk_ finance.png */,
-				EAFA21F61FC2E0720044D83D /* wk_ finance@2x.png */,
-				EAFA21F71FC2E0720044D83D /* wk_ finance_highlight.png */,
-				EAFA21F81FC2E0720044D83D /* wk_ finance_highlight@2x.png */,
-				EAFA21F91FC2E0720044D83D /* wk_home.png */,
-				EAFA21FA1FC2E0720044D83D /* wk_home@2x.png */,
-				EAFA21FB1FC2E0720044D83D /* wk_home_highlight.png */,
-				EAFA21FC1FC2E0720044D83D /* wk_home_highlight@2x.png */,
-				EAFA21FD1FC2E0720044D83D /* wk_mine.png */,
-				EAFA21FE1FC2E0720044D83D /* wk_mine@2x.png */,
-				EAFA21FF1FC2E0720044D83D /* wk_mine_highlight.png */,
-				EAFA22001FC2E0720044D83D /* wk_mine_highlight@2x.png */,
+				EA18FBE21FF393270014EE89 /* wk_tab_finance_selected@2x.png */,
+				EA18FBDA1FF393250014EE89 /* wk_tab_finance_selected@3x.png */,
+				EA18FBE61FF393280014EE89 /* wk_tab_finance@2x.png */,
+				EA18FBDD1FF393260014EE89 /* wk_tab_finance@3x.png */,
+				EA18FBD71FF393250014EE89 /* wk_tab_home_selected@2x.png */,
+				EA18FBE11FF393270014EE89 /* wk_tab_home_selected@3x.png */,
+				EA18FBE41FF393270014EE89 /* wk_tab_home@2x.png */,
+				EA18FBDC1FF393250014EE89 /* wk_tab_home@3x.png */,
+				EA18FBE51FF393270014EE89 /* wk_tab_mine_selected@2x.png */,
+				EA18FBDF1FF393260014EE89 /* wk_tab_mine_selected@3x.png */,
+				EA18FBE31FF393270014EE89 /* wk_tab_mine@2x.png */,
+				EA18FBE01FF393270014EE89 /* wk_tab_mine@3x.png */,
+				EA18FBD91FF393250014EE89 /* wk_tab_more_selected@2x.png */,
+				EA18FBDB1FF393250014EE89 /* wk_tab_more_selected@3x.png */,
+				EA18FBDE1FF393260014EE89 /* wk_tab_more@2x.png */,
+				EA18FBD81FF393250014EE89 /* wk_tab_more@3x.png */,
 			);
 			path = Tabbar;
 			sourceTree = "<group>";
@@ -674,36 +714,40 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA18FBEA1FF393280014EE89 /* wk_tab_finance_selected@3x.png in Resources */,
+				EA18FBF41FF393280014EE89 /* wk_tab_home@2x.png in Resources */,
 				EA2BA0AB1FF0D5C200768E2F /* wk_module_platform@2x.png in Resources */,
 				EA2EA7861FED054100F80995 /* wk_home_btnbg@3x.png in Resources */,
+				EA18FBF11FF393280014EE89 /* wk_tab_home_selected@3x.png in Resources */,
+				EA18FBEB1FF393280014EE89 /* wk_tab_more_selected@3x.png in Resources */,
+				EA18FBEC1FF393280014EE89 /* wk_tab_home@3x.png in Resources */,
 				EA2BA0A61FF0C29F00768E2F /* WKModulePlatformIntroCell.xib in Resources */,
 				EA2BA0C71FF0ED1F00768E2F /* WKModuleProductCell.xib in Resources */,
 				EAF7EEFF1FBE833500E087C0 /* LaunchScreen.storyboard in Resources */,
-				EAFA222D1FC2E0720044D83D /* wk_home_highlight@2x.png in Resources */,
-				EAFA22271FC2E0720044D83D /* wk_ finance@2x.png in Resources */,
-				EAFA222B1FC2E0720044D83D /* wk_home@2x.png in Resources */,
 				EA2BA0B51FF0DDE500768E2F /* wk_module_newad@3x.png in Resources */,
 				EA2BA0B61FF0DDE500768E2F /* wk_module_newad@2x.png in Resources */,
 				EA2BA0D01FF0F26900768E2F /* WKModuleBottomTipCell.xib in Resources */,
-				EAFA22291FC2E0720044D83D /* wk_ finance_highlight@2x.png in Resources */,
+				EA18FBE71FF393280014EE89 /* wk_tab_home_selected@2x.png in Resources */,
 				EAF7EEFC1FBE833500E087C0 /* Assets.xcassets in Resources */,
+				EA18FBF61FF393280014EE89 /* wk_tab_finance@2x.png in Resources */,
 				EAF7EEFA1FBE833500E087C0 /* Main.storyboard in Resources */,
+				EA18FBF31FF393280014EE89 /* wk_tab_mine@2x.png in Resources */,
 				EA2EA7741FECE5B100F80995 /* WKCarouselBannerCell.xib in Resources */,
-				EAFA22261FC2E0720044D83D /* wk_ finance.png in Resources */,
-				EAFA222E1FC2E0720044D83D /* wk_mine.png in Resources */,
+				EA18FBF51FF393280014EE89 /* wk_tab_mine_selected@2x.png in Resources */,
 				EA2EA7811FECEADC00F80995 /* WKModuleNewUserProductCell.xib in Resources */,
-				EAFA22301FC2E0720044D83D /* wk_mine_highlight.png in Resources */,
+				EA18FBE81FF393280014EE89 /* wk_tab_more@3x.png in Resources */,
+				EA18FBEF1FF393280014EE89 /* wk_tab_mine_selected@3x.png in Resources */,
+				EA18FBE91FF393280014EE89 /* wk_tab_more_selected@2x.png in Resources */,
+				EA18FBEE1FF393280014EE89 /* wk_tab_more@2x.png in Resources */,
 				EA2BA0AC1FF0D5C200768E2F /* wk_module_platform@3x.png in Resources */,
+				EA18FBF21FF393280014EE89 /* wk_tab_finance_selected@2x.png in Resources */,
 				EAFA22211FC2E0720044D83D /* wk_ notice.png in Resources */,
+				EA18FBED1FF393280014EE89 /* wk_tab_finance@3x.png in Resources */,
 				EA2BA0BF1FF0DEF400768E2F /* WKModuleAdImageCell.xib in Resources */,
-				EAFA22311FC2E0720044D83D /* wk_mine_highlight@2x.png in Resources */,
-				EAFA222A1FC2E0720044D83D /* wk_home.png in Resources */,
-				EAFA222C1FC2E0720044D83D /* wk_home_highlight.png in Resources */,
 				EA2BA0AE1FF0D5C200768E2F /* wk_module_safelogo@3x.png in Resources */,
-				EAFA222F1FC2E0720044D83D /* wk_mine@2x.png in Resources */,
-				EAFA22281FC2E0720044D83D /* wk_ finance_highlight.png in Resources */,
 				EA2EA7791FECE72100F80995 /* WKModuleRollPlatformNoticeCell.xib in Resources */,
 				EA2EA7851FED054100F80995 /* wk_home_btnbg@2x.png in Resources */,
+				EA18FBF01FF393280014EE89 /* wk_tab_mine@3x.png in Resources */,
 				EA2BA0AD1FF0D5C200768E2F /* wk_module_safelogo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -775,18 +819,19 @@
 				EAFA221D1FC2E0720044D83D /* UILabel+WK.m in Sources */,
 				EAFA22181FC2E0720044D83D /* WKMineController.m in Sources */,
 				EA2EA7641FECCE8700F80995 /* WKModuleProductDataSource.m in Sources */,
+				EA18FBFF1FF3949B0014EE89 /* WKMoreHomeViewController.m in Sources */,
 				EAFA221E1FC2E0720044D83D /* UIView+WKLayout.m in Sources */,
 				EA2EA7661FECCE8700F80995 /* WKModuleNewUserProductDataSource.m in Sources */,
 				EA2EA7651FECCE8700F80995 /* WKModulePlatformIntroDataSource.m in Sources */,
 				EA2EA7801FECEADC00F80995 /* WKModuleNewUserProductCell.m in Sources */,
 				EA2BA0BE1FF0DEF400768E2F /* WKModuleAdImageCell.m in Sources */,
 				EA2BA0CF1FF0F26900768E2F /* WKModuleBottomTipCell.m in Sources */,
-				EAFA22141FC2E0720044D83D /* WKHomeProductProgress.m in Sources */,
 				EA2EA7381FEBAE8400F80995 /* WKModuleBasicControllerHelper.m in Sources */,
 				EAFA22121FC2E0720044D83D /* WKNewUserProductCellHelper.m in Sources */,
 				EA2EA72B1FEBABF200F80995 /* UIColor+WK.m in Sources */,
 				EAFA22201FC2E0720044D83D /* WKHomeHttpProcess.m in Sources */,
 				EA2EA7681FECCE8700F80995 /* WKModuleBannerDataSource.m in Sources */,
+				EA18FBF81FF393750014EE89 /* WKTabBarController.m in Sources */,
 				EA2BA0B21FF0DA4200768E2F /* WKUserInfoManager.m in Sources */,
 				EA2EA73E1FEBB5AD00F80995 /* UIScrollView+WKRefresh.m in Sources */,
 				EAF7EF021FBE833500E087C0 /* main.m in Sources */,
@@ -805,11 +850,14 @@
 				EA2BA0D31FF0F2AC00768E2F /* WKModuleBottomTipCellHelper.m in Sources */,
 				EA2BA0A51FF0C29F00768E2F /* WKModulePlatformIntroCell.m in Sources */,
 				EA2EA7411FECA9FC00F80995 /* WKModuleConstant.m in Sources */,
+				EA18FBD31FF3847D0014EE89 /* WKFinanceControllerHelper.m in Sources */,
+				EA18FC051FF39E230014EE89 /* NSObject+WKModuleHome.m in Sources */,
 				EAF7EEF41FBE833500E087C0 /* AppDelegate.m in Sources */,
 				EA2EA7731FECE5B100F80995 /* WKCarouselBannerCell.m in Sources */,
 				EAFA22161FC2E0720044D83D /* WKHomeController.m in Sources */,
 				EA2EA76E1FECDADC00F80995 /* WKModuleTitleReusableView.m in Sources */,
 				EA2EA7671FECCE8700F80995 /* WKModuleRollPlatformNoticeDataSource.m in Sources */,
+				EA18FBD01FF368A30014EE89 /* UIViewController+WKHideNavigationBar.m in Sources */,
 				EA2EA7441FECAD5A00F80995 /* WKModuleHandler.m in Sources */,
 				EA2EA7351FEBAE4700F80995 /* WKModuleBasicController.m in Sources */,
 				EAFA221A1FC2E0720044D83D /* DataItemResult+WK.m in Sources */,
@@ -950,9 +998,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 83L6R4VD8G;
 				INFOPLIST_FILE = WKFinanceDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = wangkun.WKFinanceDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangkun.1111;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -964,9 +1014,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 83L6R4VD8G;
 				INFOPLIST_FILE = WKFinanceDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = wangkun.WKFinanceDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangkun.1111;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

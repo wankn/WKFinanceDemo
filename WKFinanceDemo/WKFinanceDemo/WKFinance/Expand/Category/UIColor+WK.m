@@ -7,12 +7,17 @@
 //
 
 #import "UIColor+WK.h"
+#import "WKFinanceConstant.h"
 
 @implementation UIColor (WK)
 
 /** 墙壁色 */
 + (UIColor *)wk_bgColor {
-    return [UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1.0];
+    return RGB_HEX(0xf5f5f5);
+}
+
++ (UIColor *)wk_defaultRedColor {
+    return RGB_HEX(0xfc291d);
 }
 
 @end

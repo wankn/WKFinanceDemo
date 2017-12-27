@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString * const WKModuleTypeKey;      //moduleType字段
+extern NSString * const WKModuleSeparatorTypeKey; //moduleSeparatorType字段
 
 /** 卡片模块样式 */
 typedef NS_ENUM(NSInteger, WKModuleType) {
@@ -21,7 +23,12 @@ typedef NS_ENUM(NSInteger, WKModuleType) {
     WKModuleTypeBottomTip = 7            //底部提示
 };
 
-
+/** 卡片模块分隔条 */
+typedef NS_ENUM(NSInteger, WKModuleSeparatorType) {
+    WKModuleSeparatorTypeNone = 0,   //没有分割条
+    WKModuleSeparatorTypeBottom = 1, //下分割条
+    WKModuleSeparatorTypeTop = 2     //上分割条 还没支持
+};
 
 @interface WKModuleConstant : NSObject
 

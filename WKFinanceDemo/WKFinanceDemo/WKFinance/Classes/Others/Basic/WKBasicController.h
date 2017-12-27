@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WKBasicController : UIViewController
+
+@protocol WKBasicControllerProtocol<NSObject>
+@optional
+/** 导航栏是否隐藏 */
+- (BOOL)hideNavigationBar;
+@end
+
+
+
+@interface WKBasicController : UIViewController<WKBasicControllerProtocol>
 
 @end

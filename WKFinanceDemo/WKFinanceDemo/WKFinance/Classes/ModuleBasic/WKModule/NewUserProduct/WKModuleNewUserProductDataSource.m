@@ -10,6 +10,7 @@
 #import "WKFinanceConstant.h"
 #import "WKNewUserProductCellHelper.h"
 #import "WKModuleTitleReusableView.h"
+#import "NSObject+WKModuleHome.h"
 
 @interface WKModuleNewUserProductDataSource()
 @property (nonatomic, strong) NSMutableArray *cellHelperList;
@@ -56,7 +57,8 @@
 
 /** 获取section的inset */
 - (UIEdgeInsets)insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(0, 0, 10, 0);
+    WKModuleSeparatorType type = [self.result.resultInfo getInt:WKModuleSeparatorTypeKey];
+    return [self wk_sectionInsetsWithModuleSeparatorType:type];
 }
 
 /** 获取对应位置的cell类名 */
