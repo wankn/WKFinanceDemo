@@ -8,9 +8,97 @@
 
 #import "UIScrollView+WKRefresh.h"
 #import <MJRefresh/MJRefresh.h>
+#import <WKChewieRefresh/UIScrollView+WKChewieRefresh.h>
+
+static CGFloat const refreshType = 0;
 
 @implementation UIScrollView (WKRefresh)
 
+- (void)wk_configureRefresh {
+    __weak typeof(self) weakSelf = self;
+    if (refreshType == 1) {
+        MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            if (strongSelf.wk_beginRefreshCallBack) {
+                strongSelf.wk_beginRefreshCallBack();
+            }
+        }];
+        self.mj_header = header;
+    } else {
+        
+        WKChewieRefreshHeader *header = [WKChewieRefreshHeader headerWithRefreshingBlock:^{
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            if (strongSelf.wk_beginRefreshCallBack) {
+                strongSelf.wk_beginRefreshCallBack();
+            }
+        }];
+        self.wk_header = header;
+    }
+}
+
+- (void)wk_configureLoadMore {
+    __weak typeof(self) weakSelf = self;
+    MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (strongSelf.wk_beginLoadMoreCallBack) {
+            strongSelf.wk_beginLoadMoreCallBack();
+        }
+    }];
+    self.mj_footer = footer;
+}
+
+- (void)wk_configureRefreshAndLoadMore {
+    [self wk_configureRefresh];
+    [self wk_configureLoadMore];
+}
+
+- (void)wk_beginRefresh {
+    if (refreshType == 1) {
+        if (!self.mj_header.isRefreshing) {
+            [self.mj_header beginRefreshing];
+        }
+    } else {
+        if (!self.wk_header.isRefreshing) {
+            [self.wk_header beginRefreshing];
+        }
+    }
+}
+
+- (void)wk_beginLoadMore {
+    if (!self.mj_footer.isRefreshing) {
+        [self.mj_footer beginRefreshing];
+    }
+}
+
+- (void)wk_endRefresh {
+    if (refreshType == 1) {
+        [self.mj_header endRefreshing];
+    } else {
+        [self.wk_header endRefreshing];
+    }
+}
+
+- (void)wk_endLoadMore {
+    [self.mj_footer endRefreshing];
+}
+
+- (void)wk_endLoadMoreWithNoMoreData {
+    [self.mj_footer endRefreshingWithNoMoreData];
+}
+
+- (void)wk_setRefreshEnable:(BOOL)enable {
+    if (refreshType == 1) {
+        self.mj_header.hidden = !enable;
+    } else {
+        self.wk_header.hidden = !enable;
+    }
+}
+
+- (void)wk_setLoadMoreEnable:(BOOL)enable {
+    self.mj_footer.hidden = !enable;
+}
+
+#pragma mark - setters and getters
 static const char WKRefreshBeginRefreshCallBackKey = '\0';
 - (void)setWk_beginRefreshCallBack:(void (^)(void))wk_beginRefreshCallBack {
     objc_setAssociatedObject(self, &WKRefreshBeginRefreshCallBackKey, wk_beginRefreshCallBack, OBJC_ASSOCIATION_COPY_NONATOMIC);
@@ -29,73 +117,5 @@ static const char WKRefreshBeginLoadMoreCallBackKey = '\0';
     return objc_getAssociatedObject(self, &WKRefreshBeginLoadMoreCallBackKey);
 }
 
-- (void)wk_configureRefresh {
-    __weak typeof(self) weakSelf = self;
-    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        if (strongSelf.wk_beginRefreshCallBack) {
-            strongSelf.wk_beginRefreshCallBack();
-        }
-    }];
-    self.mj_header = header;
-}
-
-- (void)wk_configureLoadMore {
-    __weak typeof(self) weakSelf = self;
-    MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        if (strongSelf.wk_beginLoadMoreCallBack) {
-            strongSelf.wk_beginLoadMoreCallBack();
-        }
-    }];
-    self.mj_footer = footer;
-}
-
-- (void)wk_configureRefreshAndLoadMore {
-    __weak typeof(self) weakSelf = self;
-    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        if (strongSelf.wk_beginRefreshCallBack) {
-            strongSelf.wk_beginRefreshCallBack();
-        }
-    }];
-    self.mj_header = header;
-    
-    MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        if (strongSelf.wk_beginLoadMoreCallBack) {
-            strongSelf.wk_beginLoadMoreCallBack();
-        }
-    }];
-    self.mj_footer = footer;
-}
-
-- (void)wk_beginRefresh {
-    if (!self.mj_header.isRefreshing) {
-        [self.mj_header beginRefreshing];
-    }
-}
-
-- (void)wk_beginLoadMore {
-    if (!self.mj_footer.isRefreshing) {
-        [self.mj_footer beginRefreshing];
-    }
-}
-
-- (void)wk_endRefresh {
-    [self.mj_header endRefreshing];
-}
-
-- (void)wk_endLoadMore {
-    [self.mj_footer endRefreshing];
-}
-
-- (void)wk_setRefreshEnable:(BOOL)enable {
-    self.mj_header.hidden = !enable;
-}
-
-- (void)wk_setLoadMoreEnable:(BOOL)enable {
-    self.mj_footer.hidden = !enable;
-}
 
 @end

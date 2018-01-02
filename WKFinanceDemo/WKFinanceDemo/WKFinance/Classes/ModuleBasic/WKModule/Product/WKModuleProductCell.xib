@@ -28,7 +28,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.80%+1.00%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93v-4A-8IH">
-                        <rect key="frame" x="15" y="42" width="115" height="30"/>
+                        <rect key="frame" x="15" y="42" width="110" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="VkY-O7-S1Y"/>
                         </constraints>
@@ -37,13 +37,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="历史年化收益率" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziK-rg-YhO">
-                        <rect key="frame" x="15" y="77" width="115" height="20"/>
+                        <rect key="frame" x="15" y="77" width="110" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="剩余投资：9.00万元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTN-dB-3mP">
-                        <rect key="frame" x="140" y="77" width="115" height="20"/>
+                        <rect key="frame" x="135" y="77" width="110" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="M6P-4M-WdP"/>
                         </constraints>
@@ -62,7 +62,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投资期限：30天" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klD-7X-opR">
-                        <rect key="frame" x="140" y="52" width="115" height="20"/>
+                        <rect key="frame" x="135" y="52" width="110" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="Q3G-Hf-Agi"/>
                         </constraints>
@@ -70,6 +70,13 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wk_module_sellout.png" highlightedImage="wk_module_sellout.png" translatesAutoresizingMaskIntoConstraints="NO" id="Run-NI-vpc">
+                        <rect key="frame" x="255" y="51.5" width="70" height="41"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="PBe-Kw-gHA"/>
+                            <constraint firstAttribute="height" constant="41" id="gXP-ed-auJ"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
@@ -85,14 +92,16 @@
                 <constraint firstItem="nTN-dB-3mP" firstAttribute="top" secondItem="klD-7X-opR" secondAttribute="bottom" constant="5" id="MSx-6K-3zI"/>
                 <constraint firstItem="MeQ-4Z-waT" firstAttribute="bottom" secondItem="xlw-Oz-dlI" secondAttribute="bottom" id="Q9U-N1-lOl"/>
                 <constraint firstItem="nTN-dB-3mP" firstAttribute="leading" secondItem="ziK-rg-YhO" secondAttribute="trailing" constant="10" id="Y1F-VR-aJ8"/>
-                <constraint firstItem="16x-cA-cYv" firstAttribute="leading" secondItem="nTN-dB-3mP" secondAttribute="trailing" constant="10" id="YtX-Jn-NML"/>
+                <constraint firstItem="16x-cA-cYv" firstAttribute="leading" secondItem="nTN-dB-3mP" secondAttribute="trailing" constant="20" id="YtX-Jn-NML"/>
                 <constraint firstItem="MeQ-4Z-waT" firstAttribute="top" secondItem="xlw-Oz-dlI" secondAttribute="top" id="cXh-Z4-5pf"/>
                 <constraint firstItem="16x-cA-cYv" firstAttribute="bottom" secondItem="nTN-dB-3mP" secondAttribute="bottom" id="g9c-gO-JZW"/>
                 <constraint firstAttribute="bottom" secondItem="16x-cA-cYv" secondAttribute="bottom" constant="15" id="hND-is-FKa"/>
                 <constraint firstItem="nTN-dB-3mP" firstAttribute="bottom" secondItem="ziK-rg-YhO" secondAttribute="bottom" id="lkO-IN-tp2"/>
+                <constraint firstItem="16x-cA-cYv" firstAttribute="centerY" secondItem="Run-NI-vpc" secondAttribute="centerY" id="n1C-Si-sye"/>
                 <constraint firstItem="ziK-rg-YhO" firstAttribute="top" secondItem="93v-4A-8IH" secondAttribute="bottom" constant="5" id="tWg-ow-ckd"/>
                 <constraint firstItem="nTN-dB-3mP" firstAttribute="width" secondItem="ziK-rg-YhO" secondAttribute="width" id="uFQ-k8-pWv"/>
                 <constraint firstItem="nTN-dB-3mP" firstAttribute="top" secondItem="ziK-rg-YhO" secondAttribute="top" id="ww5-fB-5wn"/>
+                <constraint firstItem="16x-cA-cYv" firstAttribute="centerX" secondItem="Run-NI-vpc" secondAttribute="centerX" id="yem-Ru-PNy"/>
                 <constraint firstItem="nTN-dB-3mP" firstAttribute="trailing" secondItem="klD-7X-opR" secondAttribute="trailing" id="zFw-lz-1tq"/>
             </constraints>
             <size key="customSize" width="330" height="112"/>
@@ -100,6 +109,7 @@
                 <outlet property="productNameLabel" destination="xlw-Oz-dlI" id="x9L-X4-fWE"/>
                 <outlet property="progress" destination="16x-cA-cYv" id="d3i-6o-ym7"/>
                 <outlet property="remainingInvestmentLabel" destination="nTN-dB-3mP" id="2G4-hy-Mfd"/>
+                <outlet property="selloutImageView" destination="Run-NI-vpc" id="aue-Ff-2zQ"/>
                 <outlet property="tagsView" destination="MeQ-4Z-waT" id="rRA-kC-OTn"/>
                 <outlet property="timeLabel" destination="klD-7X-opR" id="3PW-CM-n2s"/>
                 <outlet property="yieldDesLabel" destination="ziK-rg-YhO" id="KUs-oq-Ced"/>
@@ -108,4 +118,7 @@
             <point key="canvasLocation" x="157" y="68"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="wk_module_sellout.png" width="64" height="35"/>
+    </resources>
 </document>

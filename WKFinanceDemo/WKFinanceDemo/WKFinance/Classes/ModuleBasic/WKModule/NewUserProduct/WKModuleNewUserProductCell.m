@@ -10,7 +10,7 @@
 #import "WKModuleBasicProtocol.h"
 #import "WKNewUserProductCellHelper.h"
 
-@interface WKModuleNewUserProductCell()<WKModuleCellProtocol>
+@interface WKModuleNewUserProductCell()
 @property (weak, nonatomic) IBOutlet UILabel *indexLabel;
 @property (weak, nonatomic) IBOutlet UILabel *indexDesLabel;
 @property (weak, nonatomic) IBOutlet UILabel *minBuyAmoutLabel;
@@ -34,6 +34,12 @@
     self.indexLabel.text = helper.profit;
     self.minBuyAmoutLabel.text = helper.investBegin;
     self.timeLabel.text = helper.timeLimitValue;
+}
+
+- (void)didSelect {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(switchToTargetControllerWithType:params:)]) {
+        [self.delegate switchToTargetControllerWithType:WKModuleTypeNewUserProduct params:nil];
+    }
 }
 
 @end

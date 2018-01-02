@@ -30,6 +30,7 @@
 - (void)wk_endRefresh;
 /** 停止加载更多 */
 - (void)wk_endLoadMore;
+- (void)wk_endLoadMoreWithNoMoreData;
 
 /** 设置下拉刷新状态 */
 - (void)wk_setRefreshEnable:(BOOL)enable;

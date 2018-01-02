@@ -23,7 +23,7 @@
     return loader;
 }
 
-- (NSArray *)fetchDataSourceListWithDataItemResult:(DataItemResult *)result {
+- (NSArray *)fetchRefreshResultListWithDataItemResult:(DataItemResult *)result {
     return [self configureData:result];
 }
 

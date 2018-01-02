@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "WKFNavigationBar.h"
 
 @protocol WKBasicControllerProtocol<NSObject>
 @optional
@@ -16,7 +16,8 @@
 @end
 
 
-
 @interface WKBasicController : UIViewController<WKBasicControllerProtocol>
+
+@property (nonatomic, readonly) WKFNavigationBar *navigationBar;
 
 @end

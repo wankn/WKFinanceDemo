@@ -198,7 +198,7 @@
 - (CALayer *)gradientLayer {
     if (!_gradientLayer) {
         _gradientLayer = [CALayer layer];
-        CGFloat offset = 5;
+        CGFloat offset = 2;
         //左侧渐变色
         CAGradientLayer *leftLayer = [CAGradientLayer layer];
         leftLayer.frame = CGRectMake(0, 0, self.bounds.size.width/2 - offset, self.bounds.size.height);

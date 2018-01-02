@@ -35,5 +35,11 @@
     }
 }
 
+- (void)didSelect {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(switchToTargetControllerWithType:params:)]) {
+        [self.delegate switchToTargetControllerWithType:WKModuleTypeNewAd params:nil];
+    }
+}
+
 
 @end

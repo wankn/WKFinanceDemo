@@ -23,9 +23,24 @@
 - (id)createControllerHelper {
     WKFinanceControllerHelper *helper = [[WKFinanceControllerHelper alloc] init];
     __weak typeof(self) weakSelf = self;
-    helper.requestFinishBlock = ^(BOOL hasError, NSString *message) {
+    helper.requestFinishBlock = ^(BOOL hasError, NSString *message, BOOL hasMore) {
         [weakSelf.mainCollectionView wk_endRefresh];
         [weakSelf.mainCollectionView reloadData];
+        if (hasMore) {
+            [weakSelf.mainCollectionView wk_setLoadMoreEnable:YES];
+            [weakSelf.mainCollectionView wk_endLoadMore];
+        } else {
+            [weakSelf.mainCollectionView wk_endLoadMoreWithNoMoreData];
+        }
+    };
+    helper.requestMoreFinishBlock = ^(BOOL hasError, NSString *message, BOOL hasMore) {
+        [weakSelf.mainCollectionView wk_endLoadMore];
+        [weakSelf.mainCollectionView reloadData];
+        if (hasMore) {
+            [weakSelf.mainCollectionView wk_endLoadMore];
+        } else {
+            [weakSelf.mainCollectionView wk_endLoadMoreWithNoMoreData];
+        }
     };
     return helper;
 }

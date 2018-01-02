@@ -12,7 +12,7 @@
 #import "WKModuleRollPlatformNoticeCellHelper.h"
 #import "UIView+WKLayout.h"
 
-@interface WKModuleRollPlatformNoticeCell()<WKModuleCellProtocol>
+@interface WKModuleRollPlatformNoticeCell()
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *cycleScrollView;
 @end
 
@@ -33,6 +33,29 @@
     self.cycleScrollView.titlesGroup = helper.titleList;
 }
 
+- (void)didSelect {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(switchToTargetControllerWithType:params:)]) {
+        [self.delegate switchToTargetControllerWithType:WKModuleTypeRollPlatformNotice params:nil];
+    }
+}
+
+- (void)routeControllerViewDidAppear {
+    self.cycleScrollView.autoScroll = YES;
+}
+
+- (void)routeControllerViewWillDisappear {
+    self.cycleScrollView.autoScroll = NO;
+}
+
+- (void)routeCellWillDisplay {
+    self.cycleScrollView.autoScroll = YES;
+}
+
+- (void)routeCellDidEndDisplaying {
+    self.cycleScrollView.autoScroll = NO;
+}
+
+#pragma mark - private methods
 - (void)setupCycleScrollView {
     
     self.cycleScrollView.scrollDirection = UICollectionViewScrollDirectionVertical;

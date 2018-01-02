@@ -9,6 +9,8 @@
 #import "WKModuleBasicController.h"
 #import "Masonry.h"
 
+#import "WKWebViewController+Factory.h"
+
 @interface WKModuleBasicController ()
 
 @end
@@ -26,6 +28,30 @@
     }];
     
     [self manualRefresh:YES];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    //通知界面即将显示
+    [self routeViewWillAppear];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    //通知界面已经显示
+    [self routeViewDidAppear];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    //通知界面即将消失
+    [self routeViewWillDisappear];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    //通知界面已经消失
+    [self routeViewDidDisappear];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -140,25 +166,25 @@
     [collectionView deselectItemAtIndexPath:indexPath animated:NO];
 }
 
-- (BOOL)collectionView:(UICollectionView *)collectionView
-shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-
-- (void)collectionView:(UICollectionView *)colView
-didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell* cell = [colView cellForItemAtIndexPath:indexPath];
-    //设置(Nomal)正常状态下的颜色
-    [cell setBackgroundColor:[UIColor whiteColor]];
-}
-
-- (void)collectionView:(UICollectionView *)colView
-didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell* cell = [colView cellForItemAtIndexPath:indexPath];
-    //设置(Highlight)高亮下的颜色
-    [cell setBackgroundColor:RGB_HEX(0xD0D0D0)];
-    //[UIColor ef_homeHighlightBackColor]
-}
+//- (BOOL)collectionView:(UICollectionView *)collectionView
+//shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+//    return YES;
+//}
+//
+//- (void)collectionView:(UICollectionView *)colView
+//didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+//    UICollectionViewCell* cell = [colView cellForItemAtIndexPath:indexPath];
+//    //设置(Nomal)正常状态下的颜色
+//    [cell setBackgroundColor:[UIColor whiteColor]];
+//}
+//
+//- (void)collectionView:(UICollectionView *)colView
+//didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+//    UICollectionViewCell* cell = [colView cellForItemAtIndexPath:indexPath];
+//    //设置(Highlight)高亮下的颜色
+//    [cell setBackgroundColor:RGB_HEX(0xD0D0D0)];
+//    //[UIColor ef_homeHighlightBackColor]
+//}
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView
@@ -236,6 +262,14 @@ didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
     }
 }
 
+#pragma mark - WKModuleControllerProtocol
+/** 事件响应 */
+- (void)switchToTargetControllerWithType:(NSInteger)type params:(NSDictionary *)params {
+    
+    WKWebViewController *vc = [WKWebViewController webViewControllerWithUrl:nil];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 #pragma mark - public methods
 - (void)manualRefresh:(BOOL)manualRefresh {
     if (manualRefresh) {
@@ -307,6 +341,54 @@ didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
     self.mainCollectionView.scrollIndicatorInsets = self.mainCollectionView.contentInset;
 }
 
+/** 通知视图即将显示 */
+- (void)routeViewWillAppear {
+    if (_mainCollectionView) {
+        NSArray *cellList = [self.mainCollectionView visibleCells];
+        for (UICollectionViewCell<WKModuleCellProtocol> *cell in cellList) {
+            if ([cell respondsToSelector:@selector(routeControllerViewWillAppear)]) {
+                [cell routeControllerViewWillAppear];
+            }
+        }
+    }
+}
+
+/** 通知视图已经显示 */
+- (void)routeViewDidAppear {
+    if (_mainCollectionView) {
+        NSArray *cellList = [self.mainCollectionView visibleCells];
+        for (UICollectionViewCell<WKModuleCellProtocol> *cell in cellList) {
+            if ([cell respondsToSelector:@selector(routeControllerViewDidAppear)]) {
+                [cell routeControllerViewDidAppear];
+            }
+        }
+    }
+}
+
+/** 通知视图即将消失 */
+- (void)routeViewWillDisappear {
+    if (_mainCollectionView) {
+        NSArray *cellList = [self.mainCollectionView visibleCells];
+        for (UICollectionViewCell<WKModuleCellProtocol> *cell in cellList) {
+            if ([cell respondsToSelector:@selector(routeControllerViewWillDisappear)]) {
+                [cell routeControllerViewWillDisappear];
+            }
+        }
+    }
+}
+
+/** 通知视图已经消失 */
+- (void)routeViewDidDisappear {
+    if (_mainCollectionView) {
+        NSArray *cellList = [self.mainCollectionView visibleCells];
+        for (UICollectionViewCell<WKModuleCellProtocol> *cell in cellList) {
+            if ([cell respondsToSelector:@selector(routeControllerViewDidDisappear)]) {
+                [cell routeControllerViewDidDisappear];
+            }
+        }
+    }
+}
+
 #pragma mark - getters
 - (UICollectionView *)mainCollectionView {
     if (!_mainCollectionView) {
@@ -319,11 +401,18 @@ didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
         _mainCollectionView.showsHorizontalScrollIndicator = NO;
         
         [_mainCollectionView wk_configureRefresh];
+        [_mainCollectionView wk_configureLoadMore];
+        [_mainCollectionView wk_setLoadMoreEnable:NO];//先开闭上提加载
         __weak typeof(self) weakSelf = self;
         _mainCollectionView.wk_beginRefreshCallBack = ^{
             __strong typeof(weakSelf) strongSelf = weakSelf;
             [strongSelf.helper requestData];
             [strongSelf.mainCollectionView wk_endLoadMore];
+        };
+        _mainCollectionView.wk_beginLoadMoreCallBack = ^{
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            [strongSelf.helper requestMoreData:NO];
+            [strongSelf.mainCollectionView wk_endRefresh];
         };
         [self registerCells];
     }

@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self wr_setStatusBarStyle:UIStatusBarStyleLightContent];
 }
 
 #pragma mark - WKBasicControllerProtocol
@@ -28,7 +29,7 @@
 - (id)createControllerHelper {
     WKHomeControllerHelper *helper = [[WKHomeControllerHelper alloc] init];
     __weak typeof(self) weakSelf = self;
-    helper.requestFinishBlock = ^(BOOL hasError, NSString *message) {
+    helper.requestFinishBlock = ^(BOOL hasError, NSString *message, BOOL hasMore) {
         [weakSelf.mainCollectionView wk_endRefresh];
         [weakSelf.mainCollectionView reloadData];
     };

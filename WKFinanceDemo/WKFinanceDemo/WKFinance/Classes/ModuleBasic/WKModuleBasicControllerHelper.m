@@ -33,6 +33,7 @@
     NSInteger pageIndex = 1;
     if (!isFirstPage) {
         NSInteger currentPageIndex = [self.loadMoreResult.resultInfo getInt:@"pageNo"];
+        currentPageIndex = MAX(currentPageIndex, 1);
         pageIndex = ceil(currentPageIndex) + 1;
     }
     if ([self respondsToSelector:@selector(fetchLoadMoreConfigLoaderWithPageIndex:)]) {
@@ -41,7 +42,35 @@
     }
 }
 
+#pragma mark - SBHttpDataLoaderDelegate
+- (void)dataLoader:(SBHttpDataLoader *)dataLoader onReceived:(DataItemResult *)result {
+    if (dataLoader == self.configLoader) {
+        if (!result.hasError) {
+            if ([self respondsToSelector:@selector(fetchRefreshResultListWithDataItemResult:)]) {
+                NSArray *arr = [self fetchRefreshResultListWithDataItemResult:result];
+                [self loadDataSourceList:arr];
+                self.loadMoreResult = nil;
+            }
+        }
+        if (self.requestFinishBlock) {
+            self.requestFinishBlock(result.hasError, result.message,[self isHasMoreWithResult:result]);
+        }
+    } else if (dataLoader == self.loadMoreLoader) {
+        if (!result.hasError) {
+            self.loadMoreResult = result;
+            if ([self respondsToSelector:@selector(fetchLoadMoreResultWithDataItemResult:)]) {
+                self.loadMoreResult = [self fetchLoadMoreResultWithDataItemResult:result];
+            }
+            [self refreshMoreData];
+        }
+        if (self.requestMoreFinishBlock) {
+            self.requestMoreFinishBlock(result.hasError, result.message, [self isHasMoreWithResult:result]);
+        }
+    }
+}
+
 #pragma mark - private methods
+/** 装载数据 */
 - (void)loadDataSourceList:(NSArray<DataItemResult *> *)resultList {
     [self.sectionDataSourceList removeAllObjects];
     for (DataItemResult *result in resultList) {
@@ -58,26 +87,24 @@
     }
 }
 
-#pragma mark - SBHttpDataLoaderDelegate
-- (void)dataLoader:(SBHttpDataLoader *)dataLoader onReceived:(DataItemResult *)result {
-    if (dataLoader == self.configLoader) {
-        if (!result.hasError) {
-            if ([self respondsToSelector:@selector(fetchDataSourceListWithDataItemResult:)]) {
-                NSArray *arr = [self fetchDataSourceListWithDataItemResult:result];
-                [self loadDataSourceList:arr];
-            }
-        }
-        if (self.requestFinishBlock) {
-            self.requestFinishBlock(result.hasError, result.message);
-        }
-    } else if (dataLoader == self.loadMoreLoader) {
-        if (!result.hasError) {
-            self.loadMoreResult = result;
-            if ([self respondsToSelector:@selector(loadingLoadMoreResult:)]) {
-                
+/** 刷新加载更多的那个dataSource */
+- (void)refreshMoreData {
+    if (self.loadMoreResult) {
+        NSInteger moduldType = [self.loadMoreResult.resultInfo getInt:WKModuleTypeKey];
+        NSString *className = [WKModuleHandler dataSourceClassNameWithModuleType:moduldType];
+        if (self.sectionDataSourceList.count > 0 && [self.sectionDataSourceList.lastObject isKindOfClass:NSClassFromString(className)]) {
+            id<WKModuleSectionDataSourceProtocol> dataSource = self.sectionDataSourceList.lastObject;
+            if ([dataSource respondsToSelector:@selector(configureDataItemResult:)]) {
+                [dataSource configureDataItemResult:self.loadMoreResult];
             }
         }
     }
+}
+
+- (BOOL)isHasMoreWithResult:(DataItemResult *)result {
+    NSInteger pageNo = [result.resultInfo getInt:@"pageNo"];
+    NSInteger totalPage = [result.resultInfo getInt:@"totalPage"];
+    return totalPage>pageNo;
 }
 
 #pragma mark - getters

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WKModuleBasicProtocol.h"
 
-@interface WKCarouselBannerCell : UICollectionViewCell
-
+@interface WKCarouselBannerCell : UICollectionViewCell<WKModuleCellProtocol>
+/** 代理 */
+@property (nonatomic, weak) id<WKModuleControllerProtocol> delegate;
 @end

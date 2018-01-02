@@ -11,7 +11,7 @@
 #import "WKModuleBasicProtocol.h"
 #import "SDCycleScrollView.h"
 
-@interface WKCarouselBannerCell()<SDCycleScrollViewDelegate,WKModuleCellProtocol>
+@interface WKCarouselBannerCell()<SDCycleScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *cycleScrollView;
 @property (strong, nonatomic) WKCarouselBannerCellHelper *helper;
 @end
@@ -36,6 +36,28 @@
     [self setupCycleScrollView];
     self.helper = cellHelper;
     self.cycleScrollView.imageURLStringsGroup = self.helper.imagesUrlList;
+}
+
+- (void)didSelect {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(switchToTargetControllerWithType:params:)]) {
+        [self.delegate switchToTargetControllerWithType:WKModuleTypeBanner params:nil];
+    }
+}
+
+- (void)routeControllerViewDidAppear {
+    self.cycleScrollView.autoScroll = YES;
+}
+
+- (void)routeControllerViewWillDisappear {
+    self.cycleScrollView.autoScroll = NO;
+}
+
+- (void)routeCellWillDisplay {
+    self.cycleScrollView.autoScroll = YES;
+}
+
+- (void)routeCellDidEndDisplaying {
+    self.cycleScrollView.autoScroll = NO;
 }
 
 #pragma mark - private methods

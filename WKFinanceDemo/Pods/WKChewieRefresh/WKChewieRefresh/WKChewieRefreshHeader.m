@@ -131,7 +131,8 @@
                 self.state = WKRefreshStateIdle;
             } else if (realOffsetY < -WKRefreshOpenHeight) {
                 //如果当前松开手指的时候偏移大于33，就进入刷新状态
-                [self beginRefreshing];
+//                [self beginRefreshing]; //这里进入刷新状态不能清掉layer，因为弹性动画还没结束
+                self.state = WKRefreshStateRefreshing;
             }
         }
     }
@@ -432,7 +433,8 @@ CGFloat fetchLerp2(CGFloat a,CGFloat b,CGFloat p) {
             self.state = WKRefreshStatePullingLoading;
         } else {
             //转为开始刷新，真正的刷新
-            [self beginRefreshing];
+//            [self beginRefreshing]; //这里进入刷新状态不能清掉layer，因为弹性动画还没结束
+            self.state = WKRefreshStateRefreshing;
         }
     }
     CGPathRelease(path);

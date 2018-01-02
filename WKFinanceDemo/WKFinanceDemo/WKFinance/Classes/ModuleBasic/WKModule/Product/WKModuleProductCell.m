@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *yieldDesLabel;//收益率描述
 @property (weak, nonatomic) IBOutlet WKHomeTagsView *tagsView;
 @property (weak, nonatomic) IBOutlet WKProductPrograss *progress;
+@property (weak, nonatomic) IBOutlet UIImageView *selloutImageView;
+
 @end
 
 @implementation WKModuleProductCell
@@ -32,6 +34,7 @@
     self.yieldDesLabel.adjustsFontSizeToFitWidth = YES;
     self.backgroundColor = [UIColor whiteColor];
     [self.progress configureForeRadius:25 foreLineWidth:4];
+    self.selloutImageView.hidden = YES;
 }
 
 #pragma mark - WKModuleCellProtocol
@@ -42,8 +45,20 @@
     self.yieldLabel.attributedText = helper.profitAttributedString;
     self.timeLabel.attributedText = helper.timeLimitValue;
     self.remainingInvestmentLabel.attributedText = helper.surplusAmount;
-    [self.progress updateProgressValue:helper.investPercent.floatValue animate:YES];
+    if (helper.investPercent.floatValue < 1.0) {
+        [self.progress updateProgressValue:helper.investPercent.floatValue animate:YES];
+        self.selloutImageView.hidden = YES;
+    } else {
+        [self.progress updateProgressValue:0 animate:NO];
+        self.selloutImageView.hidden = NO;
+    }
     [self.tagsView configureTags:helper.tags];
+}
+
+- (void)didSelect {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(switchToTargetControllerWithType:params:)]) {
+        [self.delegate switchToTargetControllerWithType:WKModuleTypeProduct params:nil];
+    }
 }
 
 @end

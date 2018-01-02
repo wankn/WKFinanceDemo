@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '4ECA8F520EDACD33F3BB83CCA353A422'
+               BlueprintIdentifier = '96EBC5DAA9F56BC821E3F5553D468CCD'
                BlueprintName = 'WKChewieRefresh'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libWKChewieRefresh.a'>

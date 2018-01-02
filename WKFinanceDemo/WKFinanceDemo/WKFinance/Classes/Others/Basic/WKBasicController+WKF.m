@@ -1,18 +1,21 @@
 //
-//  UIViewController+WKHideNavigationBar.m
+//  WKBasicController+WKF.m
 //  WKFinanceDemo
 //
-//  Created by 王昆 on 2017/12/27.
-//  Copyright © 2017年 wangkun. All rights reserved.
+//  Created by 王昆 on 2018/1/2.
+//  Copyright © 2018年 wangkun. All rights reserved.
 //
 
-#import "UIViewController+WKHideNavigationBar.h"
-#import "WKBasicController.h"
+#import "WKBasicController+WKF.h"
 
-@implementation UIViewController (WKHideNavigationBar)
-
+@implementation WKBasicController (WKF)
 - (void)wkhide_viewWillAppear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    if ([self isKindOfClass:[WKBasicController class]]) {
+        if ([self respondsToSelector:@selector(hideNavigationBar)] && [(WKBasicController *)self hideNavigationBar]) {
+//            [self.navigationController setNavigationBarHidden:YES animated:animated];
+            self.navigationBar.hidden = YES;
+        }
+    }
 }
 
 - (void)wkhide_viewWillDisappear:(BOOL)animated {
@@ -26,9 +29,9 @@
                 if ([vc hideNavigationBar]) return;
             }
             //默认是重新设置导航栏的
-            [self.navigationController setNavigationBarHidden:NO animated:animated];
+//            [self.navigationController setNavigationBarHidden:NO animated:animated];
+            self.navigationBar.hidden = NO;
         }
     }
 }
-
 @end

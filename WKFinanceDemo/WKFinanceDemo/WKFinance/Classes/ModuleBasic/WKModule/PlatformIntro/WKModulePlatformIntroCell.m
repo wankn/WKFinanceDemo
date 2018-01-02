@@ -29,4 +29,16 @@
     self.rightSubTitleLabel.adjustsFontSizeToFitWidth = YES;
 }
 
+#pragma mark - WKModuleCellProtocol
+/** 绑定cellHelper */
+- (void)configureCellHelper:(id)cellHelper {
+    
+}
+
+- (void)didSelect {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(switchToTargetControllerWithType:params:)]) {
+        [self.delegate switchToTargetControllerWithType:WKModuleTypePlatformIntro params:nil];
+    }
+}
+
 @end

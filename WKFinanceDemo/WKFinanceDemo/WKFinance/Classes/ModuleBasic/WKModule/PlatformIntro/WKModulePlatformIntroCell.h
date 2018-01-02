@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WKModuleBasicProtocol.h"
 
-@interface WKModulePlatformIntroCell : UICollectionViewCell
-
+@interface WKModulePlatformIntroCell : UICollectionViewCell<WKModuleCellProtocol>
+/** 代理 */
+@property (nonatomic, weak) id<WKModuleControllerProtocol> delegate;
 @end

@@ -91,7 +91,7 @@
         <!--首页-->
         <scene sceneID="pRe-TR-1F9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fGf-KN-YAi" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fGf-KN-YAi" customClass="WKFNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="首页" id="Fhj-Hu-CKO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="v1e-AQ-Sdq">
@@ -110,7 +110,7 @@
         <!--理财-->
         <scene sceneID="Roe-tr-TYN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tKr-5e-gGj" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tKr-5e-gGj" customClass="WKFNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="理财" id="TXF-8d-hCA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EZF-Sg-hT9">
@@ -148,7 +148,7 @@
         <!--我的-->
         <scene sceneID="xVq-S1-7vm">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="51B-CE-D7s" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="51B-CE-D7s" customClass="WKFNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我的" id="ZUb-fd-ncw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zk9-k5-6Qb">
@@ -167,7 +167,7 @@
         <!--更多-->
         <scene sceneID="eu0-jO-O1G">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y7v-JX-Lno" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y7v-JX-Lno" customClass="WKFNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="更多" id="QAw-At-EAW"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>

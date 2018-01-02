@@ -37,11 +37,12 @@
 /** 加载更多接口 */
 - (SBHttpDataLoader *)fetchLoadMoreConfigLoaderWithPageIndex:(NSInteger)index;
 
-/** 获取子类需要定制的 */
-- (NSArray<DataItemResult*> *)fetchDataSourceListWithDataItemResult:(DataItemResult *)result;
+/** 获取子类需要定制的下拉刷新数据 */
+- (NSArray<DataItemResult*> *)fetchRefreshResultListWithDataItemResult:(DataItemResult *)result;
 
-/** 装载加载更多数据 */
-- (void)loadingLoadMoreResult:(DataItemResult *)result;
+/** 获取子类需要定制的加载更多数据 */
+- (DataItemResult *)fetchLoadMoreResultWithDataItemResult:(DataItemResult *)result;
+
 
 @end
 
