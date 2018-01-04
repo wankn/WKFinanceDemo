@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet WKProductPrograss *progress;
 @property (weak, nonatomic) IBOutlet UIImageView *selloutImageView;
 
+@property (nonatomic, strong) WKModuleProductCellHelper *helper;
 @end
 
 @implementation WKModuleProductCell
@@ -40,24 +41,24 @@
 #pragma mark - WKModuleCellProtocol
 /** 绑定cellHelper */
 - (void)configureCellHelper:(id)cellHelper {
-    WKModuleProductCellHelper *helper = cellHelper;
-    self.productNameLabel.text = helper.title;
-    self.yieldLabel.attributedText = helper.profitAttributedString;
-    self.timeLabel.attributedText = helper.timeLimitValue;
-    self.remainingInvestmentLabel.attributedText = helper.surplusAmount;
-    if (helper.investPercent.floatValue < 1.0) {
-        [self.progress updateProgressValue:helper.investPercent.floatValue animate:YES];
+    self.helper = cellHelper;
+    self.productNameLabel.text = self.helper.title;
+    self.yieldLabel.attributedText = self.helper.profitAttributedString;
+    self.timeLabel.attributedText = self.helper.timeLimitValue;
+    self.remainingInvestmentLabel.attributedText = self.helper.surplusAmount;
+    if (self.helper.investPercent.floatValue < 1.0) {
+        [self.progress updateProgressValue:self.helper.investPercent.floatValue animate:YES];
         self.selloutImageView.hidden = YES;
     } else {
         [self.progress updateProgressValue:0 animate:NO];
         self.selloutImageView.hidden = NO;
     }
-    [self.tagsView configureTags:helper.tags];
+    [self.tagsView configureTags:self.helper.tags];
 }
 
 - (void)didSelect {
     if (self.delegate && [self.delegate respondsToSelector:@selector(switchToTargetControllerWithType:params:)]) {
-        [self.delegate switchToTargetControllerWithType:WKModuleTypeProduct params:nil];
+        [self.delegate switchToTargetControllerWithType:WKModuleTypeProduct params:self.helper.linkParams];
     }
 }
 

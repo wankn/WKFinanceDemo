@@ -20,4 +20,10 @@
     return RGB_HEX(0xfc291d);
 }
 
+/** 分割线颜色 */
++ (UIColor *)wk_separatorLineColor {
+//    return RGB_HEX(0xeeeeee);
+    return RGB_HEX(0xDCDCDC);
+}
+
 @end

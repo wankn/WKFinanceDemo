@@ -10,6 +10,8 @@
 #import "Masonry.h"
 
 #import "WKWebViewController+Factory.h"
+#import "WKFProductDetailController+Factory.h"
+#import "NSDictionary+WKRealValue.h"
 
 @interface WKModuleBasicController ()
 
@@ -21,12 +23,11 @@
     [super viewDidLoad];
     
     [self adjustInset];
-    
     [self.view addSubview:self.mainCollectionView];
     [self.mainCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
-    
+    [self.view insertSubview:self.navigationBar aboveSubview:self.mainCollectionView];
     [self manualRefresh:YES];
 }
 
@@ -266,8 +267,54 @@
 /** 事件响应 */
 - (void)switchToTargetControllerWithType:(NSInteger)type params:(NSDictionary *)params {
     
-    WKWebViewController *vc = [WKWebViewController webViewControllerWithUrl:nil];
-    [self.navigationController pushViewController:vc animated:YES];
+    switch (type) {
+        case WKModuleTypeBanner:
+        {
+            WKWebViewController *vc = [WKWebViewController webViewControllerWithUrl:nil];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case WKModuleTypeRollPlatformNotice:
+        {
+            WKWebViewController *vc = [WKWebViewController webViewControllerWithUrl:nil];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case WKModuleTypePlatformIntro:
+        {
+            WKWebViewController *vc = [WKWebViewController webViewControllerWithUrl:nil];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case WKModuleTypeNewUserProduct:
+        {
+            NSString *productId = [params wk_stringForKey:@"productid"];
+            NSString *description = [params wk_stringForKey:@"description"];
+            WKFProductDetailController *vc = [WKFProductDetailController productDetailControllerWithProductId:productId title:description];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case WKModuleTypeProduct:
+        {
+            NSString *productId = [params wk_stringForKey:@"productid"];
+            NSString *description = [params wk_stringForKey:@"description"];
+            WKFProductDetailController *vc = [WKFProductDetailController productDetailControllerWithProductId:productId title:description];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case WKModuleTypeNewAd:
+        {
+            
+        }
+            break;
+        case WKModuleTypeBottomTip:
+        {
+            
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 #pragma mark - public methods

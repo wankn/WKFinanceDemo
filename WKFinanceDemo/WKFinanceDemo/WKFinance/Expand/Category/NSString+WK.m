@@ -24,6 +24,15 @@
     return self;
 }
 
+- (NSString *)ef_suffixWanFormatString {
+    NSString *tmp = [NSString stringWithFormat:@"%.2f",self.doubleValue];
+    if ([tmp hasSuffix:@"0000.00"]) {
+        NSString *string = [tmp substringToIndex:tmp.length - 7];
+        return [NSString stringWithFormat:@"%@万",string];
+    }
+    return tmp;
+}
+
 static inline CGSize wk_ajustedSize(CGSize originalSize) {
     CGSize ajustedSize = originalSize;
     ajustedSize.width = ceilf(originalSize.width);

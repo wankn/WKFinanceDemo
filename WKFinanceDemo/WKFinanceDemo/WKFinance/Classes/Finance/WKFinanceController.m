@@ -17,6 +17,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationBar.title = @"理财产品";
+}
+
+#pragma mark - WKBasicControllerProtocol
+- (BOOL)hideNavigationBar {
+    return NO;
 }
 
 #pragma mark - WKModuleControllerProtocol

@@ -14,6 +14,9 @@
 /** 去除最后一位0，例：5.90 变成 5.9 */
 - (NSString *)wk_rejectLastZero;
 
+/** 以万字结尾 */
+- (NSString *)ef_suffixWanFormatString;
+
 - (CGSize)wk_sizeWithFont:(UIFont *)font constrainedToSize:(CGSize)size;
 
 @end

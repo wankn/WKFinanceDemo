@@ -7,4 +7,5 @@ pod 'WKChewieRefresh'
 pod 'Masonry'
 pod 'SDCycleScrollView', '~> 1.74'
 pod 'WRNavigationBar','~>1.0.9'
+pod 'MBProgressHUD', '~> 1.1.0'
 end

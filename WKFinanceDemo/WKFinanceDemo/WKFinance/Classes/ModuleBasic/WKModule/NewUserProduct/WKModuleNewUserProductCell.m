@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *buyButton;
 
+@property (nonatomic, strong) WKNewUserProductCellHelper *helper;
 @end
 
 @implementation WKModuleNewUserProductCell
@@ -30,15 +31,15 @@
 #pragma mark - WKModuleCellProtocol
 /** 绑定cellHelper */
 - (void)configureCellHelper:(id)cellHelper {
-    WKNewUserProductCellHelper *helper = cellHelper;
-    self.indexLabel.text = helper.profit;
-    self.minBuyAmoutLabel.text = helper.investBegin;
-    self.timeLabel.text = helper.timeLimitValue;
+    self.helper = cellHelper;
+    self.indexLabel.text = self.helper.profit;
+    self.minBuyAmoutLabel.text = self.helper.investBegin;
+    self.timeLabel.text = self.helper.timeLimitValue;
 }
 
 - (void)didSelect {
     if (self.delegate && [self.delegate respondsToSelector:@selector(switchToTargetControllerWithType:params:)]) {
-        [self.delegate switchToTargetControllerWithType:WKModuleTypeNewUserProduct params:nil];
+        [self.delegate switchToTargetControllerWithType:WKModuleTypeNewUserProduct params:self.helper.linkParams];
     }
 }
 

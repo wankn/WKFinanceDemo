@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "WKFNavigationBar.h"
+#import "UIViewController+WKF.h"
+#import "UIScrollView+WKRefresh.h"
 
 @protocol WKBasicControllerProtocol<NSObject>
 @optional

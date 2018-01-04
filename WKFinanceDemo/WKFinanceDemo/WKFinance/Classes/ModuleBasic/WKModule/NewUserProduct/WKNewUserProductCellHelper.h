@@ -17,5 +17,6 @@
 @property (nonatomic, readonly) NSString *investBegin;  /**< <#note#> */
 @property (nonatomic, readonly) NSString *descriptionText;  /**< <#note#> */
 @property (nonatomic, readonly) NSString *timeLimitValue;  /**< <#note#> */
+@property (nonatomic, readonly) NSDictionary *linkParams; /**< 用于跳转 */
 
 @end

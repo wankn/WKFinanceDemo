@@ -26,14 +26,18 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setValue:@(pageSize) forKey:@"pageSize"];
     [params setValue:@(pageNo) forKey:@"pageNo"];
-    NSString *paramsString = [params sb_URLArgumentsString];
-    NSString *urlStr = nil;
-    if ([urlString rangeOfString:@"?"].location != NSNotFound) {
-        urlStr = [urlString stringByAppendingString:@"&"];
-    } else {
-        urlStr = [urlString stringByAppendingString:@"?"];
-    }
-    urlStr = [urlStr stringByAppendingString:paramsString];
+    NSString *urlStr = [self fetchFullUrlWithUrlString:urlString params:params];
+    return [self requestWithUrl:urlStr httpMethod:httpMethod delegate:delegate];
+}
+
+/** 产品详情 */
++ (WKHomeHttpLoader *)requestProductDetailWithProductId:(NSString *)productId
+                                               delegate:(id<SBHttpDataLoaderDelegate>)delegate {
+    NSString *urlString = @"https://api.jincaiwa.com/products/details";
+    NSString *httpMethod = @"POST";
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setValue:productId forKey:@"id"];
+    NSString *urlStr = [self fetchFullUrlWithUrlString:urlString params:params];
     return [self requestWithUrl:urlStr httpMethod:httpMethod delegate:delegate];
 }
 
@@ -49,6 +53,18 @@
         loader = [[WKHomeHttpLoader alloc]initWithURL:urlString httpMethod:httpMethod delegate:delegate];
     }
     return loader;
+}
+
++ (NSString *)fetchFullUrlWithUrlString:(NSString *)urlString params:(NSDictionary *)params {
+    NSString *paramsString = [params sb_URLArgumentsString];
+    NSString *urlStr = nil;
+    if ([urlString rangeOfString:@"?"].location != NSNotFound) {
+        urlStr = [urlString stringByAppendingString:@"&"];
+    } else {
+        urlStr = [urlString stringByAppendingString:@"?"];
+    }
+    urlStr = [urlStr stringByAppendingString:paramsString];
+    return urlStr;
 }
 
 @end

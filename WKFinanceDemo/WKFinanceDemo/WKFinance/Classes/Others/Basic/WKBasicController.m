@@ -8,7 +8,6 @@
 
 #import "WKBasicController.h"
 #import "WKFinanceConstant.h"
-#import "WKBasicController+WKF.h"
 #import "UIColor+WK.h"
 
 
@@ -38,23 +37,24 @@
     [self setNavigationBar];
     self.navigationController.navigationBar.hidden = YES;
     [self wr_setStatusBarStyle:UIStatusBarStyleDefault];
+    if ([self respondsToSelector:@selector(hideNavigationBar)]) {
+        self.navigationBar.hidden = [self hideNavigationBar];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self wkhide_viewWillAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self wkhide_viewWillDisappear:animated];
 }
 
 #pragma mark - private methods
 - (void)setNavigationBar {
     [self.view addSubview:self.navigationBar];
     if (self.navigationController.childViewControllers.count != 1) {
-        [self.navigationBar wr_setLeftButtonWithImage:[UIImage imageNamed:@"wk_navigation_back"]];
+        [self.navigationBar wr_setLeftButtonWithImage:[UIImage imageNamed:@"wk_navigation_back1"]];
     }
 }
 

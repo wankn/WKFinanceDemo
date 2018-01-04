@@ -19,5 +19,5 @@
 @property (nonatomic, readonly) NSAttributedString *surplusAmount;  /**< 剩余 */
 @property (nonatomic, readonly) NSArray *tags;  /**< 标签数组 */
 @property (nonatomic, readonly) NSString *investPercent; /**< 已售百分比 */
-
+@property (nonatomic, readonly) NSDictionary *linkParams; /**< 用于跳转 */
 @end

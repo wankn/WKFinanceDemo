@@ -18,4 +18,9 @@
                                           pageSize:(NSInteger)pageSize
                                           delegate:(id<SBHttpDataLoaderDelegate>)delegate;
 
+/** 产品详情 */ 
++ (WKHomeHttpLoader *)requestProductDetailWithProductId:(NSString *)productId
+                                               delegate:(id<SBHttpDataLoaderDelegate>)delegate;
+
+
 @end

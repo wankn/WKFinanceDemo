@@ -48,4 +48,13 @@
     return [NSString stringWithFormat:@"投资期限  %@天",plstimeLimitValue];
 }
 
+- (NSDictionary *)linkParams {
+    NSString *productid = [self.detail getString:@"productsId"];
+    NSString *description = [self.detail getString:@"description"];
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setValue:productid forKey:@"productid"];
+    [dic setValue:description forKey:@"description"];
+    return dic;
+}
+
 @end

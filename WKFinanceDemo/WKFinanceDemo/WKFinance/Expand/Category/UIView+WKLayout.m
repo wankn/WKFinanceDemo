@@ -8,6 +8,7 @@
 
 #import "UIView+WKLayout.h"
 #import "masonry.h"
+#import "UIColor+WK.h"
 
 @implementation UIView (WKLayout)
 - (void)wk_addTopSeparator:(BOOL)top
@@ -21,7 +22,7 @@
     }
     UIView *lineView = [[UIView alloc] init];
     lineView.tag = 444;
-    lineView.backgroundColor = [UIColor colorWithRed:238/255.0 green:238/255.0 blue:238/255.0 alpha:1.0];
+    lineView.backgroundColor = [UIColor wk_separatorLineColor];
     [self addSubview:lineView];
     [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
         if (top) {

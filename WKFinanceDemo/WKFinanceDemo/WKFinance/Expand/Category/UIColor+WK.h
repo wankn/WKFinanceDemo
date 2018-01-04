@@ -13,7 +13,11 @@
 /** 墙壁色 */
 + (UIColor *)wk_bgColor;
 
+/** 默认的红色 */
 + (UIColor *)wk_defaultRedColor;
+
+/** 分割线颜色 */
++ (UIColor *)wk_separatorLineColor;
 
 
 @end
