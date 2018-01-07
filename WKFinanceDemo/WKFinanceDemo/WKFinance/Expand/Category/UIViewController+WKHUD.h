@@ -21,7 +21,9 @@
 - (void)wk_showTips:(NSString *)tips showIndicator:(BOOL)showIndicator;
 - (void)wk_showTips:(NSString *)tips showIndicator:(BOOL)showIndicator inView:(UIView *)inView;
 - (void)wk_showTips:(NSString *)tips hiddenAfterSeconds:(CGFloat)hiddenAfterSeconds;
-- (void)wk_showTips:(NSString *)tips hiddenAfterSeconds:(CGFloat)hiddenAfterSeconds inView:(UIView *)inView;
+- (void)wk_showTips:(NSString *)tips
+ hiddenAfterSeconds:(CGFloat)hiddenAfterSeconds
+             inView:(UIView *)inView;
 - (void)wk_showTips:(NSString *)tips
       showIndicator:(BOOL)showIndicator
  hiddenAfterSeconds:(CGFloat)hiddenAfterSeconds;

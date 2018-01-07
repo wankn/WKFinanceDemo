@@ -7,7 +7,17 @@
 //
 
 #import "WKBasicController.h"
+#import <WebKit/WebKit.h>
+#import "WKWebViewInteractionCenter.h"
+#import "WKWebViewController+WKF.h"
 
-@interface WKWebViewController : WKBasicController
+@interface WKWebViewController : WKBasicController<WKWebViewControllerPortocol,WKUIDelegate,WKNavigationDelegate>
+
+@property (nonatomic, strong) WKWebView *htmlWebView;
+@property (nonatomic, strong) WKWebViewInteractionCenter *interactionCenter;
+@property (nonatomic, copy) NSString *urlString;
+
+
+- (instancetype)initWithInteractionCenter:(WKWebViewInteractionCenter *)interactionCenter;
 
 @end

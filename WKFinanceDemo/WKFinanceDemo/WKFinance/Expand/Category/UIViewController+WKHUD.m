@@ -25,17 +25,39 @@
 }
 
 - (void)wk_showTips:(NSString *)tips inView:(UIView *)inView {
-    
+    [self wk_showTips:tips
+               inView:inView
+        showIndicator:YES
+   hiddenAfterSeconds:0
+           completion:nil];
 }
 
 - (void)wk_showTips:(NSString *)tips showIndicator:(BOOL)showIndicator {
     [self wk_showTips:tips showIndicator:showIndicator hiddenAfterSeconds:0];
 }
 
+- (void)wk_showTips:(NSString *)tips showIndicator:(BOOL)showIndicator inView:(UIView *)inView {
+    [self wk_showTips:tips
+               inView:inView
+        showIndicator:showIndicator
+   hiddenAfterSeconds:0
+           completion:nil];
+}
+
 - (void)wk_showTips:(NSString *)tips hiddenAfterSeconds:(CGFloat)hiddenAfterSeconds {
     [self wk_showTips:tips
         showIndicator:YES
    hiddenAfterSeconds:hiddenAfterSeconds];
+}
+
+- (void)wk_showTips:(NSString *)tips
+ hiddenAfterSeconds:(CGFloat)hiddenAfterSeconds
+             inView:(UIView *)inView {
+    [self wk_showTips:tips
+               inView:inView
+        showIndicator:YES
+   hiddenAfterSeconds:hiddenAfterSeconds
+           completion:nil];
 }
 
 - (void)wk_showTips:(NSString *)tips
@@ -48,6 +70,16 @@
            completion:nil];
 }
 
+- (void)wk_showTips:(NSString *)tips
+      showIndicator:(BOOL)showIndicator
+ hiddenAfterSeconds:(CGFloat)hiddenAfterSeconds
+             inView:(UIView *)inView {
+    [self wk_showTips:tips
+               inView:inView
+        showIndicator:showIndicator
+   hiddenAfterSeconds:hiddenAfterSeconds
+           completion:nil];
+}
 
 /******************** 显示 自动消失 默认不带转子 ********************/
 - (void)wk_showTipsAutoHidden:(NSString *)tips {

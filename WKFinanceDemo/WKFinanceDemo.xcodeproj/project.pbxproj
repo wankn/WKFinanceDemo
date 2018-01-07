@@ -81,6 +81,9 @@
 		EA2EA7851FED054100F80995 /* wk_home_btnbg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA2EA7831FED054000F80995 /* wk_home_btnbg@2x.png */; };
 		EA2EA7861FED054100F80995 /* wk_home_btnbg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA2EA7841FED054000F80995 /* wk_home_btnbg@3x.png */; };
 		EA44AC631FFE1D90002F11DC /* UIViewController+WKHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = EA44AC621FFE1D90002F11DC /* UIViewController+WKHUD.m */; };
+		EA44AC681FFF7E8C002F11DC /* WKWebViewInteractionCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = EA44AC671FFF7E8C002F11DC /* WKWebViewInteractionCenter.m */; };
+		EA44AC6B1FFF7EF5002F11DC /* WKWebViewConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = EA44AC6A1FFF7EF5002F11DC /* WKWebViewConstant.m */; };
+		EA44AC6E1FFF80C7002F11DC /* WKWebViewController+WKF.m in Sources */ = {isa = PBXBuildFile; fileRef = EA44AC6D1FFF80C7002F11DC /* WKWebViewController+WKF.m */; };
 		EA66516F1FFCC54E00AC7AAD /* UIViewController+WKF.m in Sources */ = {isa = PBXBuildFile; fileRef = EA66516E1FFCC54E00AC7AAD /* UIViewController+WKF.m */; };
 		EA6651721FFCD85300AC7AAD /* WKFPorductDetailTopCellHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6651711FFCD85300AC7AAD /* WKFPorductDetailTopCellHelper.m */; };
 		EA91BA391FF14C60002A210B /* WKProductPrograss.m in Sources */ = {isa = PBXBuildFile; fileRef = EA91BA381FF14C60002A210B /* WKProductPrograss.m */; };
@@ -239,6 +242,12 @@
 		EA2EA7841FED054000F80995 /* wk_home_btnbg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_home_btnbg@3x.png"; sourceTree = "<group>"; };
 		EA44AC611FFE1D90002F11DC /* UIViewController+WKHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+WKHUD.h"; sourceTree = "<group>"; };
 		EA44AC621FFE1D90002F11DC /* UIViewController+WKHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+WKHUD.m"; sourceTree = "<group>"; };
+		EA44AC661FFF7E8C002F11DC /* WKWebViewInteractionCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKWebViewInteractionCenter.h; sourceTree = "<group>"; };
+		EA44AC671FFF7E8C002F11DC /* WKWebViewInteractionCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKWebViewInteractionCenter.m; sourceTree = "<group>"; };
+		EA44AC691FFF7EF5002F11DC /* WKWebViewConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKWebViewConstant.h; sourceTree = "<group>"; };
+		EA44AC6A1FFF7EF5002F11DC /* WKWebViewConstant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKWebViewConstant.m; sourceTree = "<group>"; };
+		EA44AC6C1FFF80C7002F11DC /* WKWebViewController+WKF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WKWebViewController+WKF.h"; sourceTree = "<group>"; };
+		EA44AC6D1FFF80C7002F11DC /* WKWebViewController+WKF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "WKWebViewController+WKF.m"; sourceTree = "<group>"; };
 		EA66516D1FFCC54E00AC7AAD /* UIViewController+WKF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+WKF.h"; sourceTree = "<group>"; };
 		EA66516E1FFCC54E00AC7AAD /* UIViewController+WKF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+WKF.m"; sourceTree = "<group>"; };
 		EA6651701FFCD85300AC7AAD /* WKFPorductDetailTopCellHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKFPorductDetailTopCellHelper.h; sourceTree = "<group>"; };
@@ -401,6 +410,12 @@
 				EA18FC261FF48D3A0014EE89 /* WKWebViewController.m */,
 				EA18FC281FF48D800014EE89 /* WKWebViewController+Factory.h */,
 				EA18FC291FF48D800014EE89 /* WKWebViewController+Factory.m */,
+				EA44AC661FFF7E8C002F11DC /* WKWebViewInteractionCenter.h */,
+				EA44AC671FFF7E8C002F11DC /* WKWebViewInteractionCenter.m */,
+				EA44AC691FFF7EF5002F11DC /* WKWebViewConstant.h */,
+				EA44AC6A1FFF7EF5002F11DC /* WKWebViewConstant.m */,
+				EA44AC6C1FFF80C7002F11DC /* WKWebViewController+WKF.h */,
+				EA44AC6D1FFF80C7002F11DC /* WKWebViewController+WKF.m */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -1061,10 +1076,12 @@
 				EAFA220E1FC2E0720044D83D /* WKCarouselBannerCellHelper.m in Sources */,
 				EAFA22151FC2E0720044D83D /* WKHomeTagsView.m in Sources */,
 				EAFA221C1FC2E0720044D83D /* NSString+WK.m in Sources */,
+				EA44AC6B1FFF7EF5002F11DC /* WKWebViewConstant.m in Sources */,
 				EAFA221B1FC2E0720044D83D /* NSDictionary+WKRealValue.m in Sources */,
 				EA2BA0D61FF0FF4300768E2F /* WKModuleProductCellHelper.m in Sources */,
 				EA2EA7781FECE72100F80995 /* WKModuleRollPlatformNoticeCell.m in Sources */,
 				EA2BA0D31FF0F2AC00768E2F /* WKModuleBottomTipCellHelper.m in Sources */,
+				EA44AC6E1FFF80C7002F11DC /* WKWebViewController+WKF.m in Sources */,
 				EA2BA0A51FF0C29F00768E2F /* WKModulePlatformIntroCell.m in Sources */,
 				EA18FC1E1FF48B910014EE89 /* WKPopAnimator.m in Sources */,
 				EA2EA7411FECA9FC00F80995 /* WKModuleConstant.m in Sources */,
@@ -1077,6 +1094,7 @@
 				EA2EA76E1FECDADC00F80995 /* WKModuleTitleReusableView.m in Sources */,
 				EA18FC231FF48BF90014EE89 /* WKFNavigationController.m in Sources */,
 				EA2EA7671FECCE8700F80995 /* WKModuleRollPlatformNoticeDataSource.m in Sources */,
+				EA44AC681FFF7E8C002F11DC /* WKWebViewInteractionCenter.m in Sources */,
 				EA18FC1A1FF48B910014EE89 /* UIViewController+WKSinkNavigationController.m in Sources */,
 				EA18FC1D1FF48B910014EE89 /* WKPushAnimator.m in Sources */,
 				EAD7F5881FF62E670026FCBE /* WKFNavigationBar.m in Sources */,

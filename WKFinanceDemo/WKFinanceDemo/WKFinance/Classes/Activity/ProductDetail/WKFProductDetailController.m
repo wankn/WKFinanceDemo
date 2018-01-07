@@ -20,6 +20,11 @@
 - (instancetype)initWithHelper:(WKFProductDetailControllerHelper *)helper {
     if (self = [super init]) {
         self.helper = helper;
+        __weak typeof(self) weakSelf = self;
+        self.helper.requestDataFinishBlock = ^(BOOL hasError, NSString *message) {
+            [weakSelf.collectionView wk_endRefresh];
+            [weakSelf.collectionView reloadData];
+        };
     }
     return self;
 }
@@ -34,12 +39,18 @@
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 1;
+    return self.helper.cellHelperList.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    id cellHelper = nil;
+    if (self.helper.cellHelperList.count > 0) {
+        cellHelper = self.helper.cellHelperList[indexPath.row];
+    }
     if (indexPath.row == 0) {
         WKFPorductDetailTopCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WKFPorductDetailTopCell" forIndexPath:indexPath];
+        [cell configureHelper:cellHelper];
         return cell;
     }
     return nil;
@@ -63,6 +74,10 @@
         [_collectionView wk_configureRefresh];
         _collectionView.backgroundColor = self.view.backgroundColor;
         [_collectionView registerNib:[UINib nibWithNibName:@"WKFPorductDetailTopCell" bundle:nil] forCellWithReuseIdentifier:@"WKFPorductDetailTopCell"];
+        __weak typeof(self) weakSelf = self;
+        _collectionView.wk_beginRefreshCallBack = ^{
+            [weakSelf.helper requestDetailData];
+        };
     }
     return _collectionView;
 }

@@ -15,7 +15,7 @@
 @implementation WKFPorductDetailTopCellHelper
 
 - (void)configureDetail:(DataItemDetail *)detail {
-    self.detail = detail;
+    self.detail = [detail getDetail:@"products"];
 }
 
 #pragma mark - getters

@@ -17,6 +17,10 @@
 /** 以万字结尾 */
 - (NSString *)ef_suffixWanFormatString;
 
+/** 计算size */
 - (CGSize)wk_sizeWithFont:(UIFont *)font constrainedToSize:(CGSize)size;
+
+/** 修剪两边的空白字符 */
+- (NSString *)trimBothSideSpaceCharacters;
 
 @end

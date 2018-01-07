@@ -47,5 +47,13 @@ static inline CGSize wk_ajustedSize(CGSize originalSize) {
                                         context:nil].size);
 }
 
+/** 修剪两边的空白字符 */
+- (NSString *)trimBothSideSpaceCharacters {
+    if (!self) return nil;
+    NSString *s = [NSString stringWithString:self];
+    NSString *trimmedString = [s stringByTrimmingCharactersInSet:
+                               [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    return trimmedString;
+}
 
 @end
